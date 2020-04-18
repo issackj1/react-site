@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7e6a523-e2cb-4f86-8514-c8cc0a8a110b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Content.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/About.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Contact.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Education.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Experience.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Extracurricular.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Skills.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/About.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Experience.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Extracurricular.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Extracurricular.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587238929580</updated>
-      <workItem from="1587238932162" duration="4225000" />
+      <workItem from="1587238932162" duration="5312000" />
     </task>
     <servers />
   </component>
@@ -87,22 +82,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1659" height="295" key="GridCell.Tab.0.bottom" timestamp="1587244263287">
+    <state width="1659" height="295" key="GridCell.Tab.0.bottom" timestamp="1587245913403">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1587244263287" />
-    <state width="1659" height="295" key="GridCell.Tab.0.center" timestamp="1587244263286">
+    <state width="1659" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1587245913403" />
+    <state width="1659" height="295" key="GridCell.Tab.0.center" timestamp="1587245913402">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1587244263286" />
-    <state width="1659" height="295" key="GridCell.Tab.0.left" timestamp="1587244263285">
+    <state width="1659" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1587245913402" />
+    <state width="1659" height="295" key="GridCell.Tab.0.left" timestamp="1587245913401">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1587244263285" />
-    <state width="1659" height="295" key="GridCell.Tab.0.right" timestamp="1587244263286">
+    <state width="1659" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1587245913401" />
+    <state width="1659" height="295" key="GridCell.Tab.0.right" timestamp="1587245913402">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1587244263286" />
+    <state width="1659" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1587245913402" />
     <state x="517" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1587240303840">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
