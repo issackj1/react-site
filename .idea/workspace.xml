@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7e6a523-e2cb-4f86-8514-c8cc0a8a110b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/NavBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/AstroJump.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Shuffl.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/StarterHacks2020.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Content.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/About.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Contact.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Education.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Experience.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Extracurricular.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Skills.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -46,6 +48,11 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/views" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -72,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587238929580</updated>
-      <workItem from="1587238932162" duration="2996000" />
+      <workItem from="1587238932162" duration="4225000" />
     </task>
     <servers />
   </component>
@@ -80,22 +87,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1659" height="295" key="GridCell.Tab.0.bottom" timestamp="1587243734006">
+    <state width="1659" height="295" key="GridCell.Tab.0.bottom" timestamp="1587244263287">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1587243734006" />
-    <state width="1659" height="295" key="GridCell.Tab.0.center" timestamp="1587243734005">
+    <state width="1659" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1587244263287" />
+    <state width="1659" height="295" key="GridCell.Tab.0.center" timestamp="1587244263286">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1587243734005" />
-    <state width="1659" height="295" key="GridCell.Tab.0.left" timestamp="1587243734004">
+    <state width="1659" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1587244263286" />
+    <state width="1659" height="295" key="GridCell.Tab.0.left" timestamp="1587244263285">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1587243734004" />
-    <state width="1659" height="295" key="GridCell.Tab.0.right" timestamp="1587243734006">
+    <state width="1659" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1587244263285" />
+    <state width="1659" height="295" key="GridCell.Tab.0.right" timestamp="1587244263286">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1587243734006" />
+    <state width="1659" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1587244263286" />
     <state x="517" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1587240303840">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

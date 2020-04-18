@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import NarBar from "./components/NavBar";
+import Content from "./components/Content";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           Learning React
         </a>
       </header>
+      <Content/>
     </div>
   );
 }
