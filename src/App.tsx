@@ -1,30 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import NarBar from "./components/NavBar";
-import Content from "./components/Content";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {Home} from "./components/Home";
+import {StarterHacks2020} from "./components/StarterHacks2020";
+import {Shuffl} from "./components/Shuffl";
+import {AstroJump} from "./components/AstroJump";
 
 function App() {
-  return (
-    <div className="App">
-      <NarBar/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Issack John
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learning React
-        </a>
-      </header>
-      <Content/>
-    </div>
-  );
+    return (
+        <Router>
+            <Switch>
+                <Route path="/starterhacks2020" component={StarterHacks2020}/>
+                <Route path="/shuffl" component={Shuffl}/>
+                <Route path="/astrojump" component={AstroJump}/>
+                <Route path="/" component={Home}/>
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;

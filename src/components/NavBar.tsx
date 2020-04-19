@@ -5,7 +5,7 @@ import '../App.css';
 function NarBar() {
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">Issack John</Navbar.Brand>
+            <Navbar.Brand href="/">Issack John</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
