@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavBar } from "./NavBar";
+import {NavBar} from "./NavBar";
 import logo from "../logo.svg";
-import { Content } from "./Content";
+import {Content} from "./Content";
 
 interface Props {
 

@@ -8,7 +8,7 @@ interface Props {
 
 export const NavBar: React.FC<Props> = () => {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" fixed={"top"}>
             <Navbar.Brand href="/">Issack John</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">

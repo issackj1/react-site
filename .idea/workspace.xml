@@ -3,18 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f7e6a523-e2cb-4f86-8514-c8cc0a8a110b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AstroJump.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AstroJump.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Shuffl.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Shuffl.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StarterHacks2020.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StarterHacks2020.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/About.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Contact.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Education.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Education.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Experience.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Extracurricular.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Extracurricular.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Skills.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Skills.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +80,7 @@
       <workItem from="1587272444987" duration="305000" />
       <workItem from="1587327612648" duration="2494000" />
       <workItem from="1587424044278" duration="896000" />
-      <workItem from="1587505882152" duration="1710000" />
+      <workItem from="1587505882152" duration="3255000" />
     </task>
     <servers />
   </component>
