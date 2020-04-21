@@ -1,9 +1,13 @@
 import React from 'react';
 import '../App.css';
 
-function Education() {
+interface Props {
+
+}
+
+export const Education:React.FC<Props> = () => {
     return (
-        <div>
+        <div id={"education"}>
             <h1>EDUCATION</h1>
             <h5>Education</h5>
             <ul>
@@ -13,5 +17,3 @@ function Education() {
         </div>
     );
 };
-
-export default Education;

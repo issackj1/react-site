@@ -1,9 +1,13 @@
 import React from 'react';
 import '../App.css';
 
-function Skills() {
+interface Props {
+
+}
+
+export const Skills:React.FC<Props> = () => {
     return (
-        <div>
+        <div id={"skills"}>
             <h1>MY SPECIALTY</h1>
             <h5>My Skills</h5>
             <ul>
@@ -15,5 +19,3 @@ function Skills() {
         </div>
     );
 };
-
-export default Skills;

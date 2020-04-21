@@ -1,9 +1,13 @@
 import React from 'react';
 import '../App.css';
 
-function Experience() {
+interface Props {
+
+}
+
+export const Experience: React.FC<Props> = () => {
     return (
-        <div>
+        <div id={"experience"}>
             <h1>EXPERIENCE</h1>
             <h5>Work Experience</h5>
             <ul>
@@ -11,9 +15,8 @@ function Experience() {
                 <li>
                     Software Engineer at The Bank of Nova Scotia Sep 2019 - Dec 2019
                 </li>
+                <li>DevOps Engineer (PLATO) at The Bank of Nova Scotia May 2020 - Aug 2020</li>
             </ul>
         </div>
     );
 };
-
-export default Experience;

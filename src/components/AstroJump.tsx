@@ -1,5 +1,5 @@
 import React from 'react';
-import NarBar from "./NavBar";
+import {NavBar} from "./NavBar";
 
 interface Props {
 
@@ -7,7 +7,7 @@ interface Props {
 
 export const AstroJump: React.FC<Props> = () => {
     return (<div className="App">
-        <NarBar/>
+        <NavBar/>
         <h1>Astro Jump</h1>
     </div>)
 };

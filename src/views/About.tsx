@@ -1,9 +1,13 @@
 import React from 'react';
 import '../App.css';
 
-function About() {
+interface Props {
+
+}
+
+export const About:React.FC<Props> = () => {
     return (
-        <div>
+        <div id={"about"}>
             <h1>ABOUT ME</h1>
             <h5>Who am i?</h5>
             <p>Hi I'm Issack John, I am a fourth-year computer science student at the University of Calgary. I have a
@@ -14,5 +18,3 @@ function About() {
         </div>
     );
 };
-
-export default About;

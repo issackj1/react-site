@@ -1,9 +1,13 @@
 import React from 'react';
 import '../App.css';
 
-function Extracurricular() {
+interface Props {
+
+}
+
+export const Extracurricular:React.FC<Props> = () => {
     return (
-        <div>
+        <div id={"extracurricular"}>
             <h1>EXTRACURRICULAR</h1>
             <h5>Hackathons Attended</h5>
             <ul>
@@ -23,5 +27,3 @@ function Extracurricular() {
         </div>
     );
 };
-
-export default Extracurricular;
