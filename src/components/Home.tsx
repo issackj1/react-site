@@ -6,16 +6,23 @@ import {useSpring, animated} from 'react-spring';
 
 interface Props {
     opacity: number;
+    scroll: number;
     from: {
-        opacity: number
+        opacity: number;
+        scroll: number;
     };
 }
 
-export const Home: React.FC<Props> = () => {
+export const Home:React.FC<Props> = () => {
 
-    const props = useSpring({opacity: 1, from: {opacity: 0}});
+    const props = useSpring({
+        opacity: 1,
+        scroll: 100,
+        from: {opacity: 0,
+            scroll: 0}
+    });
 
-    return (<animated.div className="App" style={props}>
+    return (<animated.div scrollTop={props.scroll} className="App" style={props}>
         <NavBar/>
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
