@@ -1,13 +1,20 @@
 import React from 'react';
 import {NavBar} from "./NavBar";
+import {Col, Container, Row} from "react-bootstrap";
 
 interface Props {
 
 }
 
 export const AstroJump: React.FC<Props> = () => {
-    return (<div className="App">
+    return (<div>
         <NavBar/>
-        <h1>Astro Jump</h1>
+        <Container>
+            <Row>
+                <Col>
+                    <h1>Astro Jump</h1>
+                </Col>
+            </Row>
+        </Container>
     </div>)
 };
