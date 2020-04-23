@@ -10,7 +10,7 @@ const slides = [
     {id: 0, url: '1YBhEkWJmSZfLoQCRl5zZ09lH2LUgpIrg'},
     {id: 1, url: '1nnufQtCHvg6jUokh3IPnBKlqf8-GZ9Tg'},
     {id: 2, url: '1i74jIT4iFzh4KcIB91lHOL33URnro9IP-GZ9Tg'},
-    {id: 3, url: '13Uf7ZCSn81pjV68w2wp74o1lZQAeIF9Z'},
+    {id: 3, url: '1ZifkzFIbqduHHiNx9BAxu-4EQxw-5KEq'},
 ];
 
 export const Carousel: React.FC<Props> = () => {
