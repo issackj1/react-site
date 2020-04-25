@@ -1,11 +1,12 @@
 import React from 'react';
 import '../App.css';
-import {About} from "../views/About";
-import {Skills} from "../views/Skills";
-import {Education} from "../views/Education";
-import {Experience} from "../views/Experience";
-import {Extracurricular} from "../views/Extracurricular";
-import {Contact} from "../views/Contact";
+import {About} from "./About";
+import {Skills} from "./Skills";
+import {Education} from "./Education";
+import {Experience} from "./Experience";
+import {Extracurricular} from "./Extracurricular";
+import {Contact} from "./Contact";
+import {Container} from "react-bootstrap";
 
 interface Props {
 
@@ -13,13 +14,13 @@ interface Props {
 
 export const Content: React.FC<Props> = () => {
     return (
-        <div>
+        <Container>
             <About/>
             <Skills/>
             <Education/>
             <Experience/>
             <Extracurricular/>
             <Contact/>
-        </div>
+        </Container>
     );
 };
