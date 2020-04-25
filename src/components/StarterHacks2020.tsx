@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavBar} from "./NavBar";
-import {Col, Container, Row} from "react-bootstrap";
+import {Col, Container, ListGroup, Row} from "react-bootstrap";
 
 interface Props {
 
@@ -12,7 +12,9 @@ export const StarterHacks2020: React.FC<Props> = () => {
         <Container>
             <Row>
                 <Col>
-                    <h1>Starter Hacks 2020</h1>
+                    <h1>StarterHacks 2020</h1>
+                    <h5>JANUARY 18 AND 19, 2020
+                        UNIVERSITY OF WATERLOO</h5>
                     <br/>
                     <br/>
                     <h3>Foodify Inspiration</h3>
@@ -73,6 +75,11 @@ export const StarterHacks2020: React.FC<Props> = () => {
                         shopping
                         list.
                     </p>
+                    <h3>Built with</h3>
+                    <ListGroup horizontal>
+                        <ListGroup.Item>Django</ListGroup.Item>
+                        <ListGroup.Item>Python</ListGroup.Item>
+                    </ListGroup>
                 </Col>
             </Row>
         </Container>

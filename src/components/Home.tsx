@@ -31,7 +31,7 @@ export const Home: React.FC<Props> = () => {
 
     return (<animated.div scrollTop={props.scroll} className="App" style={props}>
         <NavBar/>
-        <Carousel/>
+        {/*<Carousel/>*/}
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
             <p>
