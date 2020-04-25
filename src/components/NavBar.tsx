@@ -13,15 +13,15 @@ export const NavBar: React.FC<Props> = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="react-site">Home</Nav.Link>
                     <Nav.Link href="#about">About</Nav.Link>
                     <NavDropdown title="Projects" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="/starterhacks2020">Starter Hacks 2020</NavDropdown.Item>
-                        <NavDropdown.Item href="/nsbehacks2020">NSBE Hacks 2020</NavDropdown.Item>
-                        <NavDropdown.Item href="/shuffl">Shuffl</NavDropdown.Item>
-                        <NavDropdown.Item href="/astrojump">Astro Jump</NavDropdown.Item>
+                        <NavDropdown.Item href="starterhacks2020">Starter Hacks 2020</NavDropdown.Item>
+                        <NavDropdown.Item href="nsbehacks2020">NSBE Hacks 2020</NavDropdown.Item>
+                        <NavDropdown.Item href="shuffl">Shuffl</NavDropdown.Item>
+                        <NavDropdown.Item href="astrojump">Astro Jump</NavDropdown.Item>
                         <NavDropdown.Divider/>
-                        <NavDropdown.Item href="/projects">See All</NavDropdown.Item>
+                        <NavDropdown.Item href="projects">See All</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link href="#skills">Skills</Nav.Link>
                     <Nav.Link href="#education">Education</Nav.Link>

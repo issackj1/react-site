@@ -68,6 +68,9 @@ export const NsbeHacks: React.FC<Props> = () => {
                         established mentors in the industry. This can bridge the gap when it comes to connecting the
                         mentor with the mentee and really take a first step to feasibly creating any type of real
                         venture.</p>
+                    <a href="https://us-east.git.cloud.ibm.com/dnkantor/BlackTechInitiative"
+                       rel={"noopener noreferrer"}
+                       target={"_blank"}>Repository</a>
                     <h3>Built with</h3>
                     <ListGroup horizontal>
                         <ListGroup.Item> express.js</ListGroup.Item>
@@ -75,7 +78,9 @@ export const NsbeHacks: React.FC<Props> = () => {
                         <ListGroup.Item>mongodb</ListGroup.Item>
                         <ListGroup.Item>node.js</ListGroup.Item>
                         <ListGroup.Item>react</ListGroup.Item>
+                        <ListGroup.Item>react</ListGroup.Item>
                     </ListGroup>
+
                 </Col>
             </Row>
         </Container>
