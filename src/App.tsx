@@ -9,7 +9,7 @@ import {NsbeHacks} from "./components/NsbeHacks";
 
 function App() {
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route path="/starterhacks2020" component={StarterHacks2020}/>
                 <Route path="/nsbehacks2020" component={NsbeHacks}/>
