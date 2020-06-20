@@ -20,7 +20,7 @@ export const Extracurricular: React.FC<Props> = () => {
                         </a>
                         <a href="https://devpost.com/software/black-tech-initiative-4fghix" rel={"noopener noreferrer"}
                            target={"_blank"}>
-                            <li>NSBE Hacks 20</li>
+                            <li>NSBE Hacks 2020</li>
                         </a>
                     </ul>
                 </Col>

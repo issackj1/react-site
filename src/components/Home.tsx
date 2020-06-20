@@ -2,10 +2,16 @@ import React from 'react';
 import {NavBar} from "./NavBar";
 import logo from "../logo.svg";
 import {Content} from "./Content";
-import {useSpring, animated } from 'react-spring';
+import {useSpring, animated} from 'react-spring';
 
 interface Props {
+    dropDownLinks: link[],
+    navLinks: link[]
+}
 
+interface link  {
+    title: string,
+    path: string
 }
 
 interface useSpringProps {
@@ -17,9 +23,9 @@ interface useSpringProps {
     };
 }
 
-export const Home: React.FC<Props> = () => {
+export const Home: React.FC<Props> = (props) => {
 
-    const props = useSpring<useSpringProps>({
+    const springProps = useSpring<useSpringProps>({
         opacity: 1,
         scroll: 100,
         from: {
@@ -28,24 +34,9 @@ export const Home: React.FC<Props> = () => {
         }
     });
 
-    const navProps = {
-        dropDownLinks: [
-            {title: 'Starter Hacks 2020', path: '/project/starterhacks2020'},
-            {title: 'NSBE Hacks 2020', path: '/project/nsbehacks2020'},
-            {title: 'Shuffl', path: '/project/shuffl'},
-            {title: 'Astro Jump', path: '/project/astrojump'},
-        ],
-        navLinks: [
-            {title: 'Skills', path: '#skills'},
-            {title: 'Education', path: '#education'},
-            {title: 'Experience', path: '#experience'},
-            {title: 'Extracurricular', path: '#extracurricular'},
-        ]
-    };
-
     // @ts-ignore
-    return (<animated.div scrollTop={props.scroll} className="App" style={props}>
-        <NavBar  {...navProps} />
+    return (<animated.div scrollTop={springProps.scroll} className="App" style={springProps}>
+        <NavBar  {...props} />
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
             <p>
