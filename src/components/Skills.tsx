@@ -27,7 +27,6 @@ export const Skills: React.FC<Props> = () => {
                         <li>Django</li>
                         <li>React</li>
                         <li>Express.js</li>
-                        <li></li>
                     </ul>
                 </Col>
                 <Col>
@@ -36,7 +35,6 @@ export const Skills: React.FC<Props> = () => {
                         <li>Mongodb</li>
                         <li>SQLite3</li>
                         <li>PostgreSQL</li>
-                        <li></li>
                     </ul>
                 </Col>
             </Row>
