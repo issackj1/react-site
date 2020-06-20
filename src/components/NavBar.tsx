@@ -6,15 +6,15 @@ import {
 import '../App.css';
 
 interface Props {
-    dropDownLinks: {
-        title: string,
-        path: string
-    }[],
-    navLinks: {
-        title: string,
-        path: string
-    }[]
+    dropDownLinks: link[],
+    navLinks: link[]
 }
+
+interface link  {
+    title: string,
+    path: string
+}
+
 
 export const NavBar: React.FC<Props> = ({dropDownLinks, navLinks}) => {
     return (

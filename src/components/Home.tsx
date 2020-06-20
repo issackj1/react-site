@@ -46,7 +46,6 @@ export const Home: React.FC<Props> = () => {
     // @ts-ignore
     return (<animated.div scrollTop={props.scroll} className="App" style={props}>
         <NavBar  {...navProps} />
-        {/*<Carousel/>*/}
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
             <p>
