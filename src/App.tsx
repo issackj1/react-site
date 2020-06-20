@@ -7,7 +7,7 @@ import {Shuffl} from "./components/Shuffl";
 import {AstroJump} from "./components/AstroJump";
 import {NsbeHacks} from "./components/NsbeHacks";
 import {HackathonPage} from "./components/HackathonPage";
-import {HackathonOne, HackathonTwo} from "./constants";
+import {HackathonOne, HackathonTwo, NoHackathon} from "./constants";
 
 function getHackathon(name: string) {
     let result;
@@ -19,7 +19,7 @@ function getHackathon(name: string) {
             result = HackathonTwo;
             break;
         default:
-            result = HackathonOne;
+            result = NoHackathon;
     }
     return result;
 }
