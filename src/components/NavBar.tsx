@@ -1,5 +1,8 @@
 import React from 'react';
 import {Navbar, Nav, NavDropdown} from "react-bootstrap";
+import {
+    Link,
+} from "react-router-dom";
 import '../App.css';
 
 interface Props {
@@ -16,8 +19,12 @@ export const NavBar: React.FC<Props> = () => {
                     {/*<Nav.Link href="/react-site">Home</Nav.Link>*/}
                     {/*<Nav.Link href="#about">About</Nav.Link>*/}
                     <NavDropdown title="Projects" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="starterhacks2020">Starter Hacks 2020</NavDropdown.Item>
-                        <NavDropdown.Item href="nsbehacks2020">NSBE Hacks 2020</NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <Link to="StarterHacks2020">Starter Hacks 2020</Link>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <Link to="NSBEHacks2020">NSBE Hacks 2020</Link>
+                        </NavDropdown.Item>
                         <NavDropdown.Item href="shuffl">Shuffl</NavDropdown.Item>
                         <NavDropdown.Item href="astrojump">Astro Jump</NavDropdown.Item>
                         <NavDropdown.Divider/>
