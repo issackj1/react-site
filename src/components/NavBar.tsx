@@ -9,6 +9,21 @@ interface Props {
 
 }
 
+const state = {
+    dropDownLinks: [
+        {title: 'Starter Hacks 2020', path: '/project/starterhacks2020'},
+        {title: 'NSBE Hacks 2020', path: '/project/nsbehacks2020'},
+        {title: 'Shuffl', path: '/project/shuffl'},
+        {title: 'Astro Jump', path: '/project/astrojump'},
+    ],
+    navLink: [
+        {title: 'Skills', path: '#skills'},
+        {title: 'Education', path: '#education'},
+        {title: 'Experience', path: '#experience'},
+        {title: 'Extracurricular', path: '#extracurricular'},
+    ]
+};
+
 export const NavBar: React.FC<Props> = () => {
     return (
         <Navbar bg="light" expand="lg" sticky={"top"}>
@@ -18,27 +33,16 @@ export const NavBar: React.FC<Props> = () => {
                 <Nav className="mr-auto">
                     <Nav.Link href="#about">About</Nav.Link>
                     <NavDropdown title="Projects" id="basic-nav-dropdown">
-                        <NavDropdown.Item>
-                            <Link to="/project/starterhacks2020">Starter Hacks 2020</Link>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item>
-                            <Link to="/project/nsbehacks2020">NSBE Hacks 2020</Link>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item>
-                            <Link to="/project/shuffl">Shuffl</Link>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item>
-                            <Link to="/project/astrojump">Astro Jump</Link>
-                        </NavDropdown.Item>
+                        {state.dropDownLinks.map(({title, path}) =>
+                            <NavDropdown.Item>
+                                <Link to={path}>{title}</Link>
+                            </NavDropdown.Item>)}
                         <NavDropdown.Divider/>
                         <NavDropdown.Item>
                             <Link to="/project">See All</Link>
                         </NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="#skills">Skills</Nav.Link>
-                    <Nav.Link href="#education">Education</Nav.Link>
-                    <Nav.Link href="#experience">Experience</Nav.Link>
-                    <Nav.Link href="#extracurricular">Extracurricular</Nav.Link>
+                    {state.navLink.map(({title, path}) => <Nav.Link href={path}>{title}</Nav.Link>)}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
