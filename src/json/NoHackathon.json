@@ -1,9 +1,16 @@
 {
   "name": "No Hackathon Found",
-  "year": "No Year",
-  "date": "No Date",
-  "location": "No Location",
-  "projectTitle": "No Project",
-  "summary": "No Summary",
-  "howItWorks": "Doesn't work"
+  "year": "",
+  "date": "",
+  "location": "",
+  "projectTitle": "",
+  "summary": "N/A",
+  "howItWorks": "N/A",
+  "howWeBuilt": "N/A",
+  "challenges": "N/A",
+  "accomplishments": "N/A",
+  "learned": "N/A",
+  "next": "N/A",
+  "repoUrl": "N/A",
+  "technologies": ["N/A"]
 }
