@@ -20,7 +20,7 @@ interface Props {
 
 }
 
-export const HackathonPage: React.FC<Props> = (props) => {
+export const Project: React.FC<Props> = (props) => {
     const {
         name, year, date, location, projectTitle, summary, howItWorks,
         howWeBuilt, challenges, accomplishments, learned, next, repoUrl, technologies

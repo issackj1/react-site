@@ -19,20 +19,20 @@ export const NavBar: React.FC<Props> = () => {
                     <Nav.Link href="#about">About</Nav.Link>
                     <NavDropdown title="Projects" id="basic-nav-dropdown">
                         <NavDropdown.Item>
-                            <Link to="/hackathon/StarterHacks2020">Starter Hacks 2020</Link>
+                            <Link to="/project/starterhacks2020">Starter Hacks 2020</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
-                            <Link to="/hackathon/NSBEHacks2020">NSBE Hacks 2020</Link>
+                            <Link to="/project/nsbehacks2020">NSBE Hacks 2020</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
-                            <Link to="/shuffl">Shuffl</Link>
+                            <Link to="/project/shuffl">Shuffl</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
-                            <Link to="/astrojump">Astro Jump</Link>
+                            <Link to="/project/astrojump">Astro Jump</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Divider/>
                         <NavDropdown.Item>
-                            <Link to="/projects">See All</Link>
+                            <Link to="/project">See All</Link>
                         </NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link href="#skills">Skills</Nav.Link>
