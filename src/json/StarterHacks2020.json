@@ -11,7 +11,7 @@
   "accomplishments": "Doesn't work",
   "learned": "Doesn't work",
   "next": "Doesn't work",
-  "repoUrl": "Doesn't work",
+  "repoUrl": "https://github.com/issackj1/StarterHacks2020",
   "technologies": ["Django", "Python"]
 
 }
