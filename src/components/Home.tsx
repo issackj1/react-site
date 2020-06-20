@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {NavBar} from "./NavBar";
 import logo from "../logo.svg";
 import {Content} from "./Content";
 import {useSpring, animated } from 'react-spring';
-import {Carousel} from "./Carousel";
 
 interface Props {
 

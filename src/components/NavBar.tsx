@@ -20,10 +20,10 @@ export const NavBar: React.FC<Props> = () => {
                     <Nav.Link href="#about">About</Nav.Link>
                     <NavDropdown title="Projects" id="basic-nav-dropdown">
                         <NavDropdown.Item>
-                            <Link to="hackathon:StarterHacks2020">Starter Hacks 2020</Link>
+                            <Link to="/hackathon/StarterHacks2020">Starter Hacks 2020</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
-                            <Link to="hackathon:NSBEHacks2020">NSBE Hacks 2020</Link>
+                            <Link to="/hackathon/NSBEHacks2020">NSBE Hacks 2020</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
                             <Link to="shuffl">Shuffl</Link>

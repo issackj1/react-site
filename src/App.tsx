@@ -10,13 +10,18 @@ import {HackathonPage} from "./components/HackathonPage";
 import {HackathonOne, HackathonTwo} from "./constants";
 
 function getHackathon(name: string) {
-    if (name === ":StarterHacks2020") {
-        return HackathonOne;
-    } else if (name === ":NSBEHacks2020") {
-        return HackathonTwo;
-    } else {
-        return HackathonOne;
+    let result;
+    switch (name) {
+        case  "StarterHacks2020":
+            result = HackathonOne;
+            break;
+        case "NSBEHacks2020":
+            result = HackathonTwo;
+            break;
+        default:
+            result = HackathonOne;
     }
+    return result;
 }
 
 function App() {
@@ -27,7 +32,7 @@ function App() {
                 <Route path="/nsbehacks2020" component={NsbeHacks}/>
                 <Route path="/shuffl" component={Shuffl}/>
                 <Route path="/astrojump" component={AstroJump}/>
-                <Route path="/hackathon:name" render={(routeProps) => (
+                <Route path="/hackathon/:name" render={(routeProps) => (
                     <HackathonPage {...routeProps} {...getHackathon(((routeProps.match.params.name)))} />
                 )}/>
                 <Route path="/" component={Home}/>
