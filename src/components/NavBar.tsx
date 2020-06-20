@@ -17,16 +17,20 @@ export const NavBar: React.FC<Props> = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     {/*<Nav.Link href="/react-site">Home</Nav.Link>*/}
-                    {/*<Nav.Link href="#about">About</Nav.Link>*/}
+                    <Nav.Link href="#about">About</Nav.Link>
                     <NavDropdown title="Projects" id="basic-nav-dropdown">
                         <NavDropdown.Item>
-                            <Link to="StarterHacks2020">Starter Hacks 2020</Link>
+                            <Link to="hackathon:StarterHacks2020">Starter Hacks 2020</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
-                            <Link to="NSBEHacks2020">NSBE Hacks 2020</Link>
+                            <Link to="hackathon:NSBEHacks2020">NSBE Hacks 2020</Link>
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="shuffl">Shuffl</NavDropdown.Item>
-                        <NavDropdown.Item href="astrojump">Astro Jump</NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <Link to="shuffl">Shuffl</Link>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <Link to="astrojump">Astro Jump</Link>
+                        </NavDropdown.Item>
                         <NavDropdown.Divider/>
                         <NavDropdown.Item href="projects">See All</NavDropdown.Item>
                     </NavDropdown>
