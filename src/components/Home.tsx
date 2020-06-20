@@ -28,9 +28,24 @@ export const Home: React.FC<Props> = () => {
         }
     });
 
+    const navProps = {
+        dropDownLinks: [
+            {title: 'Starter Hacks 2020', path: '/project/starterhacks2020'},
+            {title: 'NSBE Hacks 2020', path: '/project/nsbehacks2020'},
+            {title: 'Shuffl', path: '/project/shuffl'},
+            {title: 'Astro Jump', path: '/project/astrojump'},
+        ],
+        navLinks: [
+            {title: 'Skills', path: '#skills'},
+            {title: 'Education', path: '#education'},
+            {title: 'Experience', path: '#experience'},
+            {title: 'Extracurricular', path: '#extracurricular'},
+        ]
+    };
+
     // @ts-ignore
     return (<animated.div scrollTop={props.scroll} className="App" style={props}>
-        <NavBar/>
+        <NavBar  {...navProps} />
         {/*<Carousel/>*/}
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>

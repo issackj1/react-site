@@ -20,13 +20,29 @@ interface Props {
 
 }
 
+
 export const Project: React.FC<Props> = (props) => {
     const {
         name, year, date, location, projectTitle, summary, howItWorks,
         howWeBuilt, challenges, accomplishments, learned, next, repoUrl, technologies
     } = props;
+
+    const navProps = {
+        dropDownLinks: [
+            {title: 'Starter Hacks 2020', path: '/project/starterhacks2020'},
+            {title: 'NSBE Hacks 2020', path: '/project/nsbehacks2020'},
+            {title: 'Shuffl', path: '/project/shuffl'},
+            {title: 'Astro Jump', path: '/project/astrojump'},
+        ],
+        navLinks: [
+            {title: 'Skills', path: '#skills'},
+            {title: 'Education', path: '#education'},
+            {title: 'Experience', path: '#experience'},
+            {title: 'Extracurricular', path: '#extracurricular'},
+        ]
+    };
     return (<div>
-        <NavBar/>
+        <NavBar {...navProps}/>
         <Container>
             <Row>
                 <Col>

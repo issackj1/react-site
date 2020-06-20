@@ -6,25 +6,17 @@ import {
 import '../App.css';
 
 interface Props {
-
+    dropDownLinks: {
+        title: string,
+        path: string
+    }[],
+    navLinks: {
+        title: string,
+        path: string
+    }[]
 }
 
-const state = {
-    dropDownLinks: [
-        {title: 'Starter Hacks 2020', path: '/project/starterhacks2020'},
-        {title: 'NSBE Hacks 2020', path: '/project/nsbehacks2020'},
-        {title: 'Shuffl', path: '/project/shuffl'},
-        {title: 'Astro Jump', path: '/project/astrojump'},
-    ],
-    navLink: [
-        {title: 'Skills', path: '#skills'},
-        {title: 'Education', path: '#education'},
-        {title: 'Experience', path: '#experience'},
-        {title: 'Extracurricular', path: '#extracurricular'},
-    ]
-};
-
-export const NavBar: React.FC<Props> = () => {
+export const NavBar: React.FC<Props> = ({dropDownLinks, navLinks}) => {
     return (
         <Navbar bg="light" expand="lg" sticky={"top"}>
             <Navbar.Brand href="/react-site">Issack John</Navbar.Brand>
@@ -33,7 +25,7 @@ export const NavBar: React.FC<Props> = () => {
                 <Nav className="mr-auto">
                     <Nav.Link href="#about">About</Nav.Link>
                     <NavDropdown title="Projects" id="basic-nav-dropdown">
-                        {state.dropDownLinks.map(({title, path}) =>
+                        {dropDownLinks.map(({title, path}) =>
                             <NavDropdown.Item>
                                 <Link to={path}>{title}</Link>
                             </NavDropdown.Item>)}
@@ -42,7 +34,7 @@ export const NavBar: React.FC<Props> = () => {
                             <Link to="/project">See All</Link>
                         </NavDropdown.Item>
                     </NavDropdown>
-                    {state.navLink.map(({title, path}) => <Nav.Link href={path}>{title}</Nav.Link>)}
+                    {navLinks.map(({title, path}) => <Nav.Link href={path}>{title}</Nav.Link>)}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
