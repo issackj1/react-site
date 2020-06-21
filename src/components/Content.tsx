@@ -18,19 +18,19 @@ export const Content: React.FC<Props> = () => {
             <ParallaxLayer offset={1} speed={2}>
                 <About/>
             </ParallaxLayer>
-            <ParallaxLayer offset={2} speed={2}>
+            <ParallaxLayer factor={0.5} offset={2} speed={2}>
                 <Skills/>
             </ParallaxLayer>
-            <ParallaxLayer offset={3} speed={2}>
+            <ParallaxLayer factor={0.5} offset={3} speed={2}>
                 <Education/>
             </ParallaxLayer>
-            <ParallaxLayer offset={4} speed={2}>
+            <ParallaxLayer factor={0.5} offset={4} speed={2}>
                 <Experience/>
             </ParallaxLayer>
-            <ParallaxLayer offset={5} speed={2}>
+            <ParallaxLayer factor={0.5} offset={5} speed={2}>
                 <Extracurricular/>
             </ParallaxLayer>
-            <ParallaxLayer offset={6} speed={0.5}>
+            <ParallaxLayer factor={0.5} offset={6} speed={0.5}>
                 <Contact/>
             </ParallaxLayer>
         </>
