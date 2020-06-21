@@ -65,6 +65,10 @@ export const Home: React.FC<Props> = (props) => {
     return (<div className="App">
         <NavBar  {...props} />
         <Parallax pages={7} scrolling={true} ref={ref => (parallax = ref)}>
+            <Parallax.Layer offset={2} speed={1} style={{ backgroundColor: '#282c34' }} />
+            <Parallax.Layer offset={4} speed={1} style={{ backgroundColor: '#282c34' }} />
+            <Parallax.Layer offset={6} speed={1} style={{ backgroundColor: '#282c34' }} />
+
             <ParallaxLayer offset={0} speed={2} onClick={() => parallax.scrollTo(1)}>
                 <header className="App-header">
                     <animated.p style={springProps}>Issack John</animated.p>
@@ -90,7 +94,6 @@ export const Home: React.FC<Props> = (props) => {
                                display: 'flex',
                                alignItems: 'center',
                                justifyContent: 'center',
-                               backgroundColor: '#282c34',
                                color: 'white'
                            }}>
                 <Skills/>
@@ -104,7 +107,6 @@ export const Home: React.FC<Props> = (props) => {
                                display: 'flex',
                                alignItems: 'center',
                                justifyContent: 'center',
-                               backgroundColor: '#282c34',
                                color: 'white'
                            }}>
                 <Experience/>
@@ -118,7 +120,6 @@ export const Home: React.FC<Props> = (props) => {
                                display: 'flex',
                                alignItems: 'center',
                                justifyContent: 'center',
-                               backgroundColor: '#282c34',
                                color: 'white'
                            }}>
                 <Contact/>
