@@ -65,9 +65,8 @@ export const Home: React.FC<Props> = (props) => {
     return (<div className="App">
         <NavBar  {...props} />
         <Parallax pages={7} scrolling={true} ref={ref => (parallax = ref)}>
-            <ParallaxLayer offset={0} speed={2}>
-                <span onClick={() => parallax.scrollTo(1)}>
-                    <header className="App-header">
+            <ParallaxLayer offset={0} speed={2} onClick={() => parallax.scrollTo(1)}>
+                <header className="App-header">
                     <animated.p style={springProps}>Issack John</animated.p>
                     <animated.h1 style={h1Props}>Welcome</animated.h1>
                     <animated.a
@@ -80,7 +79,6 @@ export const Home: React.FC<Props> = (props) => {
                         Learning React
                     </animated.a>
                 </header>
-                </span>
             </ParallaxLayer>
             <ParallaxLayer
                 offset={1} speed={0.5} onClick={() => parallax.scrollTo(2)}
@@ -88,7 +86,13 @@ export const Home: React.FC<Props> = (props) => {
                 <About/>
             </ParallaxLayer>
             <ParallaxLayer offset={2} speed={0.5} onClick={() => parallax.scrollTo(3)}
-                           style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                           style={{
+                               display: 'flex',
+                               alignItems: 'center',
+                               justifyContent: 'center',
+                               backgroundColor: '#282c34',
+                               color: 'white'
+                           }}>
                 <Skills/>
             </ParallaxLayer>
             <ParallaxLayer offset={3} speed={0.5} onClick={() => parallax.scrollTo(4)}
@@ -96,7 +100,13 @@ export const Home: React.FC<Props> = (props) => {
                 <Education/>
             </ParallaxLayer>
             <ParallaxLayer offset={4} speed={0.5} onClick={() => parallax.scrollTo(5)}
-                           style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                           style={{
+                               display: 'flex',
+                               alignItems: 'center',
+                               justifyContent: 'center',
+                               backgroundColor: '#282c34',
+                               color: 'white'
+                           }}>
                 <Experience/>
             </ParallaxLayer>
             <ParallaxLayer offset={5} speed={0.5} onClick={() => parallax.scrollTo(6)}
@@ -104,7 +114,13 @@ export const Home: React.FC<Props> = (props) => {
                 <Extracurricular/>
             </ParallaxLayer>
             <ParallaxLayer offset={6} speed={0.5} onClick={() => parallax.scrollTo(1)}
-                           style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                           style={{
+                               display: 'flex',
+                               alignItems: 'center',
+                               justifyContent: 'center',
+                               backgroundColor: '#282c34',
+                               color: 'white'
+                           }}>
                 <Contact/>
             </ParallaxLayer>
         </Parallax>
