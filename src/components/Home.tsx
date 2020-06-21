@@ -33,6 +33,7 @@ interface useSpringProps {
 export const Home: React.FC<Props> = (props) => {
 
     const springProps = useSpring<useSpringProps>({
+        config: { duration: 3000 },
         opacity: 1,
         scroll: 100,
         from: {
