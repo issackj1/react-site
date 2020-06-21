@@ -17,26 +17,40 @@ interface link {
 
 interface useSpringProps {
     config: SpringConfig;
-    opacity: number;
+    to: {
+        opacity: number;
+    }[];
     from: {
         opacity: number;
+        color: string;
     };
 }
 
 export const Home: React.FC<Props> = (props) => {
 
+    // @ts-ignore
     const springProps = useSpring<useSpringProps>({
-        config: config.molasses,
-        delay: 500,
-        opacity: 1,
+        config: config.slow,
+        delay: 200,
+        to: [{opacity: 1}, {opacity: 0}],
+        from: {
+            opacity: 0,
+        },
+    });
+
+    // @ts-ignore
+    const aProps = useSpring({
+        config: config.slow,
+        delay: 1700,
+        to: [{opacity: 1}, {opacity: 0}],
         from: {
             opacity: 0,
         }
     });
 
-    const aProps = useSpring({
+    const h1Props = useSpring({
         config: config.molasses,
-        delay: 1500,
+        delay: 4000,
         opacity: 1,
         from: {
             opacity: 0,
@@ -45,13 +59,13 @@ export const Home: React.FC<Props> = (props) => {
 
     // @ts-ignore
     let parallax;
-    // @ts-ignore
     return (<div className="App">
         <NavBar  {...props} />
         <Parallax pages={7} scrolling={true} ref={ref => (parallax = ref)}>
             <ParallaxLayer offset={0} speed={2}>
                 <header className="App-header">
                     <animated.p style={springProps}>Issack John</animated.p>
+                    <animated.h1 style={h1Props}>Welcome</animated.h1>
                     <animated.a
                         className="App-link"
                         href="https://reactjs.org"
