@@ -93,7 +93,7 @@ export const Home: React.FC<Props> = (props) => {
             </ParallaxLayer>
             <ParallaxLayer offset={3} speed={0.5} onClick={() => parallax.scrollTo(4)}
                            style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                <Education/>s
+                <Education/>
             </ParallaxLayer>
             <ParallaxLayer offset={4} speed={0.5} onClick={() => parallax.scrollTo(5)}
                            style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
