@@ -2,14 +2,8 @@ import React from 'react';
 import {NavBar} from "./NavBar";
 import logo from "../logo.svg";
 import {Content} from "./Content";
-import {useSpring, animated} from 'react-spring';
+import {useSpring, animated, config} from 'react-spring';
 import {Parallax, ParallaxLayer} from "react-spring/renderprops-addons";
-import {About} from "./About";
-import {Skills} from "./Skills";
-import {Education} from "./Education";
-import {Experience} from "./Experience";
-import {Extracurricular} from "./Extracurricular";
-import {Contact} from "./Contact";
 
 interface Props {
     dropDownLinks: link[],
@@ -33,12 +27,22 @@ interface useSpringProps {
 export const Home: React.FC<Props> = (props) => {
 
     const springProps = useSpring<useSpringProps>({
-        config: { duration: 3000 },
+        config: config.molasses,
+        delay: 500,
         opacity: 1,
         scroll: 100,
         from: {
             opacity: 0,
             scroll: 0
+        }
+    });
+
+    const aProps = useSpring({
+        config: config.molasses,
+        delay: 1500,
+        opacity: 1,
+        from: {
+            opacity: 0,
         }
     });
 
@@ -50,16 +54,16 @@ export const Home: React.FC<Props> = (props) => {
         <Parallax pages={7} scrolling={true} ref={ref => (parallax = ref)}>
             <ParallaxLayer offset={0} speed={0.5}>
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
                     <animated.p style={springProps}>Issack John</animated.p>
-                    <a
+                    <animated.a
                         className="App-link"
                         href="https://reactjs.org"
                         target="_blank"
                         rel="noopener noreferrer"
+                        style={aProps}
                     >
                         Learning React
-                    </a>
+                    </animated.a>
                 </header>
             </ParallaxLayer>
             <Content/>
