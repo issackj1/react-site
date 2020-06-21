@@ -27,7 +27,7 @@ export const Home: React.FC<Props> = (props) => {
     // @ts-ignore
     const springProps = useSpring<useSpringProps>({
         config: config.slow,
-        delay: 200,
+        delay: 300,
         to: [{opacity: 1}, {opacity: 0}],
         from: {
             opacity: 0,
@@ -37,7 +37,7 @@ export const Home: React.FC<Props> = (props) => {
     // @ts-ignore
     const aProps = useSpring({
         config: config.slow,
-        delay: 1700,
+        delay: 2000,
         to: [{opacity: 1}, {opacity: 0}],
         from: {
             opacity: 0,
