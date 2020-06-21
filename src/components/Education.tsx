@@ -7,7 +7,7 @@ interface Props {
 
 export const Education: React.FC<Props> = () => {
     return (
-        <div id={"education"}>
+        <div className={"container"} id={"education"}>
             <h1>EDUCATION</h1>
             <h5>Education</h5>
             <ul className={"list-unstyled"}>

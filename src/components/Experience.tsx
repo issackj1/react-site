@@ -7,7 +7,7 @@ interface Props {
 
 export const Experience: React.FC<Props> = () => {
     return (
-        <div id={"experience"}>
+        <div className={"container"} id={"experience"}>
             <h1>EXPERIENCE</h1>
             <h5>Work Experience</h5>
             <ul className={"list-unstyled"}>

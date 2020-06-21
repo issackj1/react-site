@@ -1,9 +1,15 @@
+// @ts-nocheck
 import React from 'react';
 import {NavBar} from "./NavBar";
-import {Content} from "./Content";
 import {useSpring, animated, config} from 'react-spring';
 import {Parallax, ParallaxLayer} from "react-spring/renderprops-addons";
 import {SpringConfig} from "react-spring/renderprops-universal";
+import {About} from "./About";
+import {Skills} from "./Skills";
+import {Education} from "./Education";
+import {Experience} from "./Experience";
+import {Extracurricular} from "./Extracurricular";
+import {Contact} from "./Contact";
 
 interface Props {
     dropDownLinks: link[],
@@ -52,14 +58,16 @@ export const Home: React.FC<Props> = (props) => {
             opacity: 0,
         }
     });
+    // const imageOne = require('../images/image_two.jpg');
+    //style={{backgroundImage: `url(${imageOne})`}}
 
-    // @ts-ignore
-    let parallax;
+    let parallax: Parallax | null;
     return (<div className="App">
         <NavBar  {...props} />
-        <Parallax pages={7} scrolling={true} ref={ref => (parallax = ref)}>
+        <Parallax pages={7} scrolling={true} ref={ref => (parallax = ref)} >
             <ParallaxLayer offset={0} speed={2}>
-                <header className="App-header">
+                <span onClick={() => parallax.scrollTo(1)}>
+                    <header className="App-header">
                     <animated.p style={springProps}>Issack John</animated.p>
                     <animated.h1 style={h1Props}>Welcome</animated.h1>
                     <animated.a
@@ -72,8 +80,38 @@ export const Home: React.FC<Props> = (props) => {
                         Learning React
                     </animated.a>
                 </header>
+                </span>
             </ParallaxLayer>
-            <Content/>
+            <ParallaxLayer offset={1} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span onClick={() => parallax.scrollTo(2)}>
+                    <About/>
+                </span>
+            </ParallaxLayer>
+            <ParallaxLayer offset={2} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span onClick={() => parallax.scrollTo(3)}>
+                    <Skills/>
+                </span>
+            </ParallaxLayer>
+            <ParallaxLayer offset={3} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span onClick={() => parallax.scrollTo(4)}>
+                    <Education/>
+                </span>
+            </ParallaxLayer>
+            <ParallaxLayer offset={4} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span onClick={() => parallax.scrollTo(5)}>
+                    <Experience/>
+                </span>
+            </ParallaxLayer>
+            <ParallaxLayer offset={5} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span onClick={() => parallax.scrollTo(6)}>
+                    <Extracurricular/>
+                </span>
+            </ParallaxLayer>
+            <ParallaxLayer offset={6} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span onClick={() => parallax.scrollTo(1)}>
+                    <Contact/>
+                </span>
+            </ParallaxLayer>
         </Parallax>
     </div>)
 };
