@@ -17,13 +17,9 @@ interface link {
 
 interface useSpringProps {
     config: SpringConfig;
-    to: {
-        opacity: number;
-    }[];
-    from: {
-        opacity: number;
-        color: string;
-    };
+    delay: number;
+    to: { opacity: number; }[];
+    from: { opacity: number; };
 }
 
 export const Home: React.FC<Props> = (props) => {
