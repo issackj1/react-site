@@ -50,9 +50,7 @@ export const Home: React.FC<Props> = (props) => {
             <ParallaxLayer offset={0} speed={0.5}>
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
-                    <p>
-                        Issack John
-                    </p>
+                    <animated.p style={springProps}>Issack John</animated.p>
                     <a
                         className="App-link"
                         href="https://reactjs.org"

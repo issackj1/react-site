@@ -1,13 +1,14 @@
 import React from 'react';
 import '../App.css';
+// const imageOne = require('../images/image_two.jpg');
 
 interface Props {
 
 }
-
+//style={{backgroundImage: `url(${imageOne})`}}
 export const About:React.FC<Props> = () => {
     return (
-        <div id={"about"}>
+        <div id={"about"} >
             <h1>ABOUT ME</h1>
             <h5>Who am i?</h5>
             <p>Hi I'm Issack John, I am a fourth-year computer science student at the University of Calgary. I have a
