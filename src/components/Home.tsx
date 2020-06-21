@@ -64,7 +64,7 @@ export const Home: React.FC<Props> = (props) => {
     let parallax: Parallax | null;
     return (<div className="App">
         <NavBar  {...props} />
-        <Parallax pages={7} scrolling={true} ref={ref => (parallax = ref)} >
+        <Parallax pages={7} scrolling={true} ref={ref => (parallax = ref)}>
             <ParallaxLayer offset={0} speed={2}>
                 <span onClick={() => parallax.scrollTo(1)}>
                     <header className="App-header">
@@ -82,35 +82,30 @@ export const Home: React.FC<Props> = (props) => {
                 </header>
                 </span>
             </ParallaxLayer>
-            <ParallaxLayer offset={1} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span onClick={() => parallax.scrollTo(2)}>
-                    <About/>
-                </span>
+            <ParallaxLayer
+                offset={1} speed={0.5} onClick={() => parallax.scrollTo(2)}
+                style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <About/>
             </ParallaxLayer>
-            <ParallaxLayer offset={2} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span onClick={() => parallax.scrollTo(3)}>
-                    <Skills/>
-                </span>
+            <ParallaxLayer offset={2} speed={0.5} onClick={() => parallax.scrollTo(3)}
+                           style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <Skills/>
             </ParallaxLayer>
-            <ParallaxLayer offset={3} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span onClick={() => parallax.scrollTo(4)}>
-                    <Education/>
-                </span>
+            <ParallaxLayer offset={3} speed={0.5} onClick={() => parallax.scrollTo(4)}
+                           style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <Education/>s
             </ParallaxLayer>
-            <ParallaxLayer offset={4} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span onClick={() => parallax.scrollTo(5)}>
-                    <Experience/>
-                </span>
+            <ParallaxLayer offset={4} speed={0.5} onClick={() => parallax.scrollTo(5)}
+                           style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <Experience/>
             </ParallaxLayer>
-            <ParallaxLayer offset={5} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span onClick={() => parallax.scrollTo(6)}>
-                    <Extracurricular/>
-                </span>
+            <ParallaxLayer offset={5} speed={0.5} onClick={() => parallax.scrollTo(6)}
+                           style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <Extracurricular/>
             </ParallaxLayer>
-            <ParallaxLayer offset={6} speed={0.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span onClick={() => parallax.scrollTo(1)}>
-                    <Contact/>
-                </span>
+            <ParallaxLayer offset={6} speed={0.5} onClick={() => parallax.scrollTo(1)}
+                           style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <Contact/>
             </ParallaxLayer>
         </Parallax>
     </div>)
