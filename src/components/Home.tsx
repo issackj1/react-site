@@ -1,9 +1,9 @@
 import React from 'react';
 import {NavBar} from "./NavBar";
-import logo from "../logo.svg";
 import {Content} from "./Content";
 import {useSpring, animated, config} from 'react-spring';
 import {Parallax, ParallaxLayer} from "react-spring/renderprops-addons";
+import {SpringConfig} from "react-spring/renderprops-universal";
 
 interface Props {
     dropDownLinks: link[],
@@ -16,11 +16,10 @@ interface link {
 }
 
 interface useSpringProps {
+    config: SpringConfig;
     opacity: number;
-    scroll: number;
     from: {
         opacity: number;
-        scroll: number;
     };
 }
 
@@ -30,10 +29,8 @@ export const Home: React.FC<Props> = (props) => {
         config: config.molasses,
         delay: 500,
         opacity: 1,
-        scroll: 100,
         from: {
             opacity: 0,
-            scroll: 0
         }
     });
 
@@ -52,7 +49,7 @@ export const Home: React.FC<Props> = (props) => {
     return (<div className="App">
         <NavBar  {...props} />
         <Parallax pages={7} scrolling={true} ref={ref => (parallax = ref)}>
-            <ParallaxLayer offset={0} speed={0.5}>
+            <ParallaxLayer offset={0} speed={2}>
                 <header className="App-header">
                     <animated.p style={springProps}>Issack John</animated.p>
                     <animated.a
