@@ -134,7 +134,7 @@ export const Home: React.FC<Props> = (props) => {
             {/*buttons*/}
             {buttons.map((object, i) => <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
                 <span onClick={() => parallax.scrollTo(i === buttons.length - 1  ? 1 : i + 1)}>
-                    <Button outline color={"danger"}>{object}</Button>
+                    <Button variant="outline-primary" size={"lg"} block>{object}</Button>
                 </span>
             </ParallaxLayer>)}
         </Parallax>
