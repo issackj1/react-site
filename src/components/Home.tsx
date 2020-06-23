@@ -60,8 +60,7 @@ export const Home: React.FC<Props> = (props) => {
         }
     });
 
-
-    const buttons = [0,1,2,3,4,5];
+    const buttons = ['Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Back To Top'];
 
     // const imageOne = require('../images/image_two.jpg');
     //style={{backgroundImage: `url(${imageOne})`}}
@@ -90,17 +89,6 @@ export const Home: React.FC<Props> = (props) => {
                         Learning React
                     </animated.a>
                 </header>
-            </ParallaxLayer>
-            {/*buttons*/}
-            {buttons.map((value => <ParallaxLayer offset={value+0.8} speed={1}>
-                <span onClick={() => parallax.scrollTo(value+1)}>
-                    <Button>Continue</Button>
-                </span>
-            </ParallaxLayer>))}
-            <ParallaxLayer offset={6.8} speed={1}>
-                <span onClick={() => parallax.scrollTo(1)}>
-                    <Button>Back to Top</Button>
-                </span>
             </ParallaxLayer>
             <ParallaxLayer
                 offset={1} speed={0.5} onClick={() => parallax.scrollTo(2)}
@@ -142,6 +130,13 @@ export const Home: React.FC<Props> = (props) => {
                            }}>
                 <Contact/>
             </ParallaxLayer>
+
+            {/*buttons*/}
+            {buttons.map((object, i) => <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
+                <span onClick={() => parallax.scrollTo(i === buttons.length - 1  ? 1 : i + 1)}>
+                    <Button outline color={"danger"}>{object}</Button>
+                </span>
+            </ParallaxLayer>)}
         </Parallax>
     </div>)
 };
