@@ -60,6 +60,13 @@ export const Home: React.FC<Props> = (props) => {
         }
     });
 
+    const secondaryBackground = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white'
+    };
+
     const buttons = ['Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Back To Top'];
 
     // const imageOne = require('../images/image_two.jpg');
@@ -96,12 +103,7 @@ export const Home: React.FC<Props> = (props) => {
                 <About/>
             </ParallaxLayer>
             <ParallaxLayer offset={2} speed={0.5} onClick={() => parallax.scrollTo(3)}
-                           style={{
-                               display: 'flex',
-                               alignItems: 'center',
-                               justifyContent: 'center',
-                               color: 'white'
-                           }}>
+                           style={secondaryBackground}>
                 <Skills/>
             </ParallaxLayer>
             <ParallaxLayer offset={3} speed={0.5} onClick={() => parallax.scrollTo(4)}
@@ -109,12 +111,7 @@ export const Home: React.FC<Props> = (props) => {
                 <Education/>
             </ParallaxLayer>
             <ParallaxLayer offset={4} speed={0.5} onClick={() => parallax.scrollTo(5)}
-                           style={{
-                               display: 'flex',
-                               alignItems: 'center',
-                               justifyContent: 'center',
-                               color: 'white'
-                           }}>
+                           style={secondaryBackground}>
                 <Experience/>
             </ParallaxLayer>
             <ParallaxLayer offset={5} speed={0.5} onClick={() => parallax.scrollTo(6)}
@@ -122,12 +119,7 @@ export const Home: React.FC<Props> = (props) => {
                 <Extracurricular/>
             </ParallaxLayer>
             <ParallaxLayer offset={6} speed={0.5} onClick={() => parallax.scrollTo(1)}
-                           style={{
-                               display: 'flex',
-                               alignItems: 'center',
-                               justifyContent: 'center',
-                               color: 'white'
-                           }}>
+                           style={secondaryBackground}>
                 <Contact/>
             </ParallaxLayer>
 
