@@ -18,7 +18,7 @@ interface link  {
 
 export const NavBar: React.FC<Props> = ({dropDownLinks, navLinks}) => {
     return (
-        <Navbar bg="light" expand="lg" sticky={"top"}>
+        <Navbar bg="light" expand="lg">
             <Navbar.Brand href="/react-site">Issack John</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
