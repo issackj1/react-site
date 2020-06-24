@@ -1,8 +1,6 @@
 import React from 'react';
-import {Navbar, Nav, NavDropdown} from "react-bootstrap";
-import {
-    Link,
-} from "react-router-dom";
+import {Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Link,} from "react-router-dom";
 import '../App.css';
 
 interface Props {
@@ -10,16 +8,26 @@ interface Props {
     navLinks: link[]
 }
 
-interface link  {
+interface link {
     title: string,
     path: string
 }
+
+const logo = require('../logo.jpg');
 
 
 export const NavBar: React.FC<Props> = ({dropDownLinks, navLinks}) => {
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="/react-site">Issack John</Navbar.Brand>
+            <Navbar.Brand href="/react-site"><img
+                alt=""
+                src={logo}
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+            />{' '}
+                Issack John
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
