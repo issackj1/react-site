@@ -32,7 +32,7 @@ export const NavBar: React.FC<Props> = ({dropDownLinks, navLinks, parallax}) => 
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="#about" onClick={() => parallax.scrollTo(1)}>About</Nav.Link>
+                    <Nav.Link onClick={() => parallax.scrollTo(1)}>About</Nav.Link>
                     <NavDropdown title="Projects" id="basic-nav-dropdown">
                         {dropDownLinks.map(({title, path}, i) =>
                             <NavDropdown.Item key={i}>
