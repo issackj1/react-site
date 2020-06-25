@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-[![Build Status](https://travis-ci.com/issackj1/react-site.svg?branch=master)
+![Build Status](https://travis-ci.com/issackj1/react-site.svg?branch=master)
 
 ## Available Scripts
 
