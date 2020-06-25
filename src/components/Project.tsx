@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavBar} from "./NavBar";
 import {Col, Container, ListGroup, Row} from "react-bootstrap";
+import {ProjectNavBar} from "./ProjectNavBar";
 
 interface Props {
     navProps: {
@@ -37,7 +38,7 @@ export const Project: React.FC<Props> = (props) => {
     } = props.projectDetail;
 
     return (<div>
-        <NavBar {...props.navProps}/>
+        <ProjectNavBar />
         <Container>
             <Row>
                 <Col>
