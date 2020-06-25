@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React from 'react';
+import React, {useState} from 'react';
 import {NavBar} from "./NavBar";
 import {useSpring, animated, config} from 'react-spring';
 import {Parallax, ParallaxLayer} from "react-spring/renderprops-addons";
@@ -14,7 +14,7 @@ import {Button} from "react-bootstrap";
 
 interface Props {
     dropDownLinks: link[],
-    navLinks: link[]
+    navLinks: link[],
 }
 
 interface link {
@@ -30,6 +30,8 @@ interface useSpringProps {
 }
 
 export const Home: React.FC<Props> = (props) => {
+
+    const [parallax, setParallax] = useState(React.createRef);
 
     // @ts-ignore
     const springProps = useSpring<useSpringProps>({
@@ -72,11 +74,9 @@ export const Home: React.FC<Props> = (props) => {
     // const imageOne = require('../images/image_two.jpg');
     //style={{backgroundImage: `url(${imageOne})`}}
 
-    let parallax: Parallax | null;
     return (<div className="App">
-        <NavBar  {...props} />
-        <Parallax pages={7} scrolling={true} ref={ref => (parallax = ref)}>
-
+        <NavBar  {...props} parallax={parallax}/>
+        <Parallax pages={7} scrolling={true} ref={ref => (setParallax(ref))}>
             {/*Backgrounds*/}
             <Parallax.Layer offset={2} speed={1} style={{backgroundColor: '#282c34'}}/>
             <Parallax.Layer offset={4} speed={1} style={{backgroundColor: '#282c34'}}/>
@@ -125,7 +125,7 @@ export const Home: React.FC<Props> = (props) => {
 
             {/*buttons*/}
             {buttons.map((object, i) => <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
-                <span onClick={() => parallax.scrollTo(i === buttons.length - 1  ? 1 : i + 1)}>
+                <span onClick={() => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1)}>
                     <Button variant="outline-primary" size={"lg"} block>{object}</Button>
                 </span>
             </ParallaxLayer>)}

@@ -37,7 +37,7 @@ export const Project: React.FC<Props> = (props) => {
     } = props.projectDetail;
 
     return (<div>
-        <NavBar {...props.navProps}/>
+        {/*<NavBar {...props.navProps}/>*/}
         <Container>
             <Row>
                 <Col>

@@ -4,6 +4,7 @@ import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import {Home} from "./components/Home";
 import {Project} from "./components/Project";
 import {HackathonOne, HackathonTwo, navProps, NoProject, ProjectOne, ProjectTwo} from "./constants";
+import {Parallax} from "react-spring/renderprops-addons";
 
 function getProps(name: string) {
 
@@ -26,7 +27,8 @@ function getProps(name: string) {
     }
     return {
         navProps: navProps,
-        projectDetail: project
+        projectDetail: project,
+        parallax: Parallax
     };
 }
 
