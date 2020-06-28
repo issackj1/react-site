@@ -1,16 +1,16 @@
 // @ts-nocheck
-import React, {useState} from 'react';
-import {NavBar} from "./NavBar";
-import {useSpring, animated, config} from 'react-spring';
-import {Parallax, ParallaxLayer} from "react-spring/renderprops-addons";
-import {SpringConfig} from "react-spring/renderprops-universal";
-import {About} from "./About";
-import {Skills} from "./Skills";
-import {Education} from "./Education";
-import {Experience} from "./Experience";
-import {Extracurricular} from "./Extracurricular";
-import {Contact} from "./Contact";
-import {Button} from "react-bootstrap";
+import React, { useState } from 'react';
+import { NavBar } from "./NavBar";
+import { animated, config, useSpring } from 'react-spring';
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
+import { SpringConfig } from "react-spring/renderprops-universal";
+import { About } from "./About";
+import { Skills } from "./Skills";
+import { Education } from "./Education";
+import { Experience } from "./Experience";
+import { Extracurricular } from "./Extracurricular";
+import { Contact } from "./Contact";
+import { Button } from "react-bootstrap";
 
 interface Props {
     dropDownLinks: link[],
@@ -76,11 +76,11 @@ export const Home: React.FC<Props> = (props) => {
 
     return (<div className="App">
         <NavBar  {...props} parallax={parallax}/>
-        <Parallax pages={7} scrolling={true} ref={ref => (setParallax(ref))}>
+        <Parallax pages={7} scrolling={true} ref={ref => setParallax(ref)}>
             {/*Backgrounds*/}
-            <Parallax.Layer offset={2} speed={1} style={{backgroundColor: '#282c34'}}/>
-            <Parallax.Layer offset={4} speed={1} style={{backgroundColor: '#282c34'}}/>
-            <Parallax.Layer offset={6} speed={1} style={{backgroundColor: '#282c34'}}/>
+            <Parallax.Layer offset={2} speed={1} style={{ backgroundColor: '#282c34' }}/>
+            <Parallax.Layer offset={4} speed={1} style={{ backgroundColor: '#282c34' }}/>
+            <Parallax.Layer offset={6} speed={1} style={{ backgroundColor: '#282c34' }}/>
 
             <ParallaxLayer offset={0} speed={2} onClick={() => parallax.scrollTo(1)}>
                 <header className="App-header">

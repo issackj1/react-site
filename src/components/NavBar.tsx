@@ -1,8 +1,8 @@
 import React from 'react';
-import {Nav, Navbar, NavDropdown} from "react-bootstrap";
-import {Link,} from "react-router-dom";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link, } from "react-router-dom";
 import '../App.css';
-import {Parallax} from "react-spring/renderprops-addons";
+import { Parallax } from "react-spring/renderprops-addons";
 
 interface Props {
     dropDownLinks: link[],
@@ -46,6 +46,7 @@ export const NavBar: React.FC<Props> = ({dropDownLinks, navLinks, parallax}) => 
                     {navLinks.map(({title, path}, i) => <Nav.Link key={i}
                                                                   onClick={() => parallax.scrollTo(i+2)}>{title}</Nav.Link>
                     )}
+                    <Nav.Link as={Link} to={"/api"}>API</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

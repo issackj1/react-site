@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import {HashRouter as Router, Route, Switch} from "react-router-dom";
-import {Home} from "./components/Home";
-import {Project} from "./components/Project";
-import {HackathonOne, HackathonTwo, navProps, NoProject, ProjectOne, ProjectTwo} from "./constants";
-import {Parallax} from "react-spring/renderprops-addons";
-import {NavBar} from "./components/NavBar";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { Home } from "./components/Home";
+import { Project } from "./components/Project";
+import { HackathonOne, HackathonTwo, navProps, NoProject, ProjectOne, ProjectTwo } from "./constants";
+import { Parallax } from "react-spring/renderprops-addons";
+import { ApiHome } from "./components/ApiHome";
 
 function getProps(name: string) {
 
@@ -40,6 +40,7 @@ function App() {
                 <Route path="/project/:name" render={(routeProps) => (
                     <Project {...routeProps} {...getProps(((routeProps.match.params.name)))} />
                 )}/>
+                <Route path={"/api"} component={ApiHome}/>
                 <Route path="/" render={(routeProps) => (
                     <Home {...routeProps} {...navProps} />
                 )}/>
