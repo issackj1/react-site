@@ -1,50 +1,31 @@
 // @ts-nocheck
-import React, { useState } from 'react';
+import React from 'react';
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { Button } from "react-bootstrap";
-import * as Yup from 'yup'; // for everything
+import { Button, Col } from "react-bootstrap";
+import * as Yup from 'yup';
+
 interface Props {
 
 }
-
-const axios = require('axios');
 
 const schema = Yup.object({
     productId: Yup.number().required('Id must be 8 digits long')
 });
 
-export const BasicForm: React.FC<Props> = () => {
-
-    const [response, setResponse] = useState('');
-
-    const handleSubmit = (id) => {
-        axios.get('http://localhost:4000/api/v1/getCubeMetaData/' + id)
-            .then(
-                (result) => {
-                    setResponse(result.data.object.split('.')[0]);
-                },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error: { data: { message: any; }; }) => {
-                    setResponse(error.data.message);
-                }
-            );
-    };
+export const BasicForm: React.FC<Props> = (props) => {
 
     return (
-        <div>
+        <Col>
             <Formik
-                initialValues={{ productId: 12345678 }}
+                initialValues={{ productId: 10100004 }}
                 validationSchema={schema}
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
                         // alert(JSON.stringify(values, null, 2));
-                        handleSubmit(values.productId);
+                        props.handleSubmit(values.productId);
                         setSubmitting(false);
                     }, 400);
-                }}
-            >
+                }}>
                 {({ isSubmitting }) => (
                     <Form>
                         <Field type="text" name="productId" placeholder={"Product Id"}/>
@@ -55,7 +36,6 @@ export const BasicForm: React.FC<Props> = () => {
                     </Form>
                 )}
             </Formik>
-            <p>{response}</p>
-        </div>
+        </Col>
     );
 };
