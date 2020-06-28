@@ -18,7 +18,7 @@ export const ApiHome: React.FC<Props> = () => {
     const [toastMessage, setToastMessage] = useState('Item already exists');
 
     const handleSubmit = (id) => {
-        axios.get('http://localhost:4000/api/v1/getCubeMetaData/' + id)
+        axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + id)
             .then((result) => {
                     if (result.data.status === 'FAILED') {
                         setResponse(result.data.object.split('.')[0]);
