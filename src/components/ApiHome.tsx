@@ -18,7 +18,7 @@ export const ApiHome: React.FC<Props> = () => {
     const [toastMessage, setToastMessage] = useState('Item already exists');
 
     const handleSubmit = (id) => {
-        axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + id)
+        axios.post('/api/v1/getCubeMetaData/' + id)
             .then((result) => {
                     if (result.data.status === 'FAILED') {
                         setResponse(result.data.object.split('.')[0]);
@@ -48,11 +48,6 @@ export const ApiHome: React.FC<Props> = () => {
                 <Col>
                     <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
                         <Toast.Header>
-                            <img
-                                src="holder.js/20x20?text=%20"
-                                className="rounded mr-2"
-                                alt=""
-                            />
                             <strong className="mr-auto">{toastMessage}</strong>
                         </Toast.Header>
                     </Toast>
