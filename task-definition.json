@@ -50,7 +50,7 @@
         }
     ],
     "placementConstraints": [],
-    "memory": "1024",
+    "memory": "500",
     "taskRoleArn": "arn:aws:iam::815726450779:role/ecsTaskExecutionRole",
     "compatibilities": [
         "EC2"
