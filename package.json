@@ -2,7 +2,7 @@
   "name": "alpha",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://issackj1.github.io/react-site",
+  "homepage": "ec2-3-235-121-117.compute-1.amazonaws.com",
   "dependencies": {
     "@types/yup": "^0.29.3",
     "axios": "^0.19.2",
