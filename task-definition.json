@@ -1,48 +1,91 @@
 {
+    "ipcMode": null,
+    "executionRoleArn": "arn:aws:iam::815726450779:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "dnsSearchDomains": null,
+            "environmentFiles": null,
+            "logConfiguration": null,
+            "entryPoint": null,
+            "portMappings": [
+                {
+                    "hostPort": 0,
+                    "protocol": "tcp",
+                    "containerPort": 80
+                }
+            ],
+            "command": null,
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [],
+            "resourceRequirements": null,
+            "ulimits": null,
+            "dnsServers": null,
+            "mountPoints": [],
+            "workingDirectory": null,
+            "secrets": null,
+            "dockerSecurityOptions": null,
+            "memory": null,
+            "memoryReservation": null,
+            "volumesFrom": [],
+            "stopTimeout": null,
+            "image": "815726450779.dkr.ecr.us-east-1.amazonaws.com/react-site",
+            "startTimeout": null,
+            "firelensConfiguration": null,
+            "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": null,
+            "hostname": null,
+            "extraHosts": null,
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": null,
+            "systemControls": null,
+            "privileged": null,
+            "name": "alpha-container"
+        }
+    ],
+    "placementConstraints": [],
+    "memory": "1024",
+    "taskRoleArn": "arn:aws:iam::815726450779:role/ecsTaskExecutionRole",
+    "compatibilities": [
+        "EC2"
+    ],
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:815726450779:task-definition/alpha:1",
+    "family": "alpha",
+    "requiresAttributes": [
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "ecs.capability.execution-role-ecr-pull"
+        }
+    ],
+    "pidMode": null,
     "requiresCompatibilities": [
         "EC2"
     ],
-    "inferenceAccelerators": [],
-    "containerDefinitions": [
-        {
-            "name": "sample-node-container",
-            "image": "848213930039.dkr.ecr.us-east-2.amazonaws.com/aws-sample-nodejs-app:latest",
-            "memory": "256",
-            "resourceRequirements": null,
-            "essential": true,
-            "portMappings": [
-                {
-                    "hostPort": "80",
-                    "containerPort": "3000",
-                    "protocol": "tcp"
-                }
-            ],
-            "environment": [
-                {
-                    "name": "MYSECRET",
-                    "value": "my-aws-super-secret"
-                }
-            ],
-            "secrets": null,
-            "mountPoints": null,
-            "volumesFrom": null,
-            "hostname": null,
-            "user": null,
-            "workingDirectory": null,
-            "extraHosts": null,
-            "logConfiguration": null,
-            "ulimits": null,
-            "dockerLabels": null,
-            "dependsOn": null,
-            "repositoryCredentials": {
-                "credentialsParameter": ""
-            }
-        }
-    ],
-    "volumes": [],
     "networkMode": null,
-    "memory": null,
-    "cpu": null,
-    "placementConstraints": [],
-    "family": "demo-node-task-definition"
+    "cpu": "256",
+    "revision": 1,
+    "status": "ACTIVE",
+    "inferenceAccelerators": null,
+    "proxyConfiguration": null,
+    "volumes": []
 }
