@@ -1,7 +1,6 @@
 import React from 'react';
-import {NavBar} from "./NavBar";
-import {Col, Container, ListGroup, Row} from "react-bootstrap";
-import {ProjectNavBar} from "./ProjectNavBar";
+import { Col, Container, ListGroup, Row } from "react-bootstrap";
+import { ProjectNavBar } from "./ProjectNavBar";
 
 interface Props {
     navProps: {

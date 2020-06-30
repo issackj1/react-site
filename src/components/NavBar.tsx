@@ -20,7 +20,7 @@ const logo = require('../logo.jpg');
 export const NavBar: React.FC<Props> = ({dropDownLinks, navLinks, parallax}) => {
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="/react-site"><img
+            <Navbar.Brand href="/"><img
                 alt=""
                 src={logo}
                 width="30"
