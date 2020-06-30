@@ -2,7 +2,7 @@
    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="React Native is released under the MIT license." />
  </a>
   
-  ![Build Status](https://travis-ci.com/issackj1/react-site.svg?branch=master)
+![Build Status](https://travis-ci.com/issackj1/react-site.svg?branch=master)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
