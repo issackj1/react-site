@@ -29,7 +29,7 @@
             "memoryReservation": null,
             "volumesFrom": [],
             "stopTimeout": null,
-            "image": "cd46d05886718867fab51265f809dd6662f97f78",
+            "image": "815726450779.dkr.ecr.us-east-1.amazonaws.com/react-site:latest",
             "startTimeout": null,
             "firelensConfiguration": null,
             "dependsOn": null,
