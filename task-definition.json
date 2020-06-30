@@ -9,14 +9,14 @@
             "entryPoint": null,
             "portMappings": [
                 {
-                    "hostPort": 0,
+                    "hostPort": 80,
                     "protocol": "tcp",
                     "containerPort": 80
                 }
             ],
             "command": null,
             "linuxParameters": null,
-            "cpu": 0,
+            "cpu": 256,
             "environment": [],
             "resourceRequirements": null,
             "ulimits": null,
@@ -50,7 +50,7 @@
         }
     ],
     "placementConstraints": [],
-    "memory": "500",
+    "memory": "512",
     "taskRoleArn": "arn:aws:iam::815726450779:role/ecsTaskExecutionRole",
     "compatibilities": [
         "EC2"
