@@ -17,7 +17,7 @@ export const BasicForm: React.FC<Props> = (props) => {
     return (
         <Col>
             <Formik
-                initialValues={{ productId: 10100004 }}
+                initialValues={{ productId: '' }}
                 validationSchema={schema}
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {

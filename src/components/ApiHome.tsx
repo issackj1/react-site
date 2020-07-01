@@ -18,7 +18,7 @@ export const ApiHome: React.FC<Props> = () => {
     const [toastMessage, setToastMessage] = useState('Item already exists');
 
     const handleSubmit = (id) => {
-        axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + id)
+        axios.post('http://3.94.8.68:4000/api/v1/getCubeMetaData/' + id)
             .then((result) => {
                     if (result.data.status === 'FAILED') {
                         setResponse(result.data.object.split('.')[0]);
@@ -42,8 +42,6 @@ export const ApiHome: React.FC<Props> = () => {
 
     return (
         <div className={"container d-flex text-center justify-content-center flex-column h-100 m-auto"}>
-            <h1>Meta Data Table Search</h1>
-            <Row><Col>Retrieve the metadata supporting the data at table level</Col></Row>
             <Row>
                 <Col>
                     <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
@@ -53,6 +51,8 @@ export const ApiHome: React.FC<Props> = () => {
                     </Toast>
                 </Col>
             </Row>
+            <h1>Meta Data Table Search</h1>
+            <Row><Col>Retrieve the metadata supporting the data at table level</Col></Row>
             <Row><BasicForm handleSubmit={(id) => handleSubmit(id)}/></Row>
             <Row>
                 <CardColumns>
