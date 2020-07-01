@@ -1,7 +1,7 @@
 {
   "name": "alpha",
   "version": "0.1.0",
-  "proxy": "http://3.235.121.117/80",
+  "proxy": "http://3.235.121.117/",
   "dependencies": {
     "@types/yup": "^0.29.3",
     "axios": "^0.19.2",
