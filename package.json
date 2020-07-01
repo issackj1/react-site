@@ -2,7 +2,7 @@
   "name": "alpha",
   "version": "0.1.0",
   "proxy": "http://localhost:4000",
-  "homepage": "http://3.236.137.142/",
+  "homepage": "http://3.94.8.68/",
   "dependencies": {
     "@types/yup": "^0.29.3",
     "axios": "^0.19.2",
