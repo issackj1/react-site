@@ -12,7 +12,6 @@ interface Props {
 
 export const ApiLogin: React.FC<Props> = ({ setAuthenticated }) => {
 
-    const [response, setResponse] = useState([]);
     const [show, setShow] = useState(false);
     const [toastMessage, setToastMessage] = useState('Item already exists');
     const [isSignUp, setIsSignUp] = useState(false);
