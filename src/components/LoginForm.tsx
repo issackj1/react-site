@@ -1,11 +1,16 @@
 import React from 'react';
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { Form, Formik, useField } from "formik";
 import { Button } from "react-bootstrap";
 import * as Yup from 'yup';
 
 interface Props {
     handleSubmit: (username: string, password: string) => any
 }
+
+interface TextFieldProps {
+    label: String
+}
+
 
 const schema = Yup.object({
     email: Yup.string()
@@ -16,6 +21,24 @@ const schema = Yup.object({
         .max(16)
         .required('Please enter a password')
 });
+
+// @ts-ignore
+const MyTextField = ({ label, ...props }) => {
+    // @ts-ignore
+    const [field, meta, helpers] = useField(props);
+    return (
+        <>
+            <label>
+                {label}
+                <input {...field} {...props} />
+            </label>
+            {meta.touched && meta.error ? (
+                <div className='error'>{meta.error}</div>
+            ) : null}
+        </>
+    );
+};
+
 
 export const LoginForm: React.FC<Props> = (props) => {
 
@@ -31,12 +54,10 @@ export const LoginForm: React.FC<Props> = (props) => {
                 }, 400);
             }}>
             {({ isSubmitting }) => (
-                <Form className={"d-flex flex-column justify-content-between"}>
-                    <Field type="email" name="email" as={"input"} placeholder={"Email"}/>
-                    <ErrorMessage name="email" component="div"/>
-                    <br/>
-                    <Field type="password" name="password" as={"input"} placeholder={"password"}/>
-                    <ErrorMessage name="password" component="div"/>
+                <Form className={"d-flex flex-column"}>
+                    <MyTextField type="email" name="email" as={"input"} placeholder={"Email"} label={"Email"}/>
+                    <MyTextField type="password" name="password" as={"input"} placeholder={"Password"}
+                                 label={"password"}/>
                     <Button type="submit" disabled={isSubmitting}>
                         Submit
                     </Button>
