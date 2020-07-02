@@ -7,11 +7,6 @@ interface Props {
     handleSubmit: (username: string, password: string) => any
 }
 
-interface TextFieldProps {
-    label: String
-}
-
-
 const schema = Yup.object({
     email: Yup.string()
         .email()
@@ -38,7 +33,6 @@ const MyTextField = ({ label, ...props }) => {
         </>
     );
 };
-
 
 export const LoginForm: React.FC<Props> = (props) => {
 
