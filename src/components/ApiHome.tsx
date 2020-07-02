@@ -6,7 +6,6 @@ import { Card, CardColumns, Col, Row, Toast } from "react-bootstrap";
 
 const axios = require('axios');
 
-
 interface Props {
 
 }
@@ -41,7 +40,7 @@ export const ApiHome: React.FC<Props> = () => {
     };
 
     return (
-        <div className={"container d-flex text-center justify-content-center flex-column h-100 m-auto"}>
+        <>
             <Row>
                 <Col>
                     <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
@@ -69,6 +68,6 @@ export const ApiHome: React.FC<Props> = () => {
                         </Card>)}
                 </CardColumns>
             </Row>
-        </div>
+        </>
     );
 };
