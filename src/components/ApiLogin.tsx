@@ -7,30 +7,39 @@ import { SignUpForm } from "./forms/SignUpForm";
 const axios = require('axios');
 
 interface Props {
-
+    setAuthenticated: () => any
 }
 
-export const ApiLogin: React.FC<Props> = () => {
+export const ApiLogin: React.FC<Props> = ({ setAuthenticated }) => {
 
     const [response, setResponse] = useState([]);
     const [show, setShow] = useState(false);
     const [toastMessage, setToastMessage] = useState('Item already exists');
-    const [isSignUp, setIsSignUp] = useState(true);
+    const [isSignUp, setIsSignUp] = useState(false);
 
     const handleLogIn = (email: String, password: String) => {
-        axios.post('http://3.94.8.68:4000/api/login/')
+        axios.post('/api/login/',
+            {
+                email: email,
+                password: password
+            })
             .then((result: any) => {
-
+                    setAuthenticated()
                 },
                 (error: any) => {
-                    setToastMessage(error.message);
-                    setShow(true)
+                    setToastMessage("Incorrect email or password");
                 }
             );
+        setShow(true)
     };
 
-    const handleSignUp = (email: String, password: string) => {
-        axios.post('http://3.94.8.68:4000/api/register/')
+    const handleSignUp = (username: string, email: string, password: string) => {
+        axios.post('/api/register/',
+            {
+                username: username,
+                email: email,
+                password: password
+            })
             .then((result: any) => {
 
                 },
@@ -46,7 +55,7 @@ export const ApiLogin: React.FC<Props> = () => {
             <>
                 <Card.Title><h1>Sign Up</h1></Card.Title>
                 <SignUpForm
-                    handleSubmit={(email, password) => handleSignUp(email, password)}
+                    handleSubmit={(username, email, password) => handleSignUp(username, email, password)}
                     toggleSignUp={() => setIsSignUp(false)}
                 />
             </>
@@ -65,7 +74,7 @@ export const ApiLogin: React.FC<Props> = () => {
 
     return (
         <>
-            <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
+            <Toast className={"mx-auto"} onClose={() => setShow(false)} show={show} delay={3000} autohide>
                 <Toast.Header>
                     <strong className="mr-auto">{toastMessage}</strong>
                 </Toast.Header>

@@ -1,8 +1,6 @@
 import React from 'react';
-import {Nav, Navbar, NavDropdown} from "react-bootstrap";
-import {Link,} from "react-router-dom";
+import { Navbar } from "react-bootstrap";
 import '../App.css';
-import {Parallax} from "react-spring/renderprops-addons";
 
 interface Props {
 }

@@ -11,16 +11,16 @@ interface Props {
 
 export const Api: React.FC<Props> = () => {
 
-    const [isAuthenticated, setAuthentication] = useState(false);
+    const [authenticated, setAuthenticated] = useState(false);
 
     useEffect(() => {
         authenticate();
     }, [])
 
     const authenticate = () => {
-        axios.post('http://3.94.8.68:4000/api/confirm-token/')
+        axios.post('/api/confirm-token/')
             .then((result: any) => {
-                    setAuthentication(true)
+                    setAuthenticated(true)
                 },
                 (error: any) => {
                     console.log('you need to log in bro')
@@ -31,9 +31,11 @@ export const Api: React.FC<Props> = () => {
     return (
         <div className={"container d-flex text-center justify-content-center flex-column h-100 m-auto"}>
             {
-                isAuthenticated
+                authenticated
                     ? <ApiHome/>
-                    : <ApiLogin/>
+                    : <ApiLogin
+                        setAuthenticated={() => setAuthenticated(true)}
+                    />
             }
         </div>
     );

@@ -6,7 +6,7 @@ import { Button, Link } from "@material-ui/core";
 import { Col } from "react-bootstrap";
 
 interface Props {
-    handleSubmit: (username: string, password: string) => any
+    handleSubmit: (username: string, email: string, password: string) => any
     toggleSignUp: () => any
 }
 
@@ -28,11 +28,11 @@ export const SignUpForm: React.FC<Props> = (props) => {
 
     return (
         <Formik
-            initialValues={{ email: '', password: '' }}
+            initialValues={{ username: '', email: '', password: '' }}
             validationSchema={schema}
             onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
-                    handleSubmit(values.email, values.password);
+                    handleSubmit(values.username, values.email, values.password);
                     setSubmitting(false);
                 }, 400);
             }}>
@@ -45,7 +45,7 @@ export const SignUpForm: React.FC<Props> = (props) => {
                            InputProps={{ notched: true }}/>
                     <Field className={"mb-3"} component={TextField} name="password" label={"password"}
                            variant="outlined" InputProps={{ notched: true }}/>
-                    <Field component={CheckboxWithLabel} name="checked"
+                    <Field component={CheckboxWithLabel} name="checked" type={"checkbox"}
                            Label={{ label: 'Agree to terms and conditions' }}/>
                     <Button type={"submit"} variant="contained" disabled={isSubmitting}
                             color="primary">Register</Button>
