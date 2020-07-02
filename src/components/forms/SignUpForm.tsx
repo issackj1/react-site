@@ -2,10 +2,12 @@ import React from 'react';
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { CheckboxWithLabel, TextField } from 'formik-material-ui';
-import { Button } from "@material-ui/core";
+import { Button, Link } from "@material-ui/core";
+import { Col } from "react-bootstrap";
 
 interface Props {
     handleSubmit: (username: string, password: string) => any
+    toggleSignUp: () => any
 }
 
 const schema = Yup.object({
@@ -18,7 +20,9 @@ const schema = Yup.object({
         .required('Please enter a password')
 });
 
-export const LoginForm: React.FC<Props> = (props) => {
+export const SignUpForm: React.FC<Props> = (props) => {
+
+    const { handleSubmit, toggleSignUp } = props;
 
     return (
         <Formik
@@ -26,7 +30,7 @@ export const LoginForm: React.FC<Props> = (props) => {
             validationSchema={schema}
             onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
-                    props.handleSubmit(values.email, values.password);
+                    handleSubmit(values.email, values.password);
                     setSubmitting(false);
                 }, 400);
             }}>
@@ -37,8 +41,13 @@ export const LoginForm: React.FC<Props> = (props) => {
                     <Field className={"mb-3"} component={TextField} name="password" label={"password"}
                            variant="outlined" InputProps={{ notched: true }}/>
                     <Field component={CheckboxWithLabel} name="checked"
-                           Label={{ label: 'Agree to terms and conditions' }}/>;
-                    <Button type={"submit"} variant="contained" disabled={isSubmitting} color="primary">Submit</Button>
+                           Label={{ label: 'Agree to terms and conditions' }}/>
+                    <Button type={"submit"} variant="contained" disabled={isSubmitting} color="primary">Sign In</Button>
+                    <Col>
+                        <Link component={"button"} onClick={toggleSignUp}>
+                            Already have an account? Log In
+                        </Link>
+                    </Col>
                 </Form>
             )}
         </Formik>

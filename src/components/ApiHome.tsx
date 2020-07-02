@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useState } from 'react';
 import '../App.css';
-import { BasicForm } from "./BasicForm";
+import { BasicForm } from "./forms/BasicForm";
 import { Card, CardColumns, Col, Row, Toast } from "react-bootstrap";
 
 const axios = require('axios');

@@ -15,7 +15,7 @@ export const Api: React.FC<Props> = () => {
 
     useEffect(() => {
         authenticate();
-    })
+    }, [])
 
     const authenticate = () => {
         axios.post('http://3.94.8.68:4000/api/confirm-token/')
