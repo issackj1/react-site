@@ -11,6 +11,8 @@ interface Props {
 }
 
 const schema = Yup.object({
+    username: Yup.string()
+        .required('Please enter a username'),
     email: Yup.string()
         .email()
         .required('Please enter a valid email'),
@@ -36,13 +38,17 @@ export const SignUpForm: React.FC<Props> = (props) => {
             }}>
             {({ isSubmitting }) => (
                 <Form className={"d-flex flex-column"}>
+                    <Field className={"mb-3"} component={TextField} name="username" label={"Username"}
+                           variant="outlined"
+                           InputProps={{ notched: true }}/>
                     <Field className={"mb-3"} component={TextField} name="email" label={"email"} variant="outlined"
                            InputProps={{ notched: true }}/>
                     <Field className={"mb-3"} component={TextField} name="password" label={"password"}
                            variant="outlined" InputProps={{ notched: true }}/>
                     <Field component={CheckboxWithLabel} name="checked"
                            Label={{ label: 'Agree to terms and conditions' }}/>
-                    <Button type={"submit"} variant="contained" disabled={isSubmitting} color="primary">Sign In</Button>
+                    <Button type={"submit"} variant="contained" disabled={isSubmitting}
+                            color="primary">Register</Button>
                     <Col>
                         <Link component={"button"} onClick={toggleSignUp}>
                             Already have an account? Log In

@@ -15,7 +15,7 @@ export const ApiLogin: React.FC<Props> = () => {
     const [response, setResponse] = useState([]);
     const [show, setShow] = useState(false);
     const [toastMessage, setToastMessage] = useState('Item already exists');
-    const [isSignUp, setIsSignUp] = useState(false);
+    const [isSignUp, setIsSignUp] = useState(true);
 
     const handleLogIn = (email: String, password: String) => {
         axios.post('http://3.94.8.68:4000/api/login/')
