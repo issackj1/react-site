@@ -40,10 +40,10 @@ export const ApiLogin: React.FC<Props> = ({ setAuthenticated }) => {
                 password: password
             })
             .then((result: any) => {
-
+                    setAuthenticated()
                 },
                 (error: any) => {
-                    setToastMessage(error.message);
+                    setToastMessage("Email is already in use");
                     setShow(true)
                 }
             );
