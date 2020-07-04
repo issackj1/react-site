@@ -18,7 +18,7 @@ export const Api: React.FC<Props> = () => {
     }, [])
 
     const authenticate = () => {
-        axios.post('/api/confirm-token/')
+        axios.post('http://localhost:4000/api/confirm-token/')
             .then((result: any) => {
                     setAuthenticated(true)
                 },

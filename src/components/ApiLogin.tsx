@@ -17,7 +17,7 @@ export const ApiLogin: React.FC<Props> = ({ setAuthenticated }) => {
     const [isSignUp, setIsSignUp] = useState(false);
 
     const handleLogIn = (email: String, password: String) => {
-        axios.post('/api/login/',
+        axios.post('http://localhost:4000/api/login/',
             {
                 email: email,
                 password: password
@@ -33,7 +33,7 @@ export const ApiLogin: React.FC<Props> = ({ setAuthenticated }) => {
     };
 
     const handleSignUp = (username: string, email: string, password: string) => {
-        axios.post('/api/register/',
+        axios.post('http://localhost:4000/api/register/',
             {
                 username: username,
                 email: email,
