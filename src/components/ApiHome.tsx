@@ -1,11 +1,10 @@
 // @ts-nocheck
 import React, { useState } from 'react';
 import '../App.css';
-import { BasicForm } from "./BasicForm";
+import { BasicForm } from "./forms/BasicForm";
 import { Card, CardColumns, Col, Row, Toast } from "react-bootstrap";
 
 const axios = require('axios');
-
 
 interface Props {
 
@@ -18,7 +17,7 @@ export const ApiHome: React.FC<Props> = () => {
     const [toastMessage, setToastMessage] = useState('Item already exists');
 
     const handleSubmit = (id) => {
-        axios.post('http://3.94.8.68:4000/api/v1/getCubeMetaData/' + id)
+        axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + id)
             .then((result) => {
                     if (result.data.status === 'FAILED') {
                         setResponse(result.data.object.split('.')[0]);
@@ -41,7 +40,7 @@ export const ApiHome: React.FC<Props> = () => {
     };
 
     return (
-        <div className={"container d-flex text-center justify-content-center flex-column h-100 m-auto"}>
+        <>
             <Row>
                 <Col>
                     <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
@@ -69,6 +68,6 @@ export const ApiHome: React.FC<Props> = () => {
                         </Card>)}
                 </CardColumns>
             </Row>
-        </div>
+        </>
     );
 };

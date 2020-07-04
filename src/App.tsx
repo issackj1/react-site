@@ -5,7 +5,7 @@ import { Home } from "./components/Home";
 import { Project } from "./components/Project";
 import { HackathonOne, HackathonTwo, navProps, NoProject, ProjectOne, ProjectTwo } from "./constants";
 import { Parallax } from "react-spring/renderprops-addons";
-import { ApiHome } from "./components/ApiHome";
+import { Api } from "./components/Api";
 
 function getProps(name: string) {
 
@@ -40,7 +40,7 @@ function App() {
                 <Route path="/project/:name" render={(routeProps) => (
                     <Project {...routeProps} {...getProps(((routeProps.match.params.name)))} />
                 )}/>
-                <Route path={"/api"} component={ApiHome}/>
+                <Route path={"/api"} component={Api}/>
                 <Route path="/" render={(routeProps) => (
                     <Home {...routeProps} {...navProps} />
                 )}/>
