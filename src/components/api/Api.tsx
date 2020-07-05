@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import '../App.css';
-import { ApiLogin } from "./ApiLogin";
-import { ApiHome } from "./ApiHome";
+import '../../App.css';
+import { Auth } from "./Auth";
+import { Home } from "./Home";
 
 const axios = require('axios');
 
@@ -23,7 +23,6 @@ export const Api: React.FC<Props> = () => {
                     setAuthenticated(true)
                 },
                 (error: any) => {
-                    console.log('you need to log in bro')
                 }
             );
     }
@@ -32,8 +31,8 @@ export const Api: React.FC<Props> = () => {
         <div className={"container d-flex text-center justify-content-center flex-column h-100 m-auto"}>
             {
                 authenticated
-                    ? <ApiHome/>
-                    : <ApiLogin
+                    ? <Home/>
+                    : <Auth
                         setAuthenticated={() => setAuthenticated(true)}
                     />
             }

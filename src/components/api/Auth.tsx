@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import '../App.css';
+import '../../App.css';
 import { Card, Toast } from "react-bootstrap";
-import { LoginForm } from "./forms/LoginForm";
-import { SignUpForm } from "./forms/SignUpForm";
+import { LoginForm } from "../forms/LoginForm";
+import { SignUpForm } from "../forms/SignUpForm";
 
 const axios = require('axios');
 
@@ -10,11 +10,11 @@ interface Props {
     setAuthenticated: () => any
 }
 
-export const ApiLogin: React.FC<Props> = ({ setAuthenticated }) => {
+export const Auth: React.FC<Props> = ({ setAuthenticated }) => {
 
     const [show, setShow] = useState(false);
     const [toastMessage, setToastMessage] = useState('Item already exists');
-    const [isSignUp, setIsSignUp] = useState(false);
+    const [isSignUp, setIsSignUp] = useState(true);
 
     const handleLogIn = (email: String, password: String) => {
         axios.post('http://localhost:4000/api/login/',
@@ -73,13 +73,15 @@ export const ApiLogin: React.FC<Props> = ({ setAuthenticated }) => {
 
     return (
         <>
-            <Toast className={"mx-auto"} onClose={() => setShow(false)} show={show} delay={3000} autohide>
-                <Toast.Header>
-                    <strong className="mr-auto">{toastMessage}</strong>
-                </Toast.Header>
-            </Toast>
-            <Card className="text-center w-50 mx-auto">
-                <Card.Body>
+            <div className={"d-flex flex-column justify-content-center"} style={{ height: '50px' }}>
+                <Toast className={"mx-auto"} onClose={() => setShow(false)} show={show} delay={3000} autohide>
+                    <Toast.Body>
+                        <strong>{toastMessage}</strong>
+                    </Toast.Body>
+                </Toast>
+            </div>
+            <Card className="mx-auto" style={{ minWidth: '50%' }}>
+                <Card.Body className={"d-flex flex-column justify-content-around"}>
                     {
                         isSignUp
                             ? signUpHeaders()

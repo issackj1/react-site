@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
-import { CheckboxWithLabel, TextField } from 'formik-material-ui';
+import { TextField } from 'formik-material-ui';
 import { Button, Link } from "@material-ui/core";
 import { Col } from "react-bootstrap";
 
@@ -18,8 +18,13 @@ const schema = Yup.object({
         .required('Please enter a valid email'),
     password: Yup.string()
         .min(8)
-        .max(16)
-        .required('Please enter a password')
+        .required('Please enter a password'),
+    confirmPassword: Yup
+        .string()
+        .required('Please re-enter password')
+        .test('passwords-match', 'Passwords must match', function (value) {
+            return this.parent.password === value;
+        })
 });
 
 export const SignUpForm: React.FC<Props> = (props) => {
@@ -28,7 +33,7 @@ export const SignUpForm: React.FC<Props> = (props) => {
 
     return (
         <Formik
-            initialValues={{ username: '', email: '', password: '' }}
+            initialValues={{ username: '', email: '', password: '', confirmPassword: '' }}
             validationSchema={schema}
             onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
@@ -37,16 +42,16 @@ export const SignUpForm: React.FC<Props> = (props) => {
                 }, 400);
             }}>
             {({ isSubmitting }) => (
-                <Form className={"d-flex flex-column"}>
+                <Form className={"d-flex flex-column justify-content-between"}>
                     <Field className={"mb-3"} component={TextField} name="username" label={"Username"}
-                           variant="outlined"
-                           InputProps={{ notched: true }}/>
+                           variant="outlined" InputProps={{ notched: true }}/>
                     <Field className={"mb-3"} component={TextField} name="email" label={"email"} variant="outlined"
                            InputProps={{ notched: true }}/>
-                    <Field className={"mb-3"} component={TextField} type={"password"} name="password" label={"password"}
+                    <Field className={"mb-3"} component={TextField} name="password" label={"password"} type={"password"}
                            variant="outlined" InputProps={{ notched: true }}/>
-                    <Field component={CheckboxWithLabel} name="checked" type={"checkbox"}
-                           Label={{ label: 'Agree to terms and conditions' }}/>
+                    <Field className={"mb-3"} component={TextField} name="confirmPassword" label={"Confirm Password"}
+                           type={"password"}
+                           variant="outlined" InputProps={{ notched: true }}/>
                     <Button type={"submit"} variant="contained" disabled={isSubmitting}
                             color="primary">Register</Button>
                     <Col>

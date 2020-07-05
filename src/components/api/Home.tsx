@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import '../App.css';
-import { BasicForm } from "./forms/BasicForm";
+import '../../App.css';
+import { BasicForm } from "../forms/BasicForm";
 import { Card, CardColumns, Col, Row, Toast } from "react-bootstrap";
 
 const axios = require('axios');
@@ -10,7 +10,7 @@ interface Props {
 
 }
 
-export const ApiHome: React.FC<Props> = () => {
+export const Home: React.FC<Props> = () => {
 
     const [response, setResponse] = useState([]);
     const [show, setShow] = useState(false);
@@ -41,19 +41,23 @@ export const ApiHome: React.FC<Props> = () => {
 
     return (
         <>
-            <Row>
-                <Col>
+            <Row style={{ height: '50px' }}>
+                <Col className={"d-flex justify-content-center"}>
                     <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
-                        <Toast.Header>
-                            <strong className="mr-auto">{toastMessage}</strong>
-                        </Toast.Header>
+                        <Toast.Body>
+                            <strong>{toastMessage}</strong>
+                        </Toast.Body>
                     </Toast>
                 </Col>
             </Row>
-            <h1>Meta Data Table Search</h1>
-            <Row><Col>Retrieve the metadata supporting the data at table level</Col></Row>
-            <Row><BasicForm handleSubmit={(id) => handleSubmit(id)}/></Row>
             <Row>
+                <Col>
+                    <h1>Meta Data Table Search</h1>
+                    <h5>Retrieve the metadata supporting the data at table level</h5>
+                    <BasicForm handleSubmit={(id) => handleSubmit(id)}/>
+                </Col>
+            </Row>
+            <Row className={"flex-grow-1"}>
                 <CardColumns>
                     {response.map(({ status, object }, i) =>
                         <Card key={i}>
