@@ -14,7 +14,7 @@ export const Auth: React.FC<Props> = ({ setAuthenticated }) => {
 
     const [show, setShow] = useState(false);
     const [toastMessage, setToastMessage] = useState('Item already exists');
-    const [isSignUp, setIsSignUp] = useState(true);
+    const [isSignUp, setIsSignUp] = useState(false);
 
     const handleLogIn = (email: String, password: String) => {
         axios.post('http://localhost:4000/api/login/',
