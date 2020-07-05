@@ -80,8 +80,8 @@ export const Auth: React.FC<Props> = ({ setAuthenticated }) => {
                     </Toast.Body>
                 </Toast>
             </div>
-            <Card className="mx-auto w-50">
-                <Card.Body className={"h-50"}>
+            <Card className="mx-auto">
+                <Card.Body className={"d-flex flex-column justify-content-around"}>
                     {
                         isSignUp
                             ? signUpHeaders()

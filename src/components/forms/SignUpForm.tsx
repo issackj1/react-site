@@ -42,10 +42,9 @@ export const SignUpForm: React.FC<Props> = (props) => {
                 }, 400);
             }}>
             {({ isSubmitting }) => (
-                <Form className={"d-flex flex-column"}>
+                <Form className={"d-flex flex-column justify-content-between"}>
                     <Field className={"mb-3"} component={TextField} name="username" label={"Username"}
-                           variant="outlined"
-                           InputProps={{ notched: true }}/>
+                           variant="outlined" InputProps={{ notched: true }}/>
                     <Field className={"mb-3"} component={TextField} name="email" label={"email"} variant="outlined"
                            InputProps={{ notched: true }}/>
                     <Field className={"mb-3"} component={TextField} name="password" label={"password"} type={"password"}
