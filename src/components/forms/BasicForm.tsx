@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import { Field, Form, Formik } from "formik";
 import { Col } from "react-bootstrap";
@@ -7,7 +6,7 @@ import { Select, TextField } from "formik-material-ui";
 import { Button, FormControl, InputLabel, MenuItem } from "@material-ui/core";
 
 interface Props {
-
+    handleSubmit: (id: string) => any
 }
 
 const schema = Yup.object({

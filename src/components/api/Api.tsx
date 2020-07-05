@@ -11,7 +11,7 @@ interface Props {
 
 export const Api: React.FC<Props> = () => {
 
-    const [authenticated, setAuthenticated] = useState(true);
+    const [authenticated, setAuthenticated] = useState(false);
 
     useEffect(() => {
         authenticate();

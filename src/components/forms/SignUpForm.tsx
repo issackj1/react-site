@@ -19,7 +19,9 @@ const schema = Yup.object({
     password: Yup.string()
         .min(8)
         .max(16)
-        .required('Please enter a password')
+        .required('Please enter a password'),
+    agreeTerms: Yup.bool()
+        .oneOf([true], 'Must agree to terms and conditions')
 });
 
 export const SignUpForm: React.FC<Props> = (props) => {
@@ -28,7 +30,7 @@ export const SignUpForm: React.FC<Props> = (props) => {
 
     return (
         <Formik
-            initialValues={{ username: '', email: '', password: '' }}
+            initialValues={{ username: '', email: '', password: '', agreeTerms: false }}
             validationSchema={schema}
             onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
