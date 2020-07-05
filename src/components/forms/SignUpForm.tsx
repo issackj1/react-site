@@ -43,9 +43,9 @@ export const SignUpForm: React.FC<Props> = (props) => {
                            InputProps={{ notched: true }}/>
                     <Field className={"mb-3"} component={TextField} name="email" label={"email"} variant="outlined"
                            InputProps={{ notched: true }}/>
-                    <Field className={"mb-3"} component={TextField} type={"password"} name="password" label={"password"}
+                    <Field className={"mb-3"} component={TextField} name="password" label={"password"} type={"password"}
                            variant="outlined" InputProps={{ notched: true }}/>
-                    <Field component={CheckboxWithLabel} name="checked" type={"checkbox"}
+                    <Field component={CheckboxWithLabel} name="agreeTerms" type={"checkbox"}
                            Label={{ label: 'Agree to terms and conditions' }}/>
                     <Button type={"submit"} variant="contained" disabled={isSubmitting}
                             color="primary">Register</Button>

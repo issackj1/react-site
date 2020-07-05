@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
-import { CheckboxWithLabel, TextField } from 'formik-material-ui';
+import { TextField } from 'formik-material-ui';
 import { Button, Link } from "@material-ui/core";
 import { Col } from "react-bootstrap";
 
@@ -40,8 +40,6 @@ export const LoginForm: React.FC<Props> = (props) => {
                            InputProps={{ notched: true }}/>
                     <Field className={"mb-3"} component={TextField} type={"password"} name="password" label={"password"}
                            variant="outlined" InputProps={{ notched: true }}/>
-                    <Field component={CheckboxWithLabel} name="checked" type={"checkbox"}
-                           Label={{ label: 'Agree to terms and conditions' }}/>
                     <Button type={"submit"} variant="contained" disabled={isSubmitting} color="primary">Sign In</Button>
                     <Col>
                         <Link component={"button"} onClick={toggleSignUp}>
