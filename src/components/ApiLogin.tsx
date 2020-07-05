@@ -73,13 +73,15 @@ export const ApiLogin: React.FC<Props> = ({ setAuthenticated }) => {
 
     return (
         <>
-            <Toast className={"mx-auto"} onClose={() => setShow(false)} show={show} delay={3000} autohide>
-                <Toast.Header>
-                    <strong className="mx-auto">{toastMessage}</strong>
-                </Toast.Header>
-            </Toast>
-            <Card className="text-center w-50 mx-auto">
-                <Card.Body>
+            <div className={"d-flex flex-column justify-content-center"} style={{height: '60px'}}>
+                <Toast className={"mx-auto"} onClose={() => setShow(false)} show={show} delay={3000} autohide>
+                    <Toast.Body>
+                        <strong>{toastMessage}</strong>
+                    </Toast.Body>
+                </Toast>
+            </div>
+            <Card className="mx-auto w-50">
+                <Card.Body className={"d-flex flex-column h-50 justify-content-center"}>
                     {
                         isSignUp
                             ? signUpHeaders()
