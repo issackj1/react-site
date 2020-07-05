@@ -16,7 +16,6 @@
             ],
             "command": null,
             "linuxParameters": null,
-            "cpu": 256,
             "environment": [],
             "resourceRequirements": null,
             "ulimits": null,
@@ -25,7 +24,6 @@
             "workingDirectory": null,
             "secrets": null,
             "dockerSecurityOptions": null,
-            "memory": 256,
             "memoryReservation": null,
             "volumesFrom": [],
             "stopTimeout": null,
@@ -58,7 +56,6 @@
         "EC2"
     ],
     "networkMode": null,
-    "cpu": "",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,
     "volumes": []
