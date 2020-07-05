@@ -23,7 +23,6 @@ export const Api: React.FC<Props> = () => {
                     setAuthenticated(true)
                 },
                 (error: any) => {
-                    console.log('you need to log in bro')
                 }
             );
     }
