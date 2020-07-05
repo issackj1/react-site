@@ -5,7 +5,7 @@ import { Figure } from 'react-bootstrap'
 interface Props {
 }
 
-export const About: React.FC<Props> = (props) => {
+export const About: React.FC<Props> = () => {
     const profilePicture = require('../images/IMG_4774.JPG');
     return (
         <div className={"container"} id={"about"}>
@@ -19,8 +19,10 @@ export const About: React.FC<Props> = (props) => {
                     rounded
                 />
                 <Figure.Caption>
-                    <h5>Hi I'm Issack. I am a fourth-year computer science student at the University of Calgary. I have experience
-                        working with agile teams and participating in all steps of the software development cycle. I am fueled by
+                    <h5>Hi I'm Issack. I am a fourth-year computer science student at the University of Calgary. I have
+                        experience
+                        working with agile teams and participating in all stages of the software development cycle. I am
+                        fueled by
                         my passion for tackling and solving difficult problems.</h5>
                 </Figure.Caption>
             </Figure>
