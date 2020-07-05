@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import '../App.css';
+import '../../App.css';
 import { Card, Toast } from "react-bootstrap";
-import { LoginForm } from "./forms/LoginForm";
-import { SignUpForm } from "./forms/SignUpForm";
+import { LoginForm } from "../forms/LoginForm";
+import { SignUpForm } from "../forms/SignUpForm";
 
 const axios = require('axios');
 
@@ -10,7 +10,7 @@ interface Props {
     setAuthenticated: () => any
 }
 
-export const ApiLogin: React.FC<Props> = ({ setAuthenticated }) => {
+export const Auth: React.FC<Props> = ({ setAuthenticated }) => {
 
     const [show, setShow] = useState(false);
     const [toastMessage, setToastMessage] = useState('Item already exists');

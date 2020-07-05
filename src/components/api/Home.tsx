@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import '../App.css';
+import '../../App.css';
 import { BasicForm } from "./forms/BasicForm";
 import { Card, CardColumns, Col, Row, Toast } from "react-bootstrap";
 
@@ -10,7 +10,7 @@ interface Props {
 
 }
 
-export const ApiHome: React.FC<Props> = () => {
+export const Home: React.FC<Props> = () => {
 
     const [response, setResponse] = useState([]);
     const [show, setShow] = useState(false);
