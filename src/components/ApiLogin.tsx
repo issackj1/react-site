@@ -75,7 +75,7 @@ export const ApiLogin: React.FC<Props> = ({ setAuthenticated }) => {
         <>
             <Toast className={"mx-auto"} onClose={() => setShow(false)} show={show} delay={3000} autohide>
                 <Toast.Header>
-                    <strong className="mr-auto">{toastMessage}</strong>
+                    <strong className="mx-auto">{toastMessage}</strong>
                 </Toast.Header>
             </Toast>
             <Card className="text-center w-50 mx-auto">
