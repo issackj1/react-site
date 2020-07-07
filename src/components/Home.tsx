@@ -33,7 +33,6 @@ export const Home: React.FC<Props> = (props) => {
 
     const [parallax, setParallax] = useState(React.createRef);
 
-    // @ts-ignore
     const springProps = useSpring<useSpringProps>({
         config: config.slow,
         delay: 300,
@@ -43,7 +42,6 @@ export const Home: React.FC<Props> = (props) => {
         },
     });
 
-    // @ts-ignore
     const aProps = useSpring({
         config: config.slow,
         delay: 2000,
