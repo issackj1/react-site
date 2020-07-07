@@ -14,7 +14,10 @@
                     "containerPort": 80
                 }
             ],
-            "command": null,
+            "command": [
+                "CMD",
+                "nginx -g daemon off;"
+            ],
             "linuxParameters": null,
             "environment": [],
             "resourceRequirements": null,
