@@ -3,6 +3,7 @@ export const HackathonTwo = require('./json/NSBEHacks2020');
 export const ProjectOne = require('./json/Shuffl');
 export const ProjectTwo = require('./json/AstroJump');
 export const NoProject = require('./json/NoProject');
+export const AboutContent = require('./json/About.json');
 export const navProps = {
     dropDownLinks: [
         {title: 'Starter Hacks 2020', path: '/project/starterhacks2020'},
