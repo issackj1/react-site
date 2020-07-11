@@ -3,18 +3,22 @@ import React, { useState } from 'react';
 import '../../App.css';
 import { BasicForm } from "../forms/BasicForm";
 import { Card, CardColumns, Col, Row, Toast } from "react-bootstrap";
+import { Button, SvgIcon } from "@material-ui/core";
+import { ExitToApp } from "@material-ui/icons";
 
 const axios = require('axios');
 
 interface Props {
-
+    setAuthenticated: () => any
 }
 
-export const Home: React.FC<Props> = () => {
+export const Home: React.FC<Props> = (props) => {
+
+    const { setAuthenticated } = props;
 
     const [response, setResponse] = useState([]);
     const [show, setShow] = useState(false);
-    const [toastMessage, setToastMessage] = useState('Item already exists');
+    const [toastMessage, setToastMessage] = useState('');
 
     const handleSubmit = (id) => {
         axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + id)
@@ -41,8 +45,21 @@ export const Home: React.FC<Props> = () => {
             );
     };
 
+    const handleLogout = () => {
+        localStorage.removeItem('my-jwt');
+        setAuthenticated()
+    }
+
     return (
         <>
+            <Row className={"d-flex justify-content-end"}>
+                <Col className={"col-1"}>
+                    <Button variant="contained" color="primary" startIcon={<SvgIcon component={ExitToApp}/>}
+                            onClick={handleLogout}>
+                        Logout
+                    </Button>
+                </Col>
+            </Row>
             <Row style={{ height: '50px' }}>
                 <Col className={"d-flex justify-content-center"}>
                     <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
