@@ -57,7 +57,7 @@ export const Api: React.FC<Props> = () => {
                     </div>
                 )
                 : authenticated
-                    ? <Home/>
+                    ? <Home setAuthenticated={() => setAuthenticated(false)}/>
                     : <Auth setAuthenticated={() => setAuthenticated(true)}/>
             }
         </div>
