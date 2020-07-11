@@ -1,0 +1,23 @@
+{
+  "title": "MY SPECIALTY",
+  "subtitle": "My Skills",
+  "languages": [
+    "Java",
+    "JavaScript",
+    "Python",
+    "C++",
+    "c"
+  ],
+  "libraries": [
+    "React"
+  ],
+  "frameworks": [
+    "Django",
+    "Express.js"
+  ],
+  "databases": [
+    "MongoDB",
+    "SQLite3",
+    "PostgreSQL"
+  ]
+}

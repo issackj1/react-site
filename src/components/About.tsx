@@ -10,7 +10,7 @@ interface Props {
 export const About: React.FC<Props> = () => {
     const profilePicture = require("../images/IMG_4774.JPG");
     return (
-        <div className={"container d-flex flex-column justify-content-around"} id={"about"}>
+        <div className={"container"} id={"about"}>
             <Row>
                 <Col>
                     <Typography variant={"h2"}>{AboutContent.title}</Typography>
