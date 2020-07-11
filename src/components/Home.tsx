@@ -75,7 +75,6 @@ export const Home: React.FC<Props> = (props) => {
     return (<div className="App">
         <Parallax pages={7} scrolling={true} ref={ref => setParallax(ref)}>
             {/*Backgrounds*/}
-
             <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#282c34' }}/>
             <ParallaxLayer offset={4} speed={1} style={{ backgroundColor: '#282c34' }}/>
             <ParallaxLayer offset={6} speed={1} style={{ backgroundColor: '#282c34' }}/>
