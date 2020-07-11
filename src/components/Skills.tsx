@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
-import {Col, Row} from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import { SkillsContent } from "../constants";
 
 interface Props {
 
@@ -9,32 +10,39 @@ interface Props {
 export const Skills: React.FC<Props> = () => {
     return (
         <div className={"container"} id={"skills"}>
-            <h1>MY SPECIALTY</h1>
-            <h5>My Skills</h5>
+            <h1>{SkillsContent.title}</h1>
+            <h5>{SkillsContent.subtitle}</h5>
             <Row>
                 <Col>
                     <h3>Languages</h3>
                     <ul className={"list-unstyled"}>
-                        <li>Java</li>
-                        <li>Python</li>
-                        <li>C++</li>
-                        <li>C</li>
+                        {
+                            SkillsContent.languages.map((language, i) => <li key={i}>{language}</li>)
+                        }
+                    </ul>
+                </Col>
+                <Col>
+                    <h3>Libraries</h3>
+                    <ul className={"list-unstyled"}>
+                        {
+                            SkillsContent.libraries.map((library, i) => <li key={i}>{library}</li>)
+                        }
                     </ul>
                 </Col>
                 <Col>
                     <h3>Frameworks</h3>
                     <ul className={"list-unstyled"}>
-                        <li>Django</li>
-                        <li>React</li>
-                        <li>Express.js</li>
+                        {
+                            SkillsContent.frameworks.map((framework, i) => <li key={i}>{framework}</li>)
+                        }
                     </ul>
                 </Col>
                 <Col>
                     <h3>Databases</h3>
                     <ul className={"list-unstyled"}>
-                        <li>Mongodb</li>
-                        <li>SQLite3</li>
-                        <li>PostgreSQL</li>
+                        {
+                            SkillsContent.databases.map((database, i) => <li key={i}>{database}</li>)
+                        }
                     </ul>
                 </Col>
             </Row>
