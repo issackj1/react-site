@@ -15,10 +15,17 @@ export const Api: React.FC<Props> = () => {
 
     useEffect(() => {
         authenticate();
-    }, [])
+    }, [authenticated])
 
     const authenticate = () => {
-        axios.post('http://localhost:4000/api/confirm-token/')
+        axios.post('http://localhost:4000/api/confirm-token',
+            {},
+            {
+                credentials: 'include',
+                headers: {
+                    Authorization: localStorage.getItem('my-jwt')
+                }
+            })
             .then((result: any) => {
                     setAuthenticated(true)
                 },

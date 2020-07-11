@@ -24,7 +24,9 @@ export const Home: React.FC<Props> = () => {
                     } else {
                         for (let i = 0; i < result.data.length; i++) {
                             if (!response.some(e => e.object.productId === result.data[i].object.productId)) {
-                                setResponse([...response, result.data[i]])
+                                setResponse(prevState => {
+                                    return { ...prevState, ...result.data[i] }
+                                })
                             } else {
                                 setToastMessage('Item already exists');
                                 setShow(true)

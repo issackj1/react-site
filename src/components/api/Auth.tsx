@@ -21,9 +21,11 @@ export const Auth: React.FC<Props> = ({ setAuthenticated }) => {
             {
                 email: email,
                 password: password
-            })
+            },
+            { withCredentials: true })
             .then((result: any) => {
-                    setAuthenticated()
+                    localStorage.setItem('my-jwt', result.data.token);
+                    setAuthenticated();
                 },
                 (error: any) => {
                     setToastMessage("Incorrect email or password");
@@ -40,6 +42,7 @@ export const Auth: React.FC<Props> = ({ setAuthenticated }) => {
                 password: password
             })
             .then((result: any) => {
+                    localStorage.setItem('my-jwt', result.data.token);
                     setAuthenticated()
                 },
                 (error: any) => {
