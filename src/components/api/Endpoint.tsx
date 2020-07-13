@@ -5,8 +5,6 @@ import { useParams } from "react-router-dom";
 import { GetCubeMetaData } from "../forms/GetCubeMetaData";
 
 interface Props {
-	// title: string,
-	// form: any
 }
 
 
@@ -34,7 +32,6 @@ const getProps = (name: string) => {
 
 export const Endpoint: React.FC<Props> = (props) => {
 
-	// const { title, form } = props;
 	const { name } = useParams();
 	const { title, form } = getProps(name);
 

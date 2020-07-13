@@ -46,7 +46,7 @@ export const Api: React.FC<Props> = () => {
 	}, [authenticated])
 
 	return (
-		<>
+		<div className={"container d-flex flex-column justify-content-center h-100"}>
 			{
 				isLoading
 					? (<div>
@@ -64,6 +64,6 @@ export const Api: React.FC<Props> = () => {
 						</Switch>
 					)
 			}
-		</>
+		</div>
 	);
 };
