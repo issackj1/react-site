@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import '../App.css';
 import { Col, Figure, Row } from 'react-bootstrap'
