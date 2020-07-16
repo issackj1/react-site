@@ -35,7 +35,7 @@ export const Welcome: React.FC<Props> = (props) => {
 				</Col>
 			</Row>
 			<Row className={"d-flex flex-grow-1"}>
-				<Col className={ "d-flex flex-column justify-content-center container" }>
+				<Col className={ "d-flex flex-row justify-content-center" }>
 					<Home/>
 				</Col>
 			</Row>
