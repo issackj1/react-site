@@ -3,7 +3,7 @@ import React from 'react';
 import '../../App.css';
 import { Home } from "./Home";
 import { Col, Row } from "react-bootstrap";
-import { Button, SvgIcon } from "@material-ui/core";
+import { Button, SvgIcon, Typography } from "@material-ui/core";
 import { ExitToApp } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
 
@@ -20,16 +20,25 @@ export const Welcome: React.FC<Props> = (props) => {
 	}
 
 	return (
-		<Row className={"d-flex flex-column"}>
-			<Col className={ "d-flex justify-content-end"}>
-				<Button variant="contained" color="primary" startIcon={ <SvgIcon component={ ExitToApp }/> }
-				        onClick={ handleLogout }>
-					Logout
-				</Button>
-			</Col>
-			<Col md={ 11 } className={ "container d-flex text-center flex-column justify-content-center h-100 m-auto" }>
-				<Home/>
-			</Col>
-		</Row>
+		<>
+			<Row>
+				<Col className={ "d-flex justify-content-end" }>
+					<Button variant="contained" color="primary" startIcon={ <SvgIcon component={ ExitToApp }/> }
+					        onClick={ handleLogout }>
+						Logout
+					</Button>
+				</Col>
+			</Row>
+			<Row>
+				<Col className={"d-flex justify-content-center"}>
+					<Typography variant={ "h3" }>What would you like to do?</Typography>
+				</Col>
+			</Row>
+			<Row className={"d-flex flex-grow-1"}>
+				<Col className={ "d-flex flex-column justify-content-center container" }>
+					<Home/>
+				</Col>
+			</Row>
+		</>
 	)
 };

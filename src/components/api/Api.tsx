@@ -48,29 +48,33 @@ export const Api: React.FC<Props> = () => {
 	}, [authenticated])
 
 	return (
-		<Row className={"d-flex flex-column"}>
-			<Col>
-				<SimpleNavBar/>
-			</Col>
-			<Col md={12}>
-				{
-					isLoading
-						? (<div>
-								<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
-								      unmountOnExit>
-									<CircularProgress/>
-								</Fade>
-							</div>
-						)
-						: (
-							<Switch>
-								<Route path={ "/api/auth" } component={ Auth } authenticated={ authenticated }/>
-								<PrivateRoute path={ "/api/:name" } component={ Endpoint }/>
-								<PrivateRoute path={ "/" } component={ Welcome }/>
-							</Switch>
-						)
-				}
-			</Col>
-		</Row>
+		<div className={ "d-flex flex-column h-100" }>
+			<Row>
+				<Col>
+					<SimpleNavBar/>
+				</Col>
+			</Row>
+			<Row className={"flex-grow-1"}>
+				<Col className={"d-flex flex-column"}>
+					{
+						isLoading
+							? (<div>
+									<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
+									      unmountOnExit>
+										<CircularProgress/>
+									</Fade>
+								</div>
+							)
+							: (
+								<Switch>
+									<Route path={ "/api/auth" } component={ Auth } authenticated={ authenticated }/>
+									<PrivateRoute path={ "/api/:name" } component={ Endpoint }/>
+									<PrivateRoute path={ "/" } component={ Welcome }/>
+								</Switch>
+							)
+					}
+				</Col>
+			</Row>
+		</div>
 	);
 };
