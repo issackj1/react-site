@@ -11,7 +11,7 @@ interface Props {
 export const Home: React.FC<Props> = (props) => {
 
 	return (
-		<Row>
+		<Row className={ "m-auto d-flex align-items-stretch justify-content-around" }>
 			<Col>
 				<ApiCard title={ "See All Tables" }
 				         description={ "Complete inventory of data tables available through this Statistics Canada API" }

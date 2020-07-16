@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 		minWidth: 275,
 	},
 	title: {
-		fontSize: 24,
+		fontSize: 32,
 	}
 });
 
