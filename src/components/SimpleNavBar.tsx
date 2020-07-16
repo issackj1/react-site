@@ -7,7 +7,7 @@ interface Props {
 
 const logo = require('../logo.jpg');
 
-export const ProjectNavBar: React.FC<Props> = () => {
+export const SimpleNavBar: React.FC<Props> = () => {
 	return (
 		<Navbar bg="light" expand="lg">
 			<Navbar.Brand href="/"><img

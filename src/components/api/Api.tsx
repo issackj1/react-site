@@ -6,6 +6,7 @@ import { CircularProgress, Fade } from "@material-ui/core";
 import { Auth } from "./Auth";
 import { PrivateRoute } from "./PrivateRoute";
 import { Endpoint } from "./Endpoint";
+import { SimpleNavBar } from "../SimpleNavBar";
 
 const axios = require('axios');
 
@@ -45,25 +46,27 @@ export const Api: React.FC<Props> = () => {
 		setIsLoading(false)
 	}, [authenticated])
 
-	return (
-		<div className={"container d-flex flex-column justify-content-center h-100"}>
-			{
-				isLoading
-					? (<div>
-							<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
-							      unmountOnExit>
-								<CircularProgress/>
-							</Fade>
-						</div>
-					)
-					: (
-						<Switch>
-							<Route path={ "/api/auth" } component={ Auth } authenticated={ authenticated }/>
-							<PrivateRoute path={ "/api/:name" } component={ Endpoint }/>
-							<PrivateRoute path={ "/" } component={ Welcome }/>
-						</Switch>
-					)
-			}
-		</div>
+	return (<>
+			<SimpleNavBar/>
+			<div className={ "container d-flex flex-column justify-content-center h-100" }>
+				{
+					isLoading
+						? (<div>
+								<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
+								      unmountOnExit>
+									<CircularProgress/>
+								</Fade>
+							</div>
+						)
+						: (
+							<Switch>
+								<Route path={ "/api/auth" } component={ Auth } authenticated={ authenticated }/>
+								<PrivateRoute path={ "/api/:name" } component={ Endpoint }/>
+								<PrivateRoute path={ "/" } component={ Welcome }/>
+							</Switch>
+						)
+				}
+			</div>
+		</>
 	);
 };

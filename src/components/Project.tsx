@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
-import { ProjectNavBar } from "./ProjectNavBar";
+import { SimpleNavBar } from "./SimpleNavBar";
 import { useParams } from "react-router-dom";
 import { HackathonOne, HackathonTwo, NoProject, ProjectOne, ProjectTwo } from "../constants";
 
@@ -41,7 +41,7 @@ export const Project: React.FC<Props> = () => {
 	} = getProps(name);
 
 	return (<div>
-		<ProjectNavBar/>
+		<SimpleNavBar/>
 		<Container>
 			<Row>
 				<Col>
