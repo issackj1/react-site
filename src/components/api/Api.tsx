@@ -108,7 +108,7 @@ export const Api: React.FC<Props> = () => {
 							)
 							: (
 								<Switch>
-									<Route path={ "/api/auth" } component={ Auth } authenticated={ authenticated }/>
+									<Route path={ "/api/auth" } component={ Auth }/>
 									<PrivateRoute path={ "/api/:name" } component={ Endpoint }/>
 									<PrivateRoute path={ "/" } component={ Welcome }/>
 								</Switch>

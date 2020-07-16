@@ -1,10 +1,10 @@
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../App.css';
 import { Card, Col, Row, Toast } from "react-bootstrap";
 import { LoginForm } from "../forms/LoginForm";
 import { SignUpForm } from "../forms/SignUpForm";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const axios = require('axios');
 
@@ -12,12 +12,19 @@ interface Props {
 	setIsLoading: () => any
 }
 
-export const Auth: React.FC<Props> = () => {
+export const Auth: React.FC<Props> = (props) => {
 
+	const { authenticated } = props;
 	const [show, setShow] = useState(false);
 	const [toastMessage, setToastMessage] = useState('');
 	const [isSignUp, setIsSignUp] = useState(false);
 	const history = useHistory();
+
+	useEffect(() => {
+		if (localStorage.getItem('my-jwt')) {
+			history.push("/api")
+		}
+	})
 
 	const handleLogIn = async (email: String, password: String) => {
 		await axios.post('http://localhost:4000/api/login/',
@@ -84,7 +91,8 @@ export const Auth: React.FC<Props> = () => {
 						{
 							toastMessage
 								? (
-									<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show } delay={ 3000 }
+									<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show }
+									       delay={ 3000 }
 									       autohide>
 										<Toast.Body>
 											<strong>{ toastMessage }</strong>
@@ -97,7 +105,7 @@ export const Auth: React.FC<Props> = () => {
 				</Col>
 			</Row>
 			<Row>
-				<Col md={5} className={"m-auto"}>
+				<Col md={ 5 } className={ "m-auto" }>
 					<Card className="mx-auto" style={ { minWidth: '50%' } }>
 						<Card.Body className={ "d-flex flex-column justify-content-around" }>
 							{
