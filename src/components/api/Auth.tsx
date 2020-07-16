@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useState } from 'react';
 import '../../App.css';
-import { Card, Toast } from "react-bootstrap";
+import { Card, Col, Row, Toast } from "react-bootstrap";
 import { LoginForm } from "../forms/LoginForm";
 import { SignUpForm } from "../forms/SignUpForm";
 import {useHistory} from "react-router-dom";
@@ -78,29 +78,37 @@ export const Auth: React.FC<Props> = () => {
 
 	return (
 		<>
-			<div className={ "d-flex flex-column justify-content-center" } style={ { height: '50px' } }>
-				{
-					toastMessage
-						? (
-							<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show } delay={ 3000 }
-							       autohide>
-								<Toast.Body>
-									<strong>{ toastMessage }</strong>
-								</Toast.Body>
-							</Toast>
-						)
-						: null
-				}
-			</div>
-			<Card className="mx-auto" style={ { minWidth: '50%' } }>
-				<Card.Body className={ "d-flex flex-column justify-content-around" }>
-					{
-						isSignUp
-							? signUpHeaders()
-							: logInHeaders()
-					}
-				</Card.Body>
-			</Card>
+			<Row>
+				<Col>
+					<div className={ "d-flex flex-column justify-content-center mb-3" } style={ { height: '50px' } }>
+						{
+							toastMessage
+								? (
+									<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show } delay={ 3000 }
+									       autohide>
+										<Toast.Body>
+											<strong>{ toastMessage }</strong>
+										</Toast.Body>
+									</Toast>
+								)
+								: null
+						}
+					</div>
+				</Col>
+			</Row>
+			<Row>
+				<Col md={5} className={"m-auto"}>
+					<Card className="mx-auto" style={ { minWidth: '50%' } }>
+						<Card.Body className={ "d-flex flex-column justify-content-around" }>
+							{
+								isSignUp
+									? signUpHeaders()
+									: logInHeaders()
+							}
+						</Card.Body>
+					</Card>
+				</Col>
+			</Row>
 		</>
 	);
 };

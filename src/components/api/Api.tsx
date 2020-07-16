@@ -55,7 +55,7 @@ export const Api: React.FC<Props> = () => {
 				</Col>
 			</Row>
 			<Row className={"flex-grow-1"}>
-				<Col className={"d-flex flex-column"}>
+				<Col className={"d-flex flex-column justify-content-center"}>
 					{
 						isLoading
 							? (<div>
