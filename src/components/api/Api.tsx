@@ -7,6 +7,7 @@ import { Auth } from "./Auth";
 import { PrivateRoute } from "./PrivateRoute";
 import { Endpoint } from "./Endpoint";
 import { SimpleNavBar } from "../SimpleNavBar";
+import { Col, Row } from "react-bootstrap";
 
 const axios = require('axios');
 
@@ -46,9 +47,12 @@ export const Api: React.FC<Props> = () => {
 		setIsLoading(false)
 	}, [authenticated])
 
-	return (<>
-			<SimpleNavBar/>
-			<div className={ "container d-flex flex-column justify-content-center h-100" }>
+	return (
+		<Row className={"d-flex flex-column"}>
+			<Col>
+				<SimpleNavBar/>
+			</Col>
+			<Col md={12}>
 				{
 					isLoading
 						? (<div>
@@ -66,7 +70,7 @@ export const Api: React.FC<Props> = () => {
 							</Switch>
 						)
 				}
-			</div>
-		</>
+			</Col>
+		</Row>
 	);
 };

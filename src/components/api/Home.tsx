@@ -15,10 +15,10 @@ export const Home: React.FC<Props> = (props) => {
 		<>
 			<Row>
 				<Col>
-					<Typography variant={ "h4" }>What would you like to do?</Typography>
+					<Typography variant={ "h3" }>What would you like to do?</Typography>
 				</Col>
 			</Row>
-			<Row>
+			<Row className={"flex-row justify-content-center"}>
 				<Col>
 					<ApiCard title={ "See All Tables" }
 					         description={ "Complete inventory of data tables available through this Statistics Canada API" }

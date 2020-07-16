@@ -20,18 +20,16 @@ export const Welcome: React.FC<Props> = (props) => {
 	}
 
 	return (
-		<>
-			<Row className={ "d-flex justify-content-end" }>
-				<Col className={ "col-1" }>
-					<Button variant="contained" color="primary" startIcon={ <SvgIcon component={ ExitToApp }/> }
-					        onClick={ handleLogout }>
-						Logout
-					</Button>
-				</Col>
-			</Row>
-			<div className={ "container d-flex text-center justify-content-around flex-column h-100 m-auto" }>
+		<Row className={"d-flex flex-column"}>
+			<Col className={ "d-flex justify-content-end"}>
+				<Button variant="contained" color="primary" startIcon={ <SvgIcon component={ ExitToApp }/> }
+				        onClick={ handleLogout }>
+					Logout
+				</Button>
+			</Col>
+			<Col md={ 11 } className={ "container d-flex text-center flex-column justify-content-center h-100 m-auto" }>
 				<Home/>
-			</div>
-		</>
+			</Col>
+		</Row>
 	)
 };
