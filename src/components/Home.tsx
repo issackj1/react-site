@@ -94,6 +94,11 @@ export const Home: React.FC<Props> = (props) => {
                     </animated.a>
                 </header>
             </ParallaxLayer>
+
+            <ParallaxLayer offset={0} speed={2} factor={1 / 6}>
+                <NavBar  {...props} parallax={parallax}/>
+            </ParallaxLayer>
+
             <ParallaxLayer
                 offset={1} speed={0.5} onClick={() => parallax.scrollTo(2)}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -120,9 +125,7 @@ export const Home: React.FC<Props> = (props) => {
                 <Contact/>
             </ParallaxLayer>
 
-            <ParallaxLayer offset={0} speed={2} factor={1 / 6}>
-                <NavBar  {...props} parallax={parallax}/>
-            </ParallaxLayer>
+
 
             {/*buttons*/}
             {buttons.map((object, i) => <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
