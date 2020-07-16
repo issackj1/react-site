@@ -12,7 +12,7 @@ const schema = Yup.object({
 	productId: Yup.number().required('Id must be 8 digits long')
 });
 
-export const GetCubeMetaData: React.FC<Props> = (props) => {
+export const GetAllCubes: React.FC<Props> = (props) => {
 
 	const [response, setResponse] = useState([]);
 

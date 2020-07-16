@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import '../../App.css';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import { Welcome } from "./Welcome";
-import { CircularProgress, Fade } from "@material-ui/core";
+import { Button, CircularProgress, Fade, SvgIcon } from "@material-ui/core";
 import { Auth } from "./Auth";
 import { PrivateRoute } from "./PrivateRoute";
 import { Endpoint } from "./Endpoint";
 import { SimpleNavBar } from "../SimpleNavBar";
 import { Col, Row } from "react-bootstrap";
+import { ExitToApp, NavigateBefore } from "@material-ui/icons";
 
 const axios = require('axios');
 
@@ -20,6 +21,17 @@ export const Api: React.FC<Props> = () => {
 	const [authenticated, setAuthenticated] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isError, setIsError] = useState(false);
+	const history = useHistory();
+
+	const goBack = () => {
+		history.goBack()
+	}
+
+	const handleLogout = () => {
+		localStorage.removeItem('my-jwt');
+		setAuthenticated(false);
+		history.push("/api");
+	}
 
 	const authenticate = async () => {
 		setIsLoading(true)
@@ -45,7 +57,9 @@ export const Api: React.FC<Props> = () => {
 				(error: any) => setIsError(true))
 		}
 		setIsLoading(false)
-	}, [authenticated])
+	})
+
+	const noBackButton = ["/api", "/api/auth"]
 
 	return (
 		<div className={ "d-flex flex-column h-100" }>
@@ -54,8 +68,35 @@ export const Api: React.FC<Props> = () => {
 					<SimpleNavBar/>
 				</Col>
 			</Row>
-			<Row className={"flex-grow-1"}>
-				<Col className={"d-flex flex-column justify-content-center"}>
+			<Row>
+				{
+					noBackButton.indexOf(history.location.pathname) === -1
+						? (
+							<Col className={ "d-flex justify-content-start" }>
+								<Button variant="contained" color="primary"
+								        startIcon={ <SvgIcon component={ NavigateBefore }/> } onClick={ goBack }>
+									Back
+								</Button>
+							</Col>
+						)
+						: null
+				}
+				{
+					authenticated
+						? (
+							<Col className={ "d-flex justify-content-end" }>
+
+								<Button variant="contained" color="primary"
+								        startIcon={ <SvgIcon component={ ExitToApp }/> } onClick={ handleLogout }>
+									Logout
+								</Button>
+							</Col>
+						)
+						: null
+				}
+			</Row>
+			<Row className={ "flex-grow-1" }>
+				<Col className={ "d-flex flex-column justify-content-center" }>
 					{
 						isLoading
 							? (<div>

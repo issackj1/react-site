@@ -3,6 +3,8 @@ import React from 'react';
 import { Col, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { GetCubeMetaData } from "../forms/GetCubeMetaData";
+import { GetAllCubes } from "../forms/GetAllCubes";
+
 
 interface Props {
 }
@@ -14,7 +16,7 @@ const getProps = (name: string) => {
 	switch ( name ) {
 		case  "seeAll":
 			title = 'See All Tables';
-			form = <GetCubeMetaData/>;
+			form = <GetAllCubes/>;
 			break;
 		case "searchAll":
 			title = 'Search All Tables';
@@ -38,12 +40,15 @@ export const Endpoint: React.FC<Props> = (props) => {
 	return (
 		<>
 			<Row>
-				<Col>
+
+			</Row>
+			<Row>
+				<Col className={ "d-flex justify-content-center" }>
 					{ title }
 				</Col>
 			</Row>
 			<Row>
-				<Col>
+				<Col className={ "d-flex justify-content-center" }>
 					{ form }
 				</Col>
 			</Row>
