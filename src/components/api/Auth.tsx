@@ -5,6 +5,7 @@ import { Card, Col, Row, Toast } from "react-bootstrap";
 import { LoginForm } from "../forms/LoginForm";
 import { SignUpForm } from "../forms/SignUpForm";
 import { useHistory } from "react-router-dom";
+import { Typography } from "@material-ui/core";
 
 const axios = require('axios');
 
@@ -62,7 +63,11 @@ export const Auth: React.FC<Props> = () => {
 	const signUpHeaders = () =>
 		(
 			<>
-				<Card.Title><h1>Sign Up</h1></Card.Title>
+				<Card.Title>
+					<Typography color={ "textPrimary" } variant="h4" component="h1" gutterBottom
+					            align={ "center" }>
+						Sign Up</Typography>
+				</Card.Title>
 				<SignUpForm
 					handleSubmit={ (username, email, password) => handleSignUp(username, email, password) }
 					toggleSignUp={ () => setIsSignUp(false) }
@@ -73,7 +78,11 @@ export const Auth: React.FC<Props> = () => {
 	const logInHeaders = () =>
 		(
 			<>
-				<Card.Title><h1>Login</h1></Card.Title>
+				<Card.Title>
+					<Typography color={ "textPrimary" } variant="h4" component="h1" gutterBottom
+					            align={ "center" }>
+						Login</Typography>
+				</Card.Title>
 				<LoginForm
 					handleSubmit={ (email, password) => handleLogIn(email, password) }
 					toggleSignUp={ () => setIsSignUp(true) }
@@ -103,7 +112,7 @@ export const Auth: React.FC<Props> = () => {
 				</Col>
 			</Row>
 			<Row>
-				<Col md={ 5 } className={ "m-auto" }>
+				<Col className={ "m-auto" }>
 					<Card className="mx-auto" style={ { minWidth: '50%' } }>
 						<Card.Body className={ "d-flex flex-column justify-content-around" }>
 							{

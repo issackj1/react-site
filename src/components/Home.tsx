@@ -11,6 +11,7 @@ import { Experience } from "./Experience";
 import { Extracurricular } from "./Extracurricular";
 import { Contact } from "./Contact";
 import { Button } from "react-bootstrap";
+import { makeStyles } from "@material-ui/core/styles";
 
 interface Props {
     dropDownLinks: link[],
@@ -32,6 +33,12 @@ interface useSpringProps {
 export const Home: React.FC<Props> = (props) => {
 
     const [parallax, setParallax] = useState(React.createRef);
+
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            margin: theme.spacing(6, 0, 3),
+        },
+    }));
 
     const springProps = useSpring<useSpringProps>({
         config: config.slow,
@@ -72,7 +79,7 @@ export const Home: React.FC<Props> = (props) => {
     // const imageOne = require('../images/image_two.jpg');
     //style={{backgroundImage: `url(${imageOne})`}}
 
-    return (<div className="App">
+    return (<>
         <Parallax pages={7} scrolling={true} ref={ref => setParallax(ref)}>
             {/*Backgrounds*/}
             <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#282c34' }}/>
@@ -134,5 +141,5 @@ export const Home: React.FC<Props> = (props) => {
                 </span>
             </ParallaxLayer>)}
         </Parallax>
-    </div>)
+    </>)
 };

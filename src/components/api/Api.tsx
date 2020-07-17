@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../../App.css';
 import { Route, Switch, useHistory } from "react-router-dom";
 import { Welcome } from "./Welcome";
-import { Button, CircularProgress, Fade, SvgIcon } from "@material-ui/core";
+import { Box, Button, CircularProgress, Container, Fade, SvgIcon } from "@material-ui/core";
 import { Auth } from "./Auth";
 import { PrivateRoute } from "./PrivateRoute";
 import { Endpoint } from "./Endpoint";
@@ -107,11 +107,16 @@ export const Api: React.FC<Props> = () => {
 								</div>
 							)
 							: (
-								<Switch>
-									<Route path={ "/api/auth" } component={ Auth }/>
-									<PrivateRoute path={ "/api/:name" } component={ Endpoint }/>
-									<PrivateRoute path={ "/" } component={ Welcome }/>
-								</Switch>
+								<Container maxWidth="sm">
+									<Box my={20}>
+										<Switch>
+											<Route path={ "/api/auth" } component={ Auth }/>
+											<PrivateRoute path={ "/api/:name" } component={ Endpoint }/>
+											<PrivateRoute path={ "/" } component={ Welcome }/>
+										</Switch>
+									</Box>
+								</Container>
+
 							)
 					}
 				</Col>

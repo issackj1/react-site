@@ -13,6 +13,7 @@ interface Props {
 const useStyles = makeStyles({
 	root: {
 		minWidth: 275,
+		height: 100
 	},
 	title: {
 		fontSize: 32,

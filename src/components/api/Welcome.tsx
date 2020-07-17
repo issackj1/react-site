@@ -12,11 +12,8 @@ export const Welcome: React.FC<Props> = (props) => {
 
 	return (
 		<>
-			<Row>
-				<Col className={ "d-flex justify-content-center" }>
-					<Typography variant={ "h3" }>What would you like to do?</Typography>
-				</Col>
-			</Row>
+			<Typography color={ "textPrimary" } component={"h5"} variant={ "h2" } align={ "center" }>What would you like to
+				do?</Typography>
 			<Row className={ "d-flex flex-grow-1" }>
 				<Col className={ "d-flex flex-row justify-content-center" }>
 					<Home/>
