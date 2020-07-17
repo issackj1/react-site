@@ -23,19 +23,18 @@ export const GetCubeMetaData: React.FC<Props> = () => {
 	const [show, setShow] = useState(false);
 
 	const handleSubmit = async (id: string) => {
+		if (response.productId === id) {
+			setToastMessage('Item already exists');
+			setShow(true);
+			return
+		}
 		setIsLoading(true);
 		await axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + id)
 			.then((result: any) => {
 					if (result.data.status === 'FAILED') {
 						setResponse(result.data.object.split('.')[0]);
 					} else {
-						// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-						response.productId !== result.data.object.productId
-							? setResponse(result.data.object)
-							: [
-								setToastMessage('Item already exists'),
-								setShow(true)
-							]
+						setResponse(result.data.object)
 					}
 				},
 				(error: { message: any; }) => {
@@ -56,43 +55,46 @@ export const GetCubeMetaData: React.FC<Props> = () => {
 
 	return (
 		<>
-			<Formik
-				initialValues={ { productId: '' } }
-				validationSchema={ schema }
-				onSubmit={ (values, { setSubmitting }) => {
-					setTimeout(() => {
-						handleSubmit(values.productId);
-						setSubmitting(false);
-					}, 400);
-				} }>
-				{ ({ isSubmitting }) => (
-					<Form>
-						<Field component={ TextField } name="productId" label={ "Product Id" } variant="standard"
-						       InputProps={ { notched: true } }/>
-						<Button className={ "mt-2 ml-1" } variant="contained" type="submit" color={ "primary" }
-						        disabled={ isSubmitting }>
-							Submit
-						</Button>
-					</Form>
-				) }
-			</Formik>
 			<Row>
-				<Col>
-					<div className={ "d-flex flex-column justify-content-center mb-3" } style={ { height: '50px' } }>
-						{
-							toastMessage
-								? (
-									<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show }
-									       delay={ 3000 }
-									       autohide>
-										<Toast.Body>
-											<strong>{ toastMessage }</strong>
-										</Toast.Body>
-									</Toast>
-								)
-								: null
-						}
-					</div>
+				<Col className={ "d-flex justify-content-center" }>
+					<Formik
+						initialValues={ { productId: '' } }
+						validationSchema={ schema }
+						onSubmit={ (values, { setSubmitting }) => {
+							setTimeout(() => {
+								handleSubmit(values.productId);
+								setSubmitting(false);
+							}, 400);
+						} }>
+						{ ({ isSubmitting }) => (
+							<Form>
+								<Field component={ TextField } name="productId" label={ "Product Id" }
+								       variant="standard"
+								       InputProps={ { notched: true } }/>
+								<Button className={ "mt-2 ml-1" } variant="contained" type="submit" color={ "primary" }
+								        disabled={ isSubmitting }>
+									Submit
+								</Button>
+							</Form>
+						) }
+					</Formik>
+				</Col>
+			</Row>
+			<Row>
+				<Col className={ "d-flex justify-content-center mb-3" } style={ { height: '50px' } }>
+					{
+						toastMessage
+							? (
+								<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show }
+								       delay={ 3000 }
+								       autohide>
+									<Toast.Body>
+										<strong>{ toastMessage }</strong>
+									</Toast.Body>
+								</Toast>
+							)
+							: null
+					}
 				</Col>
 			</Row>
 			<Row>

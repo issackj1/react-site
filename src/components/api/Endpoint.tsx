@@ -47,7 +47,7 @@ export const Endpoint: React.FC<Props> = (props) => {
 				</Col>
 			</Row>
 			<Row>
-				<Col className={ "d-flex flex-column justify-content-center" }>
+				<Col className={ "d-flex flex-column" }>
 					{ form }
 				</Col>
 			</Row>
