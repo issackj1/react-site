@@ -4,9 +4,13 @@ import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { TextField } from "formik-material-ui";
 import { Button } from "@material-ui/core";
+import { Col, Row } from "react-bootstrap";
 
 interface Props {
+
 }
+
+const axios = require('axios');
 
 const schema = Yup.object({
 	productId: Yup.number().required('Id must be 8 digits long')
@@ -15,17 +19,21 @@ const schema = Yup.object({
 export const GetAllCubes: React.FC<Props> = (props) => {
 
 	const [response, setResponse] = useState([]);
+	const [toastMessage, setToastMessage] = useState('');
+	const [show, setShow] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const handleSubmit = async (id: string) => {
 		setIsLoading(true);
 		await axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + id)
 			.then((result: any) => {
+				alert(result);
 					if (result.data.status === 'FAILED') {
 						setResponse(result.data.object.split('.')[0]);
 					} else {
 						for (let i = 0; i < result.data.length; i++) {
 							// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-							!response.some(e => e.object.productId === result.data[i].object.productId)
+							!response.some(e => e.object.productId === result.data.object.productId)
 								? setResponse(prevState => ({ ...prevState, ...result.data[i] }))
 								: [
 									setToastMessage('Item already exists'),
@@ -44,6 +52,11 @@ export const GetAllCubes: React.FC<Props> = (props) => {
 
 	return (
 		<>
+			<Row>
+				<Col>
+					{ response }
+				</Col>
+			</Row>
 			<Formik
 				initialValues={ { productId: '' } }
 				validationSchema={ schema }

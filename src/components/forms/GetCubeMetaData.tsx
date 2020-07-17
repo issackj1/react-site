@@ -4,17 +4,23 @@ import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { TextField } from "formik-material-ui";
 import { Button } from "@material-ui/core";
+import { Card, Col, Row, Toast } from "react-bootstrap";
 
 interface Props {
 }
+
+const axios = require('axios');
 
 const schema = Yup.object({
 	productId: Yup.number().required('Id must be 8 digits long')
 });
 
-export const GetCubeMetaData: React.FC<Props> = (props) => {
+export const GetCubeMetaData: React.FC<Props> = () => {
 
-	const [response, setResponse] = useState([]);
+	const [response, setResponse] = useState({});
+	const [toastMessage, setToastMessage] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
+	const [show, setShow] = useState(false);
 
 	const handleSubmit = async (id: string) => {
 		setIsLoading(true);
@@ -23,15 +29,13 @@ export const GetCubeMetaData: React.FC<Props> = (props) => {
 					if (result.data.status === 'FAILED') {
 						setResponse(result.data.object.split('.')[0]);
 					} else {
-						for (let i = 0; i < result.data.length; i++) {
-							// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-							!response.some(e => e.object.productId === result.data[i].object.productId)
-								? setResponse(prevState => ({ ...prevState, ...result.data[i] }))
-								: [
-									setToastMessage('Item already exists'),
-									setShow(true)
-								]
-						}
+						// eslint-disable-next-line @typescript-eslint/no-unused-expressions
+						response.productId !== result.data.object.productId
+							? setResponse(result.data.object)
+							: [
+								setToastMessage('Item already exists'),
+								setShow(true)
+							]
 					}
 				},
 				(error: { message: any; }) => {
@@ -41,6 +45,14 @@ export const GetCubeMetaData: React.FC<Props> = (props) => {
 			);
 		setIsLoading(false);
 	};
+
+	const isEmpty = (obj) => {
+		for (var prop in obj) {
+			if (obj.hasOwnProperty(prop))
+				return false;
+		}
+		return true;
+	}
 
 	return (
 		<>
@@ -64,6 +76,45 @@ export const GetCubeMetaData: React.FC<Props> = (props) => {
 					</Form>
 				) }
 			</Formik>
+			<Row>
+				<Col>
+					<div className={ "d-flex flex-column justify-content-center mb-3" } style={ { height: '50px' } }>
+						{
+							toastMessage
+								? (
+									<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show }
+									       delay={ 3000 }
+									       autohide>
+										<Toast.Body>
+											<strong>{ toastMessage }</strong>
+										</Toast.Body>
+									</Toast>
+								)
+								: null
+						}
+					</div>
+				</Col>
+			</Row>
+			<Row>
+				<Col className={ "d-flex justify-content-center" }>
+					{
+						!isLoading && !isEmpty(response)
+							? (
+								<Card>
+									<Card.Header>{ response.cubeTitleEn }</Card.Header>
+									<Card.Body>
+										<Card.Title>Product ID: { response.productId }</Card.Title>
+										<Card.Text>Status: { response.archiveStatusEn }</Card.Text>
+									</Card.Body>
+									<Card.Footer>
+										<small>Released: { response.releaseTime }</small>
+									</Card.Footer>
+								</Card>
+							)
+							: null
+					}
+				</Col>
+			</Row>
 		</>
 	);
 };

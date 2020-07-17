@@ -57,7 +57,7 @@ export const Api: React.FC<Props> = () => {
 				(error: any) => setIsError(true))
 		}
 		setIsLoading(false)
-	})
+	}, [authenticated])
 
 	const noBackButton = ["/api", "/api/auth"]
 

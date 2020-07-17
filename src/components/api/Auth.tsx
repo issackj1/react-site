@@ -9,12 +9,10 @@ import { useHistory } from "react-router-dom";
 const axios = require('axios');
 
 interface Props {
-	setIsLoading: () => any
 }
 
-export const Auth: React.FC<Props> = (props) => {
+export const Auth: React.FC<Props> = () => {
 
-	const { authenticated } = props;
 	const [show, setShow] = useState(false);
 	const [toastMessage, setToastMessage] = useState('');
 	const [isSignUp, setIsSignUp] = useState(false);
