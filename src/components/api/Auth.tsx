@@ -39,7 +39,7 @@ export const Auth: React.FC<Props> = () => {
 	})
 
 	const handleLogIn = async (email: String, password: String) => {
-		await axios.post('http://localhost:4000/api/login/',
+		await axios.post('http://localhost:4000/api/login',
 			{
 				email: email,
 				password: password
@@ -56,7 +56,7 @@ export const Auth: React.FC<Props> = () => {
 	};
 
 	const handleSignUp = (username: string, email: string, password: string) => {
-		axios.post('http://localhost:4000/api/register/',
+		axios.post('http://localhost:4000/api/register',
 			{
 				username: username,
 				email: email,

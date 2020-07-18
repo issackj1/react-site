@@ -23,6 +23,7 @@ export const GetAllCubes: React.FC<Props> = (props) => {
 	const [show, setShow] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 
+
 	const handleSubmit = async (id: string) => {
 		setIsLoading(true);
 		await axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + id)
