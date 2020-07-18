@@ -3,50 +3,31 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Project } from "./components/Project";
-import { HackathonOne, HackathonTwo, navProps, NoProject, ProjectOne, ProjectTwo } from "./constants";
-import { Parallax } from "react-spring/renderprops-addons";
+import { navProps } from "./constants";
 import { Api } from "./components/api/Api";
+import { Link, Typography } from "@material-ui/core";
 
-function getProps(name: string) {
-
-    let project;
-    switch (name) {
-        case  "starterhacks2020":
-            project = HackathonOne;
-            break;
-        case "nsbehacks2020":
-            project = HackathonTwo;
-            break;
-        case "shuffl":
-            project = ProjectOne;
-            break;
-        case "astrojump":
-            project = ProjectTwo;
-            break;
-        default:
-            project = NoProject;
-    }
-    return {
-        navProps: navProps,
-        projectDetail: project,
-        parallax: Parallax
-    };
+function Copyright() {
+	return (
+		<Typography variant="body2" color="textSecondary" align="center">
+			{ 'Copyright © ' }
+			<Link color="inherit" href="http://3.94.8.68/">
+				Issack John
+			</Link>{ ' ' }
+			{ new Date().getFullYear() }
+			{ '.' }
+		</Typography>
+	);
 }
 
-function App() {
-    return (
-        <Router basename={process.env.PUBLIC_URL}>
-            <Switch>
-                <Route path="/project/:name" render={(routeProps) => (
-                    <Project {...routeProps} {...getProps(((routeProps.match.params.name)))} />
-                )}/>
-                <Route path={"/api"} component={Api}/>
-                <Route path="/" render={(routeProps) => (
-                    <Home {...routeProps} {...navProps} />
-                )}/>
-            </Switch>
-        </Router>
-    );
-}
-
-export default App;
+export default function App() {
+	return (
+		<Router basename={ process.env.PUBLIC_URL }>
+			<Switch>
+				<Route path={ "/project/:name" } component={ Project }/>
+				<Route path={ "/api" } component={ Api }/>
+				<Route path={ "/" } component={ Home } { ...navProps } />
+			</Switch>
+		</Router>
+	);
+};

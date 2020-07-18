@@ -2,6 +2,8 @@
   "name": "alpha",
   "version": "0.1.0",
   "homepage": "http://3.94.8.68/",
+  "respository": "https://github.com/issackj1/react-site",
+  "license": "MIT",
   "proxy": "http://localhost:4000",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -9,6 +11,8 @@
     "@types/yup": "^0.29.3",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "eslint-plugin-react-hooks": "^4.0.7",
+    "fontsource-roboto": "^2.1.4",
     "formik": "^2.1.4",
     "formik-material-ui": "^2.0.1",
     "react": "^16.13.1",

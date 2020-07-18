@@ -1,8 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
+import { Route, Switch, useHistory } from "react-router-dom";
+import { Welcome } from "./Welcome";
+import { Button, CircularProgress, Fade, SvgIcon } from "@material-ui/core";
 import { Auth } from "./Auth";
-import { Home } from "./Home";
-import { CircularProgress, Fade } from "@material-ui/core";
+import { PrivateRoute } from "./PrivateRoute";
+import { Endpoint } from "./Endpoint";
+import { SimpleNavBar } from "../SimpleNavBar";
+import { Col, Row } from "react-bootstrap";
+import { NavigateBefore } from "@material-ui/icons";
+import { TableDetail } from "./TableDetail";
 
 const axios = require('axios');
 
@@ -12,54 +19,68 @@ interface Props {
 
 export const Api: React.FC<Props> = () => {
 
-    const [authenticated, setAuthenticated] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const history = useHistory();
 
-    useEffect(() => {
-        const authenticate = async () => {
-            setIsLoading(true)
-            setIsError(false)
-            await axios.post('http://localhost:4000/api/confirm-token', {},
-                {
-                    credentials: 'include',
-                    headers: {
-                        Authorization: localStorage.getItem('my-jwt')
-                    }
-                })
-                .then((result: any) => {
-                        setAuthenticated(true)
-                    },
-                    (error: any) => {
-                        setIsError(true)
-                    }
-                );
-            setIsLoading(false);
-        }
-        authenticate();
-    }, [authenticated])
+	const goBack = () => {
+		history.goBack()
+	}
 
+	const handleLogout = () => {
+		setIsLoading(true)
+		localStorage.removeItem('my-jwt');
+		history.push("/api");
+		setIsLoading(false)
+	}
 
-    return (
-        <div className={"container d-flex text-center justify-content-center flex-column h-100 m-auto"}>
-            {isLoading
-                ? (
-                    <div>
-                        <Fade
-                            in={isLoading}
-                            style={{
-                                transitionDelay: isLoading ? '800ms' : '0ms',
-                            }}
-                            unmountOnExit
-                        >
-                            <CircularProgress/>
-                        </Fade>
-                    </div>
-                )
-                : authenticated
-                    ? <Home setAuthenticated={() => setAuthenticated(false)}/>
-                    : <Auth setAuthenticated={() => setAuthenticated(true)}/>
-            }
-        </div>
-    );
+	const noBackButton = ["/api", "/api/auth"]
+
+	return (
+		<div className={ "d-flex flex-column h-100" }>
+			<Row>
+				<Col>
+					<SimpleNavBar/>
+				</Col>
+			</Row>
+			<Row>
+				{
+					noBackButton.indexOf(history.location.pathname) === -1
+						? (
+							<Col className={ "d-flex justify-content-start" }>
+								<Button variant="contained" color="primary"
+								        startIcon={ <SvgIcon component={ NavigateBefore }/> } onClick={ goBack }>
+									Back
+								</Button>
+							</Col>
+						)
+						: null
+				}
+			</Row>
+			<Row className={ "flex-grow-1" }>
+				<Col>
+					{
+						isLoading
+							? (<div>
+									<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
+									      unmountOnExit>
+										<CircularProgress/>
+									</Fade>
+								</div>
+							)
+							: (
+
+								<Switch>
+									<Route path={ "/api/auth" } component={ Auth }/>
+									<PrivateRoute handleLogout={ () => handleLogout() }
+									              path={ "/api/:name/detail/:productId" } component={ TableDetail }/>
+									<PrivateRoute handleLogout={ () => handleLogout() } path={ "/api/:name" }
+									              component={ Endpoint }/>
+									<PrivateRoute handleLogout={ () => handleLogout() } path={ "/" } component={ Welcome }/>
+								</Switch>
+							)
+					}
+				</Col>
+			</Row>
+		</div>
+	);
 };
