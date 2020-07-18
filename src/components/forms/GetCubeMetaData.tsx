@@ -1,10 +1,11 @@
 // @ts-nocheck
 import React, { useState } from 'react';
+import { Link, useParams } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { TextField } from "formik-material-ui";
-import { Button } from "@material-ui/core";
-import { Card, Col, Row, Toast } from "react-bootstrap";
+import { Button, Card, CardActionArea, CardContent, Typography } from "@material-ui/core";
+import { Col, Row, Toast } from "react-bootstrap";
 
 interface Props {
 }
@@ -21,6 +22,7 @@ export const GetCubeMetaData: React.FC<Props> = () => {
 	const [toastMessage, setToastMessage] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const [show, setShow] = useState(false);
+	const { name } = useParams()
 
 	const handleSubmit = async (id: string) => {
 		if (response.productId === id) {
@@ -44,14 +46,6 @@ export const GetCubeMetaData: React.FC<Props> = () => {
 			);
 		setIsLoading(false);
 	};
-
-	const isEmpty = (obj) => {
-		for (var prop in obj) {
-			if (obj.hasOwnProperty(prop))
-				return false;
-		}
-		return true;
-	}
 
 	return (
 		<>
@@ -100,17 +94,29 @@ export const GetCubeMetaData: React.FC<Props> = () => {
 			<Row>
 				<Col className={ "d-flex justify-content-center" }>
 					{
-						!isLoading && !isEmpty(response)
+						!isLoading && !_.isEmpty(response)
 							? (
 								<Card>
-									<Card.Header>{ response.cubeTitleEn }</Card.Header>
-									<Card.Body>
-										<Card.Title>Product ID: { response.productId }</Card.Title>
-										<Card.Text>Status: { response.archiveStatusEn }</Card.Text>
-									</Card.Body>
-									<Card.Footer>
-										<small>Released: { response.releaseTime }</small>
-									</Card.Footer>
+									<CardActionArea style={ { textDecoration: 'none' } } component={ Link }
+									                to={ `/api/${ name }/detail/${ response.productId }` }>
+										<CardContent>
+											<Typography gutterBottom variant="h5" component="h2">
+												{ response.cubeTitleEn }
+											</Typography>
+											<Typography variant="body2" color="textSecondary" component="p">
+												Product ID: { response.productId }
+											</Typography>
+											<Typography variant="body2" color="textSecondary" component="p">
+												Status: { response.archiveStatusEn }
+											</Typography>
+											<Typography variant="body2" color="textSecondary" component="p">
+												{ `From: ${ response.cubeStartDate } to ${ response.cubeEndDate }` }
+											</Typography>
+											<Typography variant="body2" color="textSecondary" component="p">
+												<small>Released: { response.releaseTime }</small>
+											</Typography>
+										</CardContent>
+									</CardActionArea>
 								</Card>
 							)
 							: null

@@ -9,6 +9,7 @@ import { Endpoint } from "./Endpoint";
 import { SimpleNavBar } from "../SimpleNavBar";
 import { Col, Row } from "react-bootstrap";
 import { ExitToApp, NavigateBefore } from "@material-ui/icons";
+import { TableDetail } from "./TableDetail";
 
 const axios = require('axios');
 
@@ -42,7 +43,6 @@ export const Api: React.FC<Props> = () => {
 				}
 			})
 			.then((result: any) => {
-				console.log(result)
 					setAuthenticated(true)
 				},
 				(error: any) => {
@@ -52,11 +52,9 @@ export const Api: React.FC<Props> = () => {
 	}
 
 	useEffect(() => {
-		console.log('called')
 		setIsLoading(true)
 		if (!authenticated) {
-			authenticate().then(r => (result: any) => {
-				},
+			authenticate().then(r => (result: any) => {},
 				(error: any) => setIsError(true))
 		}
 		setIsLoading(false)
@@ -113,6 +111,7 @@ export const Api: React.FC<Props> = () => {
 									<Box my={ 20 }>
 										<Switch>
 											<Route path={ "/api/auth" } component={ Auth }/>
+											<PrivateRoute path={ "/api/:name/detail/:productId" } component={ TableDetail }/>
 											<PrivateRoute path={ "/api/:name" } component={ Endpoint }/>
 											<PrivateRoute path={ "/" } component={ Welcome }/>
 										</Switch>

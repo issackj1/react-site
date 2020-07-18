@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 	}
 });
 
-export const ApiCard: React.FC<Props> = (props) => {
+export const ApiCard: React.FC<Props> = (props:Props) => {
 
 	const { title, description, to } = props;
 	const classes = useStyles();
