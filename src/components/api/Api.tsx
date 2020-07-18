@@ -35,14 +35,16 @@ export const Api: React.FC<Props> = () => {
 
 	const authenticate = async () => {
 		setIsLoading(true)
-		setIsError(false)
 		await axios.post('http://localhost:4000/api/confirm-token', {},
 			{
 				headers: {
 					Authorization: localStorage.getItem('my-jwt')
 				}
 			})
-			.then((result: any) => setAuthenticated(true),
+			.then((result: any) => {
+				console.log(result)
+					setAuthenticated(true)
+				},
 				(error: any) => {
 				});
 		setIsLoading(false);
@@ -50,6 +52,7 @@ export const Api: React.FC<Props> = () => {
 	}
 
 	useEffect(() => {
+		console.log('called')
 		setIsLoading(true)
 		if (!authenticated) {
 			authenticate().then(r => (result: any) => {
@@ -85,7 +88,6 @@ export const Api: React.FC<Props> = () => {
 					authenticated
 						? (
 							<Col className={ "d-flex justify-content-end" }>
-
 								<Button variant="contained" color="primary"
 								        startIcon={ <SvgIcon component={ ExitToApp }/> } onClick={ handleLogout }>
 									Logout
@@ -108,7 +110,7 @@ export const Api: React.FC<Props> = () => {
 							)
 							: (
 								<Container maxWidth="sm">
-									<Box my={20}>
+									<Box my={ 20 }>
 										<Switch>
 											<Route path={ "/api/auth" } component={ Auth }/>
 											<PrivateRoute path={ "/api/:name" } component={ Endpoint }/>

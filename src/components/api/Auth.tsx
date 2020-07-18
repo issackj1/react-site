@@ -5,11 +5,24 @@ import { Card, Col, Row, Toast } from "react-bootstrap";
 import { LoginForm } from "../forms/LoginForm";
 import { SignUpForm } from "../forms/SignUpForm";
 import { useHistory } from "react-router-dom";
-import { Typography } from "@material-ui/core";
+import { Link, Typography } from "@material-ui/core";
 
 const axios = require('axios');
 
 interface Props {
+}
+
+function Copyright() {
+	return (
+		<Typography variant="body2" color="textSecondary" align="center">
+			{ 'Copyright © ' }
+			<Link color="inherit" href="http://3.94.8.68/">
+				Issack John
+			</Link>{ ' ' }
+			{ new Date().getFullYear() }
+			{ '.' }
+		</Typography>
+	);
 }
 
 export const Auth: React.FC<Props> = () => {
@@ -81,7 +94,7 @@ export const Auth: React.FC<Props> = () => {
 				<Card.Title>
 					<Typography color={ "textPrimary" } variant="h4" component="h1" gutterBottom
 					            align={ "center" }>
-						Login</Typography>
+						Sign in</Typography>
 				</Card.Title>
 				<LoginForm
 					handleSubmit={ (email, password) => handleLogIn(email, password) }
@@ -122,6 +135,7 @@ export const Auth: React.FC<Props> = () => {
 							}
 						</Card.Body>
 					</Card>
+					{ Copyright() }
 				</Col>
 			</Row>
 		</>
