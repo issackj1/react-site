@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
@@ -14,7 +15,6 @@ export const TableDetail: React.FC<Props> = (props: Props) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [response, setResponse] = useState({});
 
-
 	const fetchTable = async () => {
 		setIsLoading(true)
 		await axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + productId)
@@ -22,7 +22,7 @@ export const TableDetail: React.FC<Props> = (props: Props) => {
 					if (result.data.status === 'FAILED') {
 						setResponse(result.data.object.split('.')[0]);
 					} else {
-						setResponse(result.data.object)
+						setResponse(result.data.object);
 					}
 				},
 				(error: any) => {
@@ -31,12 +31,24 @@ export const TableDetail: React.FC<Props> = (props: Props) => {
 	}
 
 	useEffect(() => {
-		console.log('three')
 		fetchTable()
-	}, [response])
+	}, [])
+
+	const details = (response) => {
+		console.log(response)
+		return (
+			<>
+				<p>{ response.cubeTitleEn }</p>
+				<p>{ response.productId }</p>
+				<p>{ response.archiveStatusEn }</p>
+				<p>{ `From: ${ response.cubeStartDate } to ${ response.cubeEndDate }` }</p>
+				<p>Released: { response.releaseTime }</p>
+			</>
+		)
+	}
 
 	return (
-		<Container maxWidth="sm">s
+		<Container maxWidth="sm">
 			<Box my={ 20 }>
 				{
 					isLoading
@@ -50,8 +62,8 @@ export const TableDetail: React.FC<Props> = (props: Props) => {
 						)
 						: (
 							!_.isEmpty(response)
-								? <h1>hey</h1>
-								: <h1>hello</h1>
+								? details(response)
+								: <h1>Something went wrong...</h1>
 						)
 				}
 			</Box>
