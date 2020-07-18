@@ -5,7 +5,7 @@ import { Card, Col, Row, Toast } from "react-bootstrap";
 import { LoginForm } from "../forms/LoginForm";
 import { SignUpForm } from "../forms/SignUpForm";
 import { useHistory } from "react-router-dom";
-import { Link, Typography } from "@material-ui/core";
+import { Box, Container, Link, Typography } from "@material-ui/core";
 
 const axios = require('axios');
 
@@ -31,12 +31,14 @@ export const Auth: React.FC<Props> = () => {
 	const [toastMessage, setToastMessage] = useState('');
 	const [isSignUp, setIsSignUp] = useState(false);
 	const history = useHistory();
+	const authenticated = !!localStorage.getItem('my-jwt')
 
 	useEffect(() => {
-		if (localStorage.getItem('my-jwt')) {
+		console.log('one')
+		if (authenticated) {
 			history.push("/api")
 		}
-	})
+	}, [authenticated])
 
 	const handleLogIn = async (email: String, password: String) => {
 		await axios.post('http://localhost:4000/api/login',
@@ -104,40 +106,43 @@ export const Auth: React.FC<Props> = () => {
 		)
 
 	return (
-		<>
-			<Row>
-				<Col>
-					<div className={ "d-flex flex-column justify-content-center mb-3" } style={ { height: '50px' } }>
-						{
-							toastMessage
-								? (
-									<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show }
-									       delay={ 3000 }
-									       autohide>
-										<Toast.Body>
-											<strong>{ toastMessage }</strong>
-										</Toast.Body>
-									</Toast>
-								)
-								: null
-						}
-					</div>
-				</Col>
-			</Row>
-			<Row>
-				<Col className={ "m-auto" }>
-					<Card className="mx-auto" style={ { minWidth: '50%' } }>
-						<Card.Body className={ "d-flex flex-column justify-content-around" }>
+		<Container maxWidth="sm">
+			<Box my={ 20 }>
+				<Row>
+					<Col>
+						<div className={ "d-flex flex-column justify-content-center mb-3" }
+						     style={ { height: '50px' } }>
 							{
-								isSignUp
-									? signUpHeaders()
-									: logInHeaders()
+								toastMessage
+									? (
+										<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show }
+										       delay={ 3000 }
+										       autohide>
+											<Toast.Body>
+												<strong>{ toastMessage }</strong>
+											</Toast.Body>
+										</Toast>
+									)
+									: null
 							}
-						</Card.Body>
-					</Card>
-					{ Copyright() }
-				</Col>
-			</Row>
-		</>
+						</div>
+					</Col>
+				</Row>
+				<Row>
+					<Col className={ "m-auto" }>
+						<Card className="mx-auto" style={ { minWidth: '50%' } }>
+							<Card.Body className={ "d-flex flex-column justify-content-around" }>
+								{
+									isSignUp
+										? signUpHeaders()
+										: logInHeaders()
+								}
+							</Card.Body>
+						</Card>
+						{ Copyright() }
+					</Col>
+				</Row>
+			</Box>
+		</Container>
 	);
 };

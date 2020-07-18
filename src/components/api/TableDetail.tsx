@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import { CircularProgress, Fade } from "@material-ui/core";
+import { Box, CircularProgress, Container, Fade } from "@material-ui/core";
 import _ from 'lodash';
 
 type Props = {};
@@ -17,7 +17,6 @@ export const TableDetail: React.FC<Props> = (props: Props) => {
 
 	const fetchTable = async () => {
 		setIsLoading(true)
-		console.log(productId)
 		await axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + productId)
 			.then((result: any) => {
 					if (result.data.status === 'FAILED') {
@@ -32,27 +31,30 @@ export const TableDetail: React.FC<Props> = (props: Props) => {
 	}
 
 	useEffect(() => {
+		console.log('three')
 		fetchTable()
 	}, [response])
 
 	return (
-		<>
-			{
-				isLoading
-					? (
-						<div>
-							<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
-							      unmountOnExit>
-								<CircularProgress/>
-							</Fade>
-						</div>
-					)
-					: (
-						!_.isEmpty(response)
-							? <h1>hey</h1>
-							: <h1>hello</h1>
-					)
-			}
-		</>
+		<Container maxWidth="sm">s
+			<Box my={ 20 }>
+				{
+					isLoading
+						? (
+							<div>
+								<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
+								      unmountOnExit>
+									<CircularProgress/>
+								</Fade>
+							</div>
+						)
+						: (
+							!_.isEmpty(response)
+								? <h1>hey</h1>
+								: <h1>hello</h1>
+						)
+				}
+			</Box>
+		</Container>
 	);
 };

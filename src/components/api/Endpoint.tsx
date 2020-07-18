@@ -4,6 +4,7 @@ import { Col, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { GetCubeMetaData } from "../forms/GetCubeMetaData";
 import { GetAllCubes } from "../forms/GetAllCubes";
+import { Box, Container } from "@material-ui/core";
 
 
 interface Props {
@@ -20,12 +21,12 @@ export const Endpoint: React.FC<Props> = (props) => {
 		switch ( name ) {
 			case  "seeAll":
 				title = 'See All Tables';
-				form = <GetAllCubes />;
+				form = <GetAllCubes/>;
 				break;
 			case "searchAll":
 				title = 'Search All Tables';
 				form =
-					<GetCubeMetaData />;
+					<GetCubeMetaData/>;
 				break;
 			default:
 				title = 'three';
@@ -40,17 +41,19 @@ export const Endpoint: React.FC<Props> = (props) => {
 	const { title, form } = getProps(name);
 
 	return (
-		<>
-			<Row>
-				<Col className={ "d-flex justify-content-center" }>
-					{ title }
-				</Col>
-			</Row>
-			<Row>
-				<Col className={ "d-flex flex-column" }>
-					{ form }
-				</Col>
-			</Row>
-		</>
+		<Container maxWidth="sm">
+			<Box my={ 20 }>
+				<Row>
+					<Col className={ "d-flex justify-content-center" }>
+						{ title }
+					</Col>
+				</Row>
+				<Row>
+					<Col className={ "d-flex flex-column" }>
+						{ form }
+					</Col>
+				</Row>
+			</Box>
+		</Container>
 	);
 }

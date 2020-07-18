@@ -1,8 +1,11 @@
 // @ts-nocheck
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
+import { Button, SvgIcon } from "@material-ui/core";
+import { ExitToApp } from "@material-ui/icons";
+import { Col } from "react-bootstrap";
 
-export const PrivateRoute = ({ component: Component, ...rest }) => (
+export const PrivateRoute = ({ component: Component, handleLogout, ...rest }) => (
 	<Route { ...rest } render={ props => {
 
 		if (!localStorage.getItem('my-jwt')) {
@@ -11,7 +14,16 @@ export const PrivateRoute = ({ component: Component, ...rest }) => (
 		}
 
 		// authorised so return component
-		return <Component { ...props } />
+		return (
+			<>
+				<Col className={ "d-flex justify-content-end" }>
+					<Button variant="contained" color="primary"
+					        startIcon={ <SvgIcon component={ ExitToApp }/> } onClick={ handleLogout }>
+						Logout
+					</Button>
+				</Col>
+				<Component { ...props } />
+			</>)
 	} }/>
 
 
