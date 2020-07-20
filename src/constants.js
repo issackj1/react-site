@@ -5,6 +5,7 @@ export const ProjectTwo = require('./json/AstroJump');
 export const NoProject = require('./json/NoProject');
 export const AboutContent = require('./json/About.json');
 export const SkillsContent = require('./json/Skills.json');
+export const ExtracurricularContent = require('./json/Extracurricular.json');
 export const navProps = {
     dropDownLinks: [
         {title: 'Starter Hacks 2020', path: '/project/starterhacks2020'},
