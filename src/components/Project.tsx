@@ -57,34 +57,32 @@ export const Project: React.FC<Props> = () => {
 				<Col>
 					<Typography variant={ "h1" } className={ classes.title } color="textPrimary"
 					            gutterBottom>{ title } { year }</Typography>
-					<Typography variant={ "h5" } color="textSecondary" gutterBottom>{ date } { location }</Typography>
-					<Typography variant={ "h4" } gutterBottom>{ projectTitle } Inspiration</Typography>
+					<Typography variant={ "h6" } color="textSecondary" gutterBottom>{ date } { location }</Typography>
+					<Typography variant={ "h5" } gutterBottom>{ projectTitle } Inspiration</Typography>
 					<Typography variant={ "body1" } gutterBottom>{ summary }</Typography>
 
-					<Typography variant={ "h4" } gutterBottom>How it Works</Typography>
+					<Typography variant={ "h5" } gutterBottom>How it Works</Typography>
 					<Typography variant={ "body1" } gutterBottom>{ howItWorks }</Typography>
 
-					<Typography variant={ "h4" } gutterBottom>How we built it</Typography>
+					<Typography variant={ "h5" } gutterBottom>How we built it</Typography>
 					<Typography variant={ "body1" } gutterBottom>{ howWeBuilt }</Typography>
 
-					<h3>Challenges we ran into</h3>
-					<p>{ challenges }</p>
-					<Typography variant={ "h4" } gutterBottom>How we built it</Typography>
-					<Typography variant={ "body1" } gutterBottom>{ howWeBuilt }</Typography>
+					<Typography variant={ "h5" } gutterBottom>Challenges we ran into</Typography>
+					<Typography variant={ "body1" } gutterBottom>{ challenges }</Typography>
 
-					<Typography variant={ "h4" } gutterBottom>Accomplishments that we're proud of</Typography>
+					<Typography variant={ "h5" } gutterBottom>Accomplishments that we're proud of</Typography>
 					<Typography variant={ "body1" } gutterBottom>{ accomplishments }</Typography>
 
-					<Typography variant={ "h4" } gutterBottom>What we learned</Typography>
+					<Typography variant={ "h5" } gutterBottom>What we learned</Typography>
 					<Typography variant={ "body1" } gutterBottom>{ learned }</Typography>
 
-					<Typography variant={ "h4" } gutterBottom>What's next for { projectTitle }</Typography>
+					<Typography variant={ "h5" } gutterBottom>What's next for { projectTitle }</Typography>
 					<Typography variant={ "body1" } gutterBottom>{ next }</Typography>
 					<a href={ repoUrl }
 					   rel={ "noopener noreferrer" }
 					   target={ "_blank" }>Repository</a>
 
-					<Typography variant={ "h4" } gutterBottom>Built with</Typography>
+					<Typography variant={ "h6" } gutterBottom>Built with</Typography>
 					<ListGroup horizontal>
 						{ technologies.map((name: React.ReactNode) => <ListGroup.Item>{ name }</ListGroup.Item>) }
 					</ListGroup>
