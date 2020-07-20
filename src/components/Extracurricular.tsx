@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import { Col, Row } from "react-bootstrap";
 import { ExtracurricularContent } from "../constants";
+import { Typography } from "@material-ui/core";
 
 interface Props {
 
@@ -10,10 +11,10 @@ interface Props {
 export const Extracurricular: React.FC<Props> = () => {
 	return (
 		<div className={ "container" } id={ "extracurricular" }>
-			<h1>EXTRACURRICULAR</h1>
+			<Typography variant={ "h2" } gutterBottom>{ ExtracurricularContent.title }</Typography>
 			<Row>
 				<Col>
-					<h4>Hackathons Attended</h4>
+					<Typography variant={ "h4" } gutterBottom>Hackathons Attended</Typography>
 					<ul className={ "list-unstyled" }>
 						<a href="https://devpost.com/software/starterhacks2020-klj3qb" rel={ "noopener noreferrer" }
 						   target={ "_blank" }>
@@ -27,7 +28,7 @@ export const Extracurricular: React.FC<Props> = () => {
 					</ul>
 				</Col>
 				<Col>
-					<h4>Favourite Books</h4>
+					<Typography variant={ "h4" } gutterBottom>Favourite Books</Typography>
 					<ul className={ "list-unstyled" }>
 						{
 							ExtracurricularContent.books.map((book, i) => <li key={ i }>{ book.name }</li>)

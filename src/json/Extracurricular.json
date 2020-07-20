@@ -1,4 +1,13 @@
 {
+  "title": "EXTRACURRICULAR",
+  "hackathons": [
+    {
+      "name": "Starter Hacks 2020"
+    },
+    {
+      "name": "NSBE Hacks 2020"
+    }
+  ],
   "books": [
     {
       "name": "The Great Gatsby",
