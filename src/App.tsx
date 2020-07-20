@@ -3,7 +3,6 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Project } from "./components/Project";
-import { navProps } from "./constants";
 import { Api } from "./components/api/Api";
 import { Link, Typography } from "@material-ui/core";
 
@@ -26,7 +25,7 @@ export default function App() {
 			<Switch>
 				<Route path={ "/project/:name" } component={ Project }/>
 				<Route path={ "/api" } component={ Api }/>
-				<Route path={ "/" } component={ Home } { ...navProps } />
+				<Route path={ "/" } component={ Home } Copyright={ () => Copyright() }/>
 			</Switch>
 		</Router>
 	);
