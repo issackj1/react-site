@@ -13,17 +13,17 @@ export const Skills: React.FC<Props> = () => {
         <div className={"container"} id={"skills"}>
             <Row>
                 <Col>
-                    <Typography variant={"h2"}>{SkillsContent.title}</Typography>
+                    <Typography variant={"h2"} align={"center"} gutterBottom>{SkillsContent.title}</Typography>
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <Typography variant={"h5"}>{SkillsContent.subtitle}</Typography>
+                    <Typography variant={"h5"} align={"center"} gutterBottom>{SkillsContent.subtitle}</Typography>
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <Typography variant={"h3"}>Languages</Typography>
+                    <Typography variant={"h4"}>Languages</Typography>
                     <ul className={"list-unstyled"}>
                         {
                             SkillsContent.languages.map((language, i) => <li key={i}>{language}</li>)
@@ -31,7 +31,7 @@ export const Skills: React.FC<Props> = () => {
                     </ul>
                 </Col>
                 <Col>
-                    <Typography variant={"h3"}>Libraries</Typography>
+                    <Typography variant={"h4"}>Libraries</Typography>
                     <ul className={"list-unstyled"}>
                         {
                             SkillsContent.libraries.map((library, i) => <li key={i}>{library}</li>)
@@ -39,7 +39,7 @@ export const Skills: React.FC<Props> = () => {
                     </ul>
                 </Col>
                 <Col>
-                    <Typography variant={"h3"}>Frameworks</Typography>
+                    <Typography variant={"h4"}>Frameworks</Typography>
                     <ul className={"list-unstyled"}>
                         {
                             SkillsContent.frameworks.map((framework, i) => <li key={i}>{framework}</li>)
@@ -47,7 +47,7 @@ export const Skills: React.FC<Props> = () => {
                     </ul>
                 </Col>
                 <Col>
-                    <Typography variant={"h3"}>Databases</Typography>
+                    <Typography variant={"h4"}>Databases</Typography>
                     <ul className={"list-unstyled"}>
                         {
                             SkillsContent.databases.map((database, i) => <li key={i}>{database}</li>)

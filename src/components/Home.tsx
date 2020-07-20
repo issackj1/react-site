@@ -95,7 +95,7 @@ export const Home: React.FC<Props> = (props) => {
 			</ParallaxLayer>
 
 			<ParallaxLayer offset={ 0 } speed={ 2 } factor={ 1 / 6 }>
-				<NavBar  { ...navProps } parallax={ parallax }/>
+				<NavBar parallax={ parallax }/>
 			</ParallaxLayer>
 
 			<ParallaxLayer
