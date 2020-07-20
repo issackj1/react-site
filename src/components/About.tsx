@@ -14,7 +14,7 @@ export const About: React.FC<Props> = () => {
         <div className={"container"} id={"about"}>
             <Row>
                 <Col>
-                    <Typography variant={"h2"}>{AboutContent.title}</Typography>
+                    <Typography variant={"h2"} align={"center"}>{AboutContent.title}</Typography>
                 </Col>
             </Row>
             <Row>

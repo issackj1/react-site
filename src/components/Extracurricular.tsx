@@ -25,7 +25,7 @@ export const Extracurricular: React.FC<Props> = () => {
                     </ul>
                 </Col>
                 <Col>
-                    <h4>Books Read</h4>
+                    <h4>Favourite Books</h4>
                     <ul className={"list-unstyled"}>
                         <li>The Great Gatsby</li>
                         <li>Always Know What To Say</li>
