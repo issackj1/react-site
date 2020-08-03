@@ -12,7 +12,6 @@ import { Extracurricular } from "./Extracurricular";
 import { Contact } from "./Contact";
 import { Button } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
-import { navProps } from "../constants";
 
 interface Props {
 }
@@ -24,16 +23,13 @@ interface useSpringProps {
 	from: { opacity: number; };
 }
 
+
+
+
 export const Home: React.FC<Props> = (props) => {
 
-	const [parallax, setParallax] = useState(React.createRef);
-	const { Copyright } = props;
 
-	const useStyles = makeStyles((theme) => ({
-		root: {
-			margin: theme.spacing(6, 0, 3),
-		},
-	}));
+	const [parallax, setParallax] = useState(React.createRef);
 
 	const springProps = useSpring<useSpringProps>({
 		config: config.slow,
@@ -70,6 +66,7 @@ export const Home: React.FC<Props> = (props) => {
 	};
 
 	const buttons = ['Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Back To Top'];
+	// <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#007b3d3d' }}>
 
 	return (<>
 		<Parallax pages={ 7 } scrolling={ true } ref={ ref => setParallax(ref) }>
@@ -77,9 +74,8 @@ export const Home: React.FC<Props> = (props) => {
 			<ParallaxLayer offset={ 2 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
 			<ParallaxLayer offset={ 4 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
 			<ParallaxLayer offset={ 6 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
-
 			<ParallaxLayer offset={ 0 } speed={ 2 } onClick={ () => parallax.scrollTo(1) }>
-				<header className="App-header">
+				<header>
 					<animated.p style={ springProps }>Issack John</animated.p>
 					<animated.h1 style={ h1Props }>Welcome</animated.h1>
 					<animated.a

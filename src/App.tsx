@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Project } from "./components/Project";
 import { Api } from "./components/api/Api";
-import { Link, Typography } from "@material-ui/core";
+import { Box, Container, Link, Typography } from "@material-ui/core";
 
 function Copyright() {
 	return (
@@ -21,12 +21,16 @@ function Copyright() {
 
 export default function App() {
 	return (
-		<Router basename={ process.env.PUBLIC_URL }>
-			<Switch>
-				<Route path={ "/project/:name" } component={ Project }/>
-				<Route path={ "/api" } component={ Api }/>
-				<Route path={ "/" } component={ Home } Copyright={ () => Copyright() }/>
-			</Switch>
-		</Router>
+		<Container maxWidth="lg">
+			<Box my={ 4 }>
+				<Router basename={ process.env.PUBLIC_URL }>
+					<Switch>
+						<Route path={ "/project/:name" } component={ Project }/>
+						<Route path={ "/api" } component={ Api }/>
+						<Route path={ "/" } component={ Home } Copyright={ () => Copyright() }/>
+					</Switch>
+				</Router>
+			</Box>
+		</Container>
 	);
 };

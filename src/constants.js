@@ -14,6 +14,7 @@ export const navProps = {
         {title: 'Astro Jump', path: '/project/astrojump'},
     ],
     navLinks: [
+        {title: 'About', path: '#about'},
         {title: 'Skills', path: '#skills'},
         {title: 'Education', path: '#education'},
         {title: 'Experience', path: '#experience'},
