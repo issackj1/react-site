@@ -11,6 +11,8 @@ import { Experience } from "./Experience";
 import { Extracurricular } from "./Extracurricular";
 import { Contact } from "./Contact";
 import { Button } from "react-bootstrap";
+import { Box, Container } from "@material-ui/core";
+import { Section } from "./Section";
 
 interface Props {
 }
@@ -28,27 +30,19 @@ export const Home: React.FC<Props> = (props) => {
 
 	const [parallax, setParallax] = useState(React.createRef);
 
-	const springProps = useSpring<useSpringProps>({
-		config: config.slow,
-		delay: 300,
-		to: [{ opacity: 1 }, { opacity: 0 }],
-		from: {
-			opacity: 0,
-		},
-	});
-
-	const aProps = useSpring({
-		config: config.slow,
-		delay: 2000,
-		to: [{ opacity: 1 }, { opacity: 0 }],
-		from: {
-			opacity: 0,
-		}
-	});
+	const springProps = useSpring<useSpringProps>(
+		{
+			config: config.slow,
+			delay: 300,
+			to: [{ opacity: 1 }, { opacity: 0 }],
+			from: {
+				opacity: 0,
+			},
+		});
 
 	const h1Props = useSpring({
 		config: config.molasses,
-		delay: 4000,
+		delay: 3000,
 		opacity: 1,
 		from: {
 			opacity: 0,
@@ -72,10 +66,14 @@ export const Home: React.FC<Props> = (props) => {
 			<ParallaxLayer offset={ 4 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
 			<ParallaxLayer offset={ 6 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
 			<ParallaxLayer offset={ 0 } speed={ 2 } onClick={ () => parallax.scrollTo(1) }>
-				<header>
-					<animated.p style={ springProps }>Issack John</animated.p>
-					<animated.h1 style={ h1Props }>Welcome</animated.h1>
-				</header>
+				<Container>
+					<Box>
+						<header>
+							<animated.p style={ springProps }>Issack John</animated.p>
+							<animated.h1 style={ h1Props }>Welcome</animated.h1>
+						</header>
+					</Box>
+				</Container>
 			</ParallaxLayer>
 
 			<ParallaxLayer offset={ 0 } speed={ 2 } factor={ 1 / 6 }>
@@ -85,19 +83,19 @@ export const Home: React.FC<Props> = (props) => {
 			<ParallaxLayer
 				offset={ 1 } speed={ 0.5 } onClick={ () => parallax.scrollTo(2) }
 				style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
-				<About/>
+				<Section component={ About }/>
 			</ParallaxLayer>
 			<ParallaxLayer offset={ 2 } speed={ 0.5 } onClick={ () => parallax.scrollTo(3) }
 			               style={ secondaryBackground }>
-				<Skills/>
+				<Section component={ Skills }/>
 			</ParallaxLayer>
 			<ParallaxLayer offset={ 3 } speed={ 0.5 } onClick={ () => parallax.scrollTo(4) }
 			               style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
-				<Education/>
+				<Section component={ Education }/>
 			</ParallaxLayer>
 			<ParallaxLayer offset={ 4 } speed={ 0.5 } onClick={ () => parallax.scrollTo(5) }
 			               style={ secondaryBackground }>
-				<Experience/>
+				<Section component={ Experience }/>
 			</ParallaxLayer>
 			<ParallaxLayer offset={ 5 } speed={ 0.5 } onClick={ () => parallax.scrollTo(6) }
 			               style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
@@ -105,7 +103,7 @@ export const Home: React.FC<Props> = (props) => {
 			</ParallaxLayer>
 			<ParallaxLayer offset={ 6 } speed={ 0.5 } onClick={ () => parallax.scrollTo(1) }
 			               style={ secondaryBackground }>
-				<Contact/>
+				<Section component={ Contact }/>
 			</ParallaxLayer>
 
 			{/*button*/ }
