@@ -1,7 +1,6 @@
 // @ts-nocheck
 import React from 'react';
 import { AppBar, Link, Toolbar, Typography, } from "@material-ui/core";
-import '../App.css';
 import { Parallax } from "react-spring/renderprops-addons";
 import { navProps } from "../constants";
 import { makeStyles } from "@material-ui/core/styles";

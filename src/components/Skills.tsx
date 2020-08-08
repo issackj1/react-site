@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css';
 import { Col, Row } from "react-bootstrap";
 import { SkillsContent } from "../constants";
 import { Typography } from "@material-ui/core";

@@ -11,7 +11,6 @@ import { Experience } from "./Experience";
 import { Extracurricular } from "./Extracurricular";
 import { Contact } from "./Contact";
 import { Button } from "react-bootstrap";
-import { makeStyles } from "@material-ui/core/styles";
 
 interface Props {
 }
@@ -22,8 +21,6 @@ interface useSpringProps {
 	to: { opacity: number; }[];
 	from: { opacity: number; };
 }
-
-
 
 
 export const Home: React.FC<Props> = (props) => {
@@ -78,15 +75,6 @@ export const Home: React.FC<Props> = (props) => {
 				<header>
 					<animated.p style={ springProps }>Issack John</animated.p>
 					<animated.h1 style={ h1Props }>Welcome</animated.h1>
-					<animated.a
-						className="App-link"
-						href="https://reactjs.org"
-						target="_blank"
-						rel="noopener noreferrer"
-						style={ aProps }
-					>
-						Learning React
-					</animated.a>
 				</header>
 			</ParallaxLayer>
 

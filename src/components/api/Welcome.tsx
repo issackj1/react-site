@@ -1,6 +1,5 @@
 // @ts-nocheck
 import React from 'react';
-import '../../App.css';
 import { Home } from "./Home";
 import { Col, Row } from "react-bootstrap";
 import { Box, Container, Typography } from "@material-ui/core";
