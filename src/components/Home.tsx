@@ -1,18 +1,18 @@
 // @ts-nocheck
+import { Box, Container, Grid } from "@material-ui/core";
 import React, { useState } from 'react';
-import { NavBar } from "./NavBar";
+import { Button } from "react-bootstrap";
 import { animated, config, useSpring } from 'react-spring';
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import { SpringConfig } from "react-spring/renderprops-universal";
 import { About } from "./About";
-import { Skills } from "./Skills";
+import { Contact } from "./Contact";
 import { Education } from "./Education";
 import { Experience } from "./Experience";
 import { Extracurricular } from "./Extracurricular";
-import { Contact } from "./Contact";
-import { Button } from "react-bootstrap";
-import { Box, Container } from "@material-ui/core";
+import { NavBar } from "./NavBar";
 import { Section } from "./Section";
+import { Skills } from "./Skills";
 
 interface Props {
 }
@@ -29,16 +29,6 @@ export const Home: React.FC<Props> = (props) => {
 
 
 	const [parallax, setParallax] = useState(React.createRef);
-
-	const springProps = useSpring<useSpringProps>(
-		{
-			config: config.slow,
-			delay: 300,
-			to: [{ opacity: 1 }, { opacity: 0 }],
-			from: {
-				opacity: 0,
-			},
-		});
 
 	const h1Props = useSpring({
 		config: config.molasses,
@@ -60,59 +50,61 @@ export const Home: React.FC<Props> = (props) => {
 	// <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#007b3d3d' }}>
 
 	return (<>
-		<Parallax pages={ 7 } scrolling={ true } ref={ ref => setParallax(ref) }>
-			{/*Backgrounds*/ }
-			<ParallaxLayer offset={ 2 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
-			<ParallaxLayer offset={ 4 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
-			<ParallaxLayer offset={ 6 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
-			<ParallaxLayer offset={ 0 } speed={ 2 } onClick={ () => parallax.scrollTo(1) }>
+		<Parallax pages={7} scrolling={true} ref={ref => setParallax(ref)}>
+			{/*Backgrounds*/}
+			<ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#282c34' }} />
+			<ParallaxLayer offset={4} speed={1} style={{ backgroundColor: '#282c34' }} />
+			<ParallaxLayer offset={6} speed={1} style={{ backgroundColor: '#282c34' }} />
+			<ParallaxLayer offset={0} speed={2} onClick={() => parallax.scrollTo(1)}
+				style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 				<Container>
-					<Box>
-						<header>
-							<animated.p style={ springProps }>Issack John</animated.p>
-							<animated.h1 style={ h1Props }>Welcome</animated.h1>
-						</header>
+					<Box my={4}>
+						<Grid container
+							justify="center"
+						>
+							<animated.h1 style={h1Props}>Welcome</animated.h1>
+						</Grid>
 					</Box>
 				</Container>
 			</ParallaxLayer>
 
-			<ParallaxLayer offset={ 0 } speed={ 2 } factor={ 1 / 6 }>
-				<NavBar parallax={ parallax }/>
+			<ParallaxLayer offset={0} speed={2} factor={1 / 6}>
+				<NavBar parallax={parallax} />
 			</ParallaxLayer>
 
 			<ParallaxLayer
-				offset={ 1 } speed={ 0.5 } onClick={ () => parallax.scrollTo(2) }
-				style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
-				<Section component={ About }/>
+				offset={1} speed={0.5} onClick={() => parallax.scrollTo(2)}
+				style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+				<Section component={About} />
 			</ParallaxLayer>
-			<ParallaxLayer offset={ 2 } speed={ 0.5 } onClick={ () => parallax.scrollTo(3) }
-			               style={ secondaryBackground }>
-				<Section component={ Skills }/>
+			<ParallaxLayer offset={2} speed={0.5} onClick={() => parallax.scrollTo(3)}
+				style={secondaryBackground}>
+				<Section component={Skills} />
 			</ParallaxLayer>
-			<ParallaxLayer offset={ 3 } speed={ 0.5 } onClick={ () => parallax.scrollTo(4) }
-			               style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
-				<Section component={ Education }/>
+			<ParallaxLayer offset={3} speed={0.5} onClick={() => parallax.scrollTo(4)}
+				style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+				<Section component={Education} />
 			</ParallaxLayer>
-			<ParallaxLayer offset={ 4 } speed={ 0.5 } onClick={ () => parallax.scrollTo(5) }
-			               style={ secondaryBackground }>
-				<Section component={ Experience }/>
+			<ParallaxLayer offset={4} speed={0.5} onClick={() => parallax.scrollTo(5)}
+				style={secondaryBackground}>
+				<Section component={Experience} />
 			</ParallaxLayer>
-			<ParallaxLayer offset={ 5 } speed={ 0.5 } onClick={ () => parallax.scrollTo(6) }
-			               style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
-				<Extracurricular/>
+			<ParallaxLayer offset={5} speed={0.5} onClick={() => parallax.scrollTo(6)}
+				style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+				<Extracurricular />
 			</ParallaxLayer>
-			<ParallaxLayer offset={ 6 } speed={ 0.5 } onClick={ () => parallax.scrollTo(1) }
-			               style={ secondaryBackground }>
-				<Section component={ Contact }/>
+			<ParallaxLayer offset={6} speed={0.5} onClick={() => parallax.scrollTo(1)}
+				style={secondaryBackground}>
+				<Section component={Contact} />
 			</ParallaxLayer>
 
-			{/*button*/ }
-			{ buttons.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }>
-                <span onClick={ () => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1) }>
-                    <Button variant="outline-primary" size={ "lg" } block>{ object }</Button>
-                </span>
-				</ParallaxLayer>
-			) }
+			{/*button*/}
+			{buttons.map((object, i) => <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
+				<span onClick={() => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1)}>
+					<Button variant="outline-primary" size={"lg"} block>{object}</Button>
+				</span>
+			</ParallaxLayer>
+			)}
 		</Parallax>
 	</>)
 };
