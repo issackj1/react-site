@@ -59,9 +59,7 @@ export const Home: React.FC<Props> = (props) => {
 				style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 				<Container>
 					<Box my={4}>
-						<Grid container
-							justify="center"
-						>
+						<Grid container justify="center">
 							<animated.h1 style={h1Props}>Welcome</animated.h1>
 						</Grid>
 					</Box>
