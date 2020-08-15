@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { AppBar, Link, Toolbar, Typography, } from "@material-ui/core";
+import { AppBar, Grid, Link, Toolbar, Typography, } from "@material-ui/core";
 import { Parallax } from "react-spring/renderprops-addons";
 import { navProps } from "../constants";
 import { makeStyles } from "@material-ui/core/styles";
@@ -52,12 +52,11 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 					<Typography variant="h6" className={ classes.title }>
 						Issack John
 					</Typography>
-					<Typography variant="h6">
-						{ navLinks.map(({ title, path }, i) => <Link key={ i }
-						                                             onClick={ () => parallax.scrollTo(i + 1) }>{ title }</Link>
-						) }                        </Typography>
-					{ dropDownLinks.map(({ title, path }, i) =>
-						<Link key={ i } color="inherit" href={ path }>{ title }</Link>) }
+						{ navLinks.map(({ title, path }, i) => <Grid md={ 1 }><Typography variant="h6"><Link key={ i }
+						                                                                                     onClick={ () => parallax.scrollTo(i + 1) }>{ title }</Link></Typography></Grid>
+						) }
+					{/*{ dropDownLinks.map(({ title, path }, i) =>*/ }
+					{/*	<Link key={ i } color="inherit" href={ path }>{ title }</Link>) }*/ }
 					<Link href={ "/api" }>API</Link>
 				</Toolbar>
 			</AppBar>
