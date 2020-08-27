@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Box, Container, Grid } from "@material-ui/core";
 import React, { RefObject, useState } from 'react';
 import { Button } from "react-bootstrap";
@@ -54,9 +55,7 @@ export const Home: React.FC<Props> = (props) => {
 	return (<>
 		<Parallax pages={ 7 } scrolling={ true } ref={ setParallax }>
 			{/*Backgrounds*/ }
-			<span style={ { backgroundColor: '#282c34' } }>
-			<ParallaxLayer offset={ 2 } speed={ 1 }/>
-			</span>
+			<ParallaxLayer offset={ 2 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
 			<ParallaxLayer offset={ 4 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
 			<ParallaxLayer offset={ 6 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
 			<ParallaxLayer offset={ 0 } speed={ 2 } onClick={ () => parallax.scrollTo(1) }
