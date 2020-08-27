@@ -13,6 +13,8 @@ import { Extracurricular } from "./Extracurricular";
 import { NavBar } from "./NavBar";
 import { Section } from "./Section";
 import { Skills } from "./Skills";
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import IconButton from "@material-ui/core/IconButton";
 
 interface Props {
 }
@@ -46,63 +48,76 @@ export const Home: React.FC<Props> = (props) => {
 		color: 'white'
 	};
 
-	const buttons = ['Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Back To Top'];
+	const buttons = ['Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Continue'];
+	const backToTop = [1, 2, 3, 4, 5, 6, 7];
 	// <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#007b3d3d' }}>
 
 	return (<>
-		<Parallax pages={7} scrolling={true} ref={ref => setParallax(ref)}>
-			{/*Backgrounds*/}
-			<ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#282c34' }} />
-			<ParallaxLayer offset={4} speed={1} style={{ backgroundColor: '#282c34' }} />
-			<ParallaxLayer offset={6} speed={1} style={{ backgroundColor: '#282c34' }} />
-			<ParallaxLayer offset={0} speed={2} onClick={() => parallax.scrollTo(1)}
-				style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+		<Parallax pages={ 7 } scrolling={ true } ref={ ref => setParallax(ref) }>
+			{/*Backgrounds*/ }
+			<ParallaxLayer offset={ 2 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
+			<ParallaxLayer offset={ 4 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
+			<ParallaxLayer offset={ 6 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
+			<ParallaxLayer offset={ 0 } speed={ 2 } onClick={ () => parallax.scrollTo(1) }
+			               style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
 				<Container>
-					<Box my={4}>
+					<Box my={ 4 }>
 						<Grid container justify="center">
-							<animated.h1 style={h1Props}>Welcome</animated.h1>
+							<animated.h1 style={ h1Props }>Welcome</animated.h1>
 						</Grid>
 					</Box>
 				</Container>
 			</ParallaxLayer>
 
-			<ParallaxLayer offset={0} speed={2} factor={1 / 6}>
-				<NavBar parallax={parallax} />
+			<ParallaxLayer offset={ 0 } speed={ 2 } factor={ 1 / 6 }>
+				<NavBar parallax={ parallax }/>
 			</ParallaxLayer>
 
 			<ParallaxLayer
-				offset={1} speed={0.5} onClick={() => parallax.scrollTo(2)}
-				style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-				<Section component={About} />
-			</ParallaxLayer>
-			<ParallaxLayer offset={2} speed={0.5} onClick={() => parallax.scrollTo(3)}
-				style={secondaryBackground}>
-				<Section component={Skills} />
-			</ParallaxLayer>
-			<ParallaxLayer offset={3} speed={0.5} onClick={() => parallax.scrollTo(4)}
-				style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-				<Section component={Education} />
-			</ParallaxLayer>
-			<ParallaxLayer offset={4} speed={0.5} onClick={() => parallax.scrollTo(5)}
-				style={secondaryBackground}>
-				<Section component={Experience} />
-			</ParallaxLayer>
-			<ParallaxLayer offset={5} speed={0.5} onClick={() => parallax.scrollTo(6)}
-				style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-				<Extracurricular />
-			</ParallaxLayer>
-			<ParallaxLayer offset={6} speed={0.5} onClick={() => parallax.scrollTo(1)}
-				style={secondaryBackground}>
-				<Section component={Contact} />
+				offset={ 1 } speed={ 0.5 } onClick={ () => parallax.scrollTo(2) }
+				style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
+				<Section component={ About }/>
 			</ParallaxLayer>
 
-			{/*button*/}
-			{buttons.map((object, i) => <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
-				<span onClick={() => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1)}>
-					<Button variant="outline-primary" size={"lg"} block>{object}</Button>
-				</span>
+			<ParallaxLayer offset={ 2 } speed={ 0.5 } onClick={ () => parallax.scrollTo(3) }
+			               style={ secondaryBackground }>
+				<Section component={ Skills }/>
 			</ParallaxLayer>
-			)}
+			<ParallaxLayer offset={ 3 } speed={ 0.5 } onClick={ () => parallax.scrollTo(4) }
+			               style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
+				<Section component={ Education }/>
+			</ParallaxLayer>
+			<ParallaxLayer offset={ 4 } speed={ 0.5 } onClick={ () => parallax.scrollTo(5) }
+			               style={ secondaryBackground }>
+				<Section component={ Experience }/>
+			</ParallaxLayer>
+			<ParallaxLayer offset={ 5 } speed={ 0.5 } onClick={ () => parallax.scrollTo(6) }
+			               style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
+				<Extracurricular/>
+			</ParallaxLayer>
+			<ParallaxLayer offset={ 6 } speed={ 0.5 } onClick={ () => parallax.scrollTo(1) }
+			               style={ secondaryBackground }>
+				<Section component={ Contact }/>
+			</ParallaxLayer>
+
+			{/*button*/ }
+			{ buttons.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }>
+				<span onClick={ () => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1) }>
+					<Button variant="outline-primary" size={ "lg" } block>{ object }</Button>
+				</span>
+				</ParallaxLayer>
+			) }
+
+			{
+				backToTop.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.7 + 1 } speed={ 1 }
+				                                            style={ { display: 'block', width: '20%', marginLeft: '95%' } }>
+				<span onClick={ () => parallax.scrollTo(0) }>
+					<IconButton edge="start" color="inherit" aria-label="arrow" fontSize={ { fontSize: 200 } }>
+					<KeyboardArrowUpIcon fontSize={ "large" }/>
+				</IconButton>
+				</span>
+				</ParallaxLayer>)
+			}
 		</Parallax>
 	</>)
 };
