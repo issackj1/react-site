@@ -1,6 +1,5 @@
-// @ts-nocheck
 import { Box, Container, Grid } from "@material-ui/core";
-import React, { useState } from 'react';
+import React, { RefObject, useState } from 'react';
 import { Button } from "react-bootstrap";
 import { animated, config, useSpring } from 'react-spring';
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
@@ -30,7 +29,7 @@ interface useSpringProps {
 export const Home: React.FC<Props> = (props) => {
 
 
-	const [parallax, setParallax] = useState(React.createRef);
+	const [parallax, setParallax] = useState<Parallax | RefObject<any> | null>(React.createRef);
 
 	const h1Props = useSpring({
 		config: config.molasses,
@@ -53,9 +52,11 @@ export const Home: React.FC<Props> = (props) => {
 	// <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#007b3d3d' }}>
 
 	return (<>
-		<Parallax pages={ 7 } scrolling={ true } ref={ ref => setParallax(ref) }>
+		<Parallax pages={ 7 } scrolling={ true } ref={ setParallax }>
 			{/*Backgrounds*/ }
-			<ParallaxLayer offset={ 2 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
+			<span style={ { backgroundColor: '#282c34' } }>
+			<ParallaxLayer offset={ 2 } speed={ 1 }/>
+			</span>
 			<ParallaxLayer offset={ 4 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
 			<ParallaxLayer offset={ 6 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
 			<ParallaxLayer offset={ 0 } speed={ 2 } onClick={ () => parallax.scrollTo(1) }
@@ -110,7 +111,11 @@ export const Home: React.FC<Props> = (props) => {
 
 			{
 				backToTop.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.7 + 1 } speed={ 1 }
-				                                            style={ { display: 'block', width: '20%', marginLeft: '95%' } }>
+				                                            style={ {
+					                                            display: 'block',
+					                                            width: '20%',
+					                                            marginLeft: '95%'
+				                                            } }>
 				<span onClick={ () => parallax.scrollTo(0) }>
 					<IconButton edge="start" color="inherit" aria-label="arrow" fontSize={ { fontSize: 200 } }>
 					<KeyboardArrowUpIcon fontSize={ "large" }/>
