@@ -1,32 +1,31 @@
-// @ts-nocheck
 import React from 'react';
-import { Col, Figure, Row } from 'react-bootstrap'
-import { Typography, Grid } from '@material-ui/core';
+import { Figure } from 'react-bootstrap'
+import { Typography, Grid, Avatar, createStyles, Theme } from '@material-ui/core';
 import { AboutContent } from "../constants";
+import { makeStyles } from "@material-ui/core/styles";
 
 interface Props {
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        large: {
+            width: theme.spacing(7),
+            height: theme.spacing(7),
+        },
+    }),
+);
+
 export const About: React.FC<Props> = () => {
     const profilePicture = require("../images/IMG_4774.JPG");
+    const classes = useStyles();
     return (
         <Grid direction="row"
             spacing={2}
             justify="center">
             <Typography variant={"h2"} align={"center"}>{AboutContent.title}</Typography>
-
-            <Figure className={"d-flex flex-row mt-5"}>
-                <Figure.Image
-                    width={428}
-                    height={451}
-                    alt="428x451"
-                    src={profilePicture}
-                    rounded
-                />
-                <Figure.Caption className={"d-flex flex-column justify-content-center ml-3"}>
-                    <p style={{ fontSize: '24px' }}>{AboutContent.summary}</p>
-                </Figure.Caption>
-            </Figure>
+            <Avatar variant={"rounded"} alt="Issack John" src={profilePicture} className={classes.large}/>
+            <Typography variant={"body1"} style={{ fontSize: '24px' }} align={"center"}>{AboutContent.summary}</Typography>
         </Grid>
     );
 };
