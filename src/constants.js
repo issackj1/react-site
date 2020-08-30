@@ -19,5 +19,6 @@ export const navProps = {
         {title: 'Education', path: '#education'},
         {title: 'Experience', path: '#experience'},
         {title: 'Extracurricular', path: '#extracurricular'},
+        {title: 'Contact', path: '#contact'},
     ]
 };
