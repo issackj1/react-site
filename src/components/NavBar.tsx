@@ -54,9 +54,11 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 					<Typography variant="h6" className={ classes.title }>
 						Issack John
 					</Typography>
-						{ navLinks.map(({ title }, i) => <Grid md={ 1 }><Typography variant="h6"><Link key={ i }
-						                                                                                     onClick={ () => parallax.scrollTo(i + 1) }>{ title }</Link></Typography></Grid>
+					<Typography className={classes.root}>
+						{ navLinks.map(({ title }, i) => <Link key={ i }
+						                                                                               onClick={ () => parallax.scrollTo(i + 1) }>{ title }</Link>
 						) }
+					</Typography>
 					{/*{ dropDownLinks.map(({ title, path }, i) =>*/ }
 					{/*	<Link key={ i } color="inherit" href={ path }>{ title }</Link>) }*/ }
 					<Link href={ "/api" }>API</Link>
