@@ -55,10 +55,10 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 						Issack John
 					</Typography>
 					<Typography className={ classes.root }>
-						{ navLinks.map(({ title }, i) => <Link key={ i }
+						{ navLinks.map(({ title }, i) => <Link underline={"none"} color={"inherit"} href={"#"} key={ i }
 						                                       onClick={ () => parallax.scrollTo(i + 1) }>{ title }</Link>
 						) }
-						<Link href={ "/api" } color={"inherit"}>API</Link>
+						<Link underline={"none"} href={ "/api" } color={"inherit"}>API</Link>
 					</Typography>
 					{/*{ dropDownLinks.map(({ title, path }, i) =>*/ }
 					{/*	<Link key={ i } color="inherit" href={ path }>{ title }</Link>) }*/ }
