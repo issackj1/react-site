@@ -15,7 +15,6 @@ export const Education: React.FC<Props> = () => {
 			<Grid item
 			      xs={ 12 }
 			      sm={ 12 }>
-
 				<Typography variant={ "h2" } align={"center"}>
 					EDUCATION
 				</Typography>
