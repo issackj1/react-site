@@ -40,6 +40,7 @@ const useStyles = makeStyles({
 
 export const Project: React.FC<Props> = () => {
 
+	// @ts-ignore
 	const { name } = useParams();
 
 	const {

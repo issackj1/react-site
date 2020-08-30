@@ -1,7 +1,6 @@
 import React from 'react';
-import { Col, Row } from "react-bootstrap";
 import { ExtracurricularContent } from "../constants";
-import { Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 interface Props {
 
@@ -10,9 +9,23 @@ interface Props {
 export const Extracurricular: React.FC<Props> = () => {
 	return (
 		<div className={ "container" } id={ "extracurricular" }>
-			<Typography variant={ "h2" } gutterBottom>{ ExtracurricularContent.title }</Typography>
-			<Row>
-				<Col>
+			<Grid
+				container
+				direction={ "row" }
+				spacing={1}
+			>
+				<Grid
+					item
+					xs={ 12 }
+					sm={ 12 }
+				>
+					<Typography variant={ "h2" } gutterBottom>{ ExtracurricularContent.title }</Typography>
+				</Grid>
+				<Grid
+					item
+					xs={ 12 }
+					sm={ 6 }
+				>
 					<Typography variant={ "h4" } gutterBottom>Hackathons Attended</Typography>
 					<ul className={ "list-unstyled" }>
 						<a href="https://devpost.com/software/starterhacks2020-klj3qb" rel={ "noopener noreferrer" }
@@ -25,16 +38,20 @@ export const Extracurricular: React.FC<Props> = () => {
 							<li>NSBE Hacks 2020</li>
 						</a>
 					</ul>
-				</Col>
-				<Col>
+				</Grid>
+				<Grid
+					item
+					xs={ 12 }
+					sm={ 6 }
+				>
 					<Typography variant={ "h4" } gutterBottom>Favourite Books</Typography>
 					<ul className={ "list-unstyled" }>
 						{
 							ExtracurricularContent.books.map((book, i) => <li key={ i }>{ book.name }</li>)
 						}
 					</ul>
-				</Col>
-			</Row>
+				</Grid>
+			</Grid>
 		</div>
 	);
 };
