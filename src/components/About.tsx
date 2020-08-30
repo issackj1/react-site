@@ -1,6 +1,5 @@
 import React from 'react';
-import { Figure } from 'react-bootstrap'
-import { Typography, Grid, Avatar, createStyles, Theme } from '@material-ui/core';
+import { Avatar, createStyles, Grid, Theme, Typography } from '@material-ui/core';
 import { AboutContent } from "../constants";
 import { makeStyles } from "@material-ui/core/styles";
 

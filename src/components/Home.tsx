@@ -1,7 +1,6 @@
 // @ts-nocheck
-import { Box, Container, Grid } from "@material-ui/core";
+import { Box, Button, Container, Grid } from "@material-ui/core";
 import React, { RefObject, useState } from 'react';
-import { Button } from "react-bootstrap";
 import { animated, config, useSpring } from 'react-spring';
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import { SpringConfig } from "react-spring/renderprops-universal";
@@ -101,12 +100,18 @@ export const Home: React.FC<Props> = (props) => {
 			</ParallaxLayer>
 
 			{/*button*/ }
-			{ buttons.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }>
+			{ buttons.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }
+			                                            style={ {
+				                                            display: 'block',
+				                                            width: '20%',
+				                                            marginLeft: '47%'
+			                                            } }>
 				<span onClick={ () => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1) }>
-					<Button variant="outline-primary" size={ "lg" } block>{ object }</Button>
+					<Button variant="contained" color={ "primary" } size={ "lg" } block>{ object }</Button>
 				</span>
 				</ParallaxLayer>
 			) }
+
 
 			{
 				backToTop.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.7 + 1 } speed={ 1 }
@@ -115,11 +120,11 @@ export const Home: React.FC<Props> = (props) => {
 					                                            width: '20%',
 					                                            marginLeft: '95%'
 				                                            } }>
-				<span onClick={ () => parallax.scrollTo(0) }>
-					<IconButton edge="start" color="inherit" aria-label="arrow" fontSize={ { fontSize: 200 } }>
-					<KeyboardArrowUpIcon fontSize={ "large" }/>
-				</IconButton>
-				</span>
+					<span onClick={ () => parallax.scrollTo(0) }>
+						<IconButton edge="start" color="inherit" aria-label="arrow" fontSize={ { fontSize: 200 } }>
+							<KeyboardArrowUpIcon fontSize={ "large" }/>
+						</IconButton>
+					</span>
 				</ParallaxLayer>)
 			}
 		</Parallax>
