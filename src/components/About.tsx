@@ -9,8 +9,8 @@ interface Props {
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		large: {
-			width: theme.spacing(7),
-			height: theme.spacing(7),
+			width: theme.spacing(30),
+			height: theme.spacing(30),
 			margin: "auto"
 		},
 	}),
