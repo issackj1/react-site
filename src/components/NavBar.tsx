@@ -14,7 +14,9 @@ interface Props {
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		flexGrow: 1,
+		'& > * + *': {
+			marginLeft: theme.spacing(2),
+		},
 	},
 	menuButton: {
 		marginRight: theme.spacing(2),
@@ -52,7 +54,7 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 					<Typography variant="h6" className={ classes.title }>
 						Issack John
 					</Typography>
-						{ navLinks.map(({ title, path }, i) => <Grid md={ 1 }><Typography variant="h6"><Link key={ i }
+						{ navLinks.map(({ title }, i) => <Grid md={ 1 }><Typography variant="h6"><Link key={ i }
 						                                                                                     onClick={ () => parallax.scrollTo(i + 1) }>{ title }</Link></Typography></Grid>
 						) }
 					{/*{ dropDownLinks.map(({ title, path }, i) =>*/ }
