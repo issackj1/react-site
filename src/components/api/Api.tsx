@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../../App.css';
 import { Route, Switch, useHistory } from "react-router-dom";
 import { Welcome } from "./Welcome";
 import { Button, CircularProgress, Fade, SvgIcon } from "@material-ui/core";
