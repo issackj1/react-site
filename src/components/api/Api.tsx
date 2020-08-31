@@ -10,8 +10,6 @@ import { Col, Row } from "react-bootstrap";
 import { NavigateBefore } from "@material-ui/icons";
 import { TableDetail } from "./TableDetail";
 
-const axios = require('axios');
-
 interface Props {
 
 }
