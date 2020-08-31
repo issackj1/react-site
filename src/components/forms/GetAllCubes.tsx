@@ -28,7 +28,6 @@ export const GetAllCubes: React.FC<Props> = (props) => {
 		setIsLoading(true);
 		await axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + id)
 			.then((result: any) => {
-				alert(result);
 					if (result.data.status === 'FAILED') {
 						setResponse(result.data.object.split('.')[0]);
 					} else {
