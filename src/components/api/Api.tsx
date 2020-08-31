@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Route, Switch, useHistory } from "react-router-dom";
 import { Welcome } from "./Welcome";
-import { Button, CircularProgress, Fade, SvgIcon } from "@material-ui/core";
+import { Button, CircularProgress, Fade, Grid, SvgIcon } from "@material-ui/core";
 import { Auth } from "./Auth";
 import { PrivateRoute } from "./PrivateRoute";
 import { Endpoint } from "./Endpoint";
 import { SimpleNavBar } from "../SimpleNavBar";
-import { Col, Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { NavigateBefore } from "@material-ui/icons";
 import { TableDetail } from "./TableDetail";
 
@@ -33,13 +33,12 @@ export const Api: React.FC<Props> = () => {
 	const noBackButton = ["/api", "/api/auth"]
 
 	return (
-		<div className={ "d-flex flex-column h-100" }>
-			<Row>
-				<Col>
-					<SimpleNavBar/>
-				</Col>
-			</Row>
-			<Row>
+		<Grid
+			direction={ "row" }>
+			<Grid item xs={ 12 } sm={ 12 }>
+				<SimpleNavBar/>
+			</Grid>
+			<Grid item xs={ 12 } sm={ 12 }>
 				{
 					noBackButton.indexOf(history.location.pathname) === -1
 						? (
@@ -52,32 +51,30 @@ export const Api: React.FC<Props> = () => {
 						)
 						: null
 				}
-			</Row>
-			<Row className={ "flex-grow-1" }>
-				<Col>
-					{
-						isLoading
-							? (<div>
-									<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
-									      unmountOnExit>
-										<CircularProgress/>
-									</Fade>
-								</div>
-							)
-							: (
+			</Grid>
+			<Grid item xs={ 12 } sm={ 12 }>
+				{
+					isLoading
+						? (<div>
+								<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
+								      unmountOnExit>
+									<CircularProgress/>
+								</Fade>
+							</div>
+						)
+						: (
 
-								<Switch>
-									<Route path={ "/api/auth" } component={ Auth }/>
-									<PrivateRoute handleLogout={ () => handleLogout() }
-									              path={ "/api/:name/detail/:productId" } component={ TableDetail }/>
-									<PrivateRoute handleLogout={ () => handleLogout() } path={ "/api/:name" }
-									              component={ Endpoint }/>
-									<PrivateRoute handleLogout={ () => handleLogout() } path={ "/" } component={ Welcome }/>
-								</Switch>
-							)
-					}
-				</Col>
-			</Row>
-		</div>
+							<Switch>
+								<Route path={ "/api/auth" } component={ Auth }/>
+								<PrivateRoute handleLogout={ () => handleLogout() }
+								              path={ "/api/:name/detail/:productId" } component={ TableDetail }/>
+								<PrivateRoute handleLogout={ () => handleLogout() } path={ "/api/:name" }
+								              component={ Endpoint }/>
+								<PrivateRoute handleLogout={ () => handleLogout() } path={ "/" } component={ Welcome }/>
+							</Switch>
+						)
+				}
+			</Grid>
+		</Grid>
 	);
 };
