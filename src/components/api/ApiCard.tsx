@@ -12,8 +12,12 @@ interface Props {
 
 const useStyles = makeStyles({
 	root: {
-		minWidth: 275,
-		height: 100
+		height: '100%',
+		display: 'flex',
+		flexDirection: 'column',
+	},
+	cardContent: {
+		flexGrow: 1,
 	},
 	title: {
 		fontSize: 32,
@@ -28,7 +32,7 @@ export const ApiCard: React.FC<Props> = (props:Props) => {
 	return (
 		<Card className={ classes.root }>
 			<CardActionArea style={ { textDecoration: 'none' } } component={ Link } to={ to }>
-				<CardContent>
+				<CardContent className={classes.cardContent}>
 					<Typography className={ classes.title } color="textSecondary" gutterBottom>
 						{ title }
 					</Typography>

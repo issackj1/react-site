@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
-import { Col, Row } from "react-bootstrap";
 import { ApiCard } from "./ApiCard";
+import { Grid } from "@material-ui/core";
 
 interface Props {
 
@@ -10,19 +10,27 @@ interface Props {
 export const Home: React.FC<Props> = (props) => {
 
 	return (
-		<Row className={ "m-auto d-flex justify-content-around" }>
-			<Col md={6}>
-				<ApiCard title={ "See All Tables" }
+		<Grid
+			container
+			direction={ "row" }
+			spacing={ 2 }
+		>
+			<Grid item
+			      xs={ 12 }
+			      sm={ 6 }>
+				<ApiCard title={ "See all tables" }
 				         description={ "Complete inventory of data tables available through this Statistics Canada API" }
 				         to={ "/api/seeAll" }
 				/>
-			</Col>
-			<Col md={6}>
-				<ApiCard title={ "Meta Data Table Search" }
+			</Grid>
+			<Grid item
+			      xs={ 12 }
+			      sm={ 6 }>
+				<ApiCard title={ "Meta data table search" }
 				         description={ "Retrieve the metadata supporting the data at table level" }
 				         to={ "/api/searchAll" }
 				/>
-			</Col>
-		</Row>
+			</Grid>
+		</Grid>
 	);
 };
