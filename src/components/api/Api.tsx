@@ -6,7 +6,6 @@ import { Auth } from "./Auth";
 import { PrivateRoute } from "./PrivateRoute";
 import { Endpoint } from "./Endpoint";
 import { SimpleNavBar } from "../SimpleNavBar";
-import { Col } from "react-bootstrap";
 import { NavigateBefore } from "@material-ui/icons";
 import { TableDetail } from "./TableDetail";
 
@@ -38,16 +37,14 @@ export const Api: React.FC<Props> = () => {
 			<Grid item xs={ 12 } sm={ 12 }>
 				<SimpleNavBar/>
 			</Grid>
-			<Grid item xs={ 12 } sm={ 12 }>
+			<Grid item xs={ 12 } sm={ 12 } justify={ "flex-start" }>
 				{
 					noBackButton.indexOf(history.location.pathname) === -1
 						? (
-							<Col className={ "d-flex justify-content-start" }>
-								<Button variant="contained" color="primary"
-								        startIcon={ <SvgIcon component={ NavigateBefore }/> } onClick={ goBack }>
-									Back
-								</Button>
-							</Col>
+							<Button variant="contained" color="primary"
+							        startIcon={ <SvgIcon component={ NavigateBefore }/> } onClick={ goBack }>
+								Back
+							</Button>
 						)
 						: null
 				}

@@ -2,8 +2,7 @@ import React from 'react';
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { TextField } from 'formik-material-ui';
-import { Button, CssBaseline, Link } from "@material-ui/core";
-import { Col, Row } from "react-bootstrap";
+import { Button, CssBaseline, Grid, Link } from "@material-ui/core";
 
 interface Props {
 	handleSubmit: (username: string, password: string) => any
@@ -44,18 +43,18 @@ export const LoginForm: React.FC<Props> = (props) => {
 					       variant="outlined"/>
 					<Button type={ "submit" } variant="contained" disabled={ isSubmitting } color="primary">Sign
 						In</Button>
-					<Row>
-						<Col>
+					<Grid container direction={ "row" } justify={"space-evenly"}>
+						<Grid item xs={ 6 } sm={ 6 }>
 							<Link component={ "button" } onClick={ toggleSignUp }>
 								Forgot password?
 							</Link>
-						</Col>
-						<Col>
+						</Grid>
+						<Grid item xs={ 6 } sm={ 6 }>
 							<Link component={ "button" } onClick={ toggleSignUp }>
 								Don't have an account? Sign Up
 							</Link>
-						</Col>
-					</Row>
+						</Grid>
+					</Grid>
 				</Form>
 			) }
 		</Formik>

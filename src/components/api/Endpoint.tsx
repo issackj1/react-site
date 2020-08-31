@@ -1,10 +1,9 @@
 // @ts-nocheck
 import React from 'react';
-import { Col, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { GetCubeMetaData } from "../forms/GetCubeMetaData";
 import { GetAllCubes } from "../forms/GetAllCubes";
-import { Box, Container } from "@material-ui/core";
+import { Box, Container, Grid, Typography } from "@material-ui/core";
 
 
 interface Props {
@@ -43,16 +42,18 @@ export const Endpoint: React.FC<Props> = (props) => {
 	return (
 		<Container maxWidth="sm">
 			<Box my={ 20 }>
-				<Row>
-					<Col className={ "d-flex justify-content-center" }>
-						{ title }
-					</Col>
-				</Row>
-				<Row>
-					<Col className={ "d-flex flex-column" }>
-						{ form }
-					</Col>
-				</Row>
+				<Grid direction={"row"}>
+					<Grid item xs={12} sm={12}>
+						<Typography align={"center"}>
+							{ title }
+						</Typography>
+					</Grid>
+					<Grid item xs={12} sm={12}>
+						<Typography align={"center"}>
+							{ form }
+						</Typography>
+					</Grid>
+				</Grid>
 			</Box>
 		</Container>
 	);
