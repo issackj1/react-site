@@ -20,7 +20,9 @@ export const About: React.FC<Props> = () => {
 	const profilePicture = require("../images/IMG_4774.JPG");
 	const classes = useStyles();
 	return (
-		<Grid direction="row"
+		<Grid
+			container
+			direction={"column"}
 		      spacing={ 2 }>
 			<Typography variant={ "h2" } align={ "center" }>{ AboutContent.title }</Typography>
 			<Avatar variant={ "rounded" } alt="Issack John" src={ profilePicture } className={ classes.large }/>

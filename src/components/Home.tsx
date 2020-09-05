@@ -107,7 +107,7 @@ export const Home: React.FC<Props> = (props) => {
 				                                            marginLeft: '47%'
 			                                            } }>
 				<span onClick={ () => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1) }>
-					<Button variant="contained" color={ "primary" } size={ "lg" } block>{ object }</Button>
+					<Button variant="contained" color={ "primary" } size={ "large" } block={"true"}>{ object }</Button>
 				</span>
 				</ParallaxLayer>
 			) }

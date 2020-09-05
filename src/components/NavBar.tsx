@@ -1,9 +1,10 @@
 // @ts-nocheck
 import React from 'react';
-import { AppBar, Button, Link, Toolbar, Typography, } from "@material-ui/core";
+import { AppBar, Button, Fab, Link, Toolbar, Typography, Zoom, } from "@material-ui/core";
 import { Parallax } from "react-spring/renderprops-addons";
 import { navProps } from "../constants";
 import { makeStyles } from "@material-ui/core/styles";
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 interface Props {
 	parallax: Parallax
@@ -21,9 +22,36 @@ const useStyles = makeStyles((theme) => ({
 	title: {
 		flexGrow: 1,
 	},
+	zoom: {
+		position: 'fixed',
+		bottom: theme.spacing(2),
+		right: theme.spacing(2),
+	}
 }));
 
 const logo = require('../logo.jpg');
+
+function ScrollTop() {
+	const classes = useStyles();
+
+	const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+		const anchor = ((event.target as HTMLDivElement).ownerDocument || document).querySelector(
+			'#back-to-top-anchor',
+		);
+
+		if (anchor) {
+			anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}
+	};
+
+	return (
+		<Zoom>
+			<div onClick={handleClick} role="presentation" className={classes.zoom}>
+				hi
+			</div>
+		</Zoom>
+	);
+}
 
 export const NavBar: React.FC<Props> = ({ parallax }) => {
 
@@ -47,9 +75,14 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 					<Button color={"inherit"} href={"/api"}>API</Button>
 					{/*{ dropDownLinks.map(({ title, path }, i) =>*/ }
 					{/*	<Link key={ i } color="inherit" href={ path }>{ title }</Link>) }*/ }
-
 				</Toolbar>
+				<ScrollTop>
+					<Fab color="secondary" size="small" aria-label="scroll back to top">
+						<KeyboardArrowUpIcon />
+					</Fab>
+				</ScrollTop>
 			</AppBar>
+
 		</div>
 	);
 };
