@@ -29,8 +29,6 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-const logo = require('../logo.jpg');
-
 function ScrollTop() {
 	const classes = useStyles();
 
@@ -55,8 +53,7 @@ function ScrollTop() {
 
 export const NavBar: React.FC<Props> = ({ parallax }) => {
 
-	const { dropDownLinks, navLinks } = navProps;
-	const [auth, setAuth] = React.useState(false);
+	const { navLinks } = navProps;
 	const classes = useStyles();
 
 	return (

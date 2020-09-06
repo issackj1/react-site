@@ -36,6 +36,3 @@ export const SimpleNavBar: React.FC<Props> = () => {
 		</div>
 	);
 };
-
-
-const logo = require('../logo.jpg');
