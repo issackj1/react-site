@@ -100,15 +100,13 @@ export const Home: React.FC<Props> = (props) => {
 			</ParallaxLayer>
 
 			{/*button*/ }
-			{ buttons.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }
-			                                            style={ {
-				                                            display: 'block',
-				                                            width: '20%',
-				                                            marginLeft: '47%'
-			                                            } }>
-				<span onClick={ () => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1) }>
-					<Button variant="contained" color={ "primary" } size={ "large" } block={"true"}>{ object }</Button>
-				</span>
+			{ buttons.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }>
+					<Grid container justify="center">
+						<span onClick={ () => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1) }>
+							<Button variant="contained" color={ "primary" } size={ "large" }
+					        block={ "true" }>{ object }</Button>
+						</span>
+					</Grid>
 				</ParallaxLayer>
 			) }
 
