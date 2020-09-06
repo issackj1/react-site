@@ -4,6 +4,7 @@ import { Home } from "./components/Home";
 import { Project } from "./components/Project";
 import { Api } from "./components/api/Api";
 import { Link, Typography } from "@material-ui/core";
+import { FinancialLiteracy } from "./components/financialLiteracy/FinancialLiteracy";
 
 function Copyright() {
 	return (
@@ -24,6 +25,7 @@ export default function App() {
 			<Switch>
 				<Route path={ "/project/:name" } component={ Project }/>
 				<Route path={ "/api" } component={ Api }/>
+				<Route path={ "/financialLiteracy" } component={ FinancialLiteracy }/>
 				<Route path={ "/" } component={ Home } Copyright={ () => Copyright() }/>
 			</Switch>
 		</Router>

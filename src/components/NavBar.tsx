@@ -68,6 +68,7 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 					{ navLinks.map(({ title }, i) => <Button onClick={ () => parallax.scrollTo(i + 1) } key={ i }
 					                                        color="inherit" variant={"text"}>{ title }</Button>
 					) }
+					<Button color={"inherit"} href={"/financialLiteracy"} variant={"text"}>Financial Literacy</Button>
 					<Button color={"inherit"} href={"/api"} variant={"text"}>API</Button>
 				</Toolbar>
 				<ScrollTop>
