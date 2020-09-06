@@ -68,13 +68,10 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 							Issack John
 						</Link>
 					</Typography>
-
 					{ navLinks.map(({ title }, i) => <Button onClick={ () => parallax.scrollTo(i + 1) } key={ i }
-					                                        color="inherit">{ title }</Button>
+					                                        color="inherit" variant={"text"}>{ title }</Button>
 					) }
-					<Button color={"inherit"} href={"/api"}>API</Button>
-					{/*{ dropDownLinks.map(({ title, path }, i) =>*/ }
-					{/*	<Link key={ i } color="inherit" href={ path }>{ title }</Link>) }*/ }
+					<Button color={"inherit"} href={"/api"} variant={"text"}>API</Button>
 				</Toolbar>
 				<ScrollTop>
 					<Fab color="secondary" size="small" aria-label="scroll back to top">
