@@ -112,7 +112,6 @@ export const Home: React.FC<Props> = (props) => {
 				</ParallaxLayer>
 			) }
 
-
 			{
 				backToTop.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.7 + 1 } speed={ 1 }
 				                                            style={ {
