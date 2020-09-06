@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, Link, Toolbar, Typography } from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 
 interface Props {
 }
@@ -28,9 +26,6 @@ export const SimpleNavBar: React.FC<Props> = () => {
 		<div className={ classes.root }>
 			<AppBar position={ "static" }>
 				<Toolbar>
-					<IconButton edge="start" className={ classes.menuButton } color="inherit" aria-label="menu">
-						<MenuIcon/>
-					</IconButton>
 					<Typography variant="h6" className={ classes.title }>
 						<Link underline={"none"} color={"inherit"} href={"/"}>
 							Issack John
