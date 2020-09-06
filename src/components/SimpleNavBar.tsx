@@ -25,7 +25,7 @@ export const SimpleNavBar: React.FC<Props> = () => {
 	return (
 		<div className={ classes.root }>
 			<AppBar position={ "static" }>
-				<Toolbar>
+				<Toolbar variant={"dense"}>
 					<Typography variant="h6" className={ classes.title }>
 						<Link underline={"none"} color={"inherit"} href={"/"}>
 							Issack John
