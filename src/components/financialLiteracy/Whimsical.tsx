@@ -11,12 +11,12 @@ export const Whimsical: React.FC<Props> = (props) => {
 	return (
 		<Container maxWidth="lg">
 			<Box my={ 4 }>
-				<Typography color={ "textPrimary" } component={ "h5" } variant={ "h2" } align={ "center" }>Welcome to Financial Literacy</Typography>
+				<Typography color={ "textPrimary" } component={ "h6" } variant={ "h2" } align={ "center" }>Financial Literacy</Typography>
 				<Grid container
-				direction={"row"}>
+				direction={"row"} justify={"center"}>
 					<Iframe url="https://whimsical.com/embed/337yB3814c7Fs1JVmmqQGU"
-					        width="1600px"
-					        height="700px"
+					        width={"1600px"}
+					        height="500px"
 					        id="myId"
 					        className="myClassname"
 					        display="initial"
