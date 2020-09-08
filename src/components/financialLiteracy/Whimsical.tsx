@@ -19,7 +19,7 @@ export const Whimsical: React.FC<Props> = (props) => {
 						<Typography color={ "textPrimary" } variant={ "h6" }>Fintech Apps</Typography>
 						<ul className={"list-unstyled"}>
 							<li><a href={"https://wealthsimple.com/invite/OBBTMW"}>Wealth Simple</a></li>
-							<li><a href={"https://www.questrade.com/home"}>Questrade</a></li>
+							<li><a href={"https://www.questrade.com?refid=5f518a4bef96e"}>Questrade</a></li>
 							<li><a href={"https://go.moka.ai/xk27G51pg8"}>Moka</a></li>
 							<li><a href={"https://www.webull.com/"}>Webull</a></li>
 						</ul>
