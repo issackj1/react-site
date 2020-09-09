@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { TextField } from 'formik-material-ui';
-import { Button, Link } from "@material-ui/core";
+import { Button, Grid, Link } from "@material-ui/core";
 
 interface Props {
 	handleSubmit: (username: string, email: string, password: string) => any
@@ -42,22 +42,33 @@ export const SignUpForm: React.FC<Props> = (props) => {
 			} }>
 			{ ({ isSubmitting }) => (
 				<Form className={ "d-flex flex-column justify-content-between" }>
-					<Field className={ "mb-3" } component={ TextField } name="username" label={ "Username" }
-					       variant="outlined"/>
-					<Field className={ "mb-3" } component={ TextField } name="email" label={ "Email Address *" }
-					       variant="outlined"/>
-					<Field className={ "mb-3" } component={ TextField } name="password" label={ "Password *" }
-					       type={ "password" }
-					       variant="outlined"/>
-					<Field className={ "mb-3" } component={ TextField } name="confirmPassword"
-					       label={ "Confirm Password *" }
-					       type={ "password" }
-					       variant="outlined"/>
-					<Button type={ "submit" } variant="contained" disabled={ isSubmitting }
-					        color="primary">Register</Button>
-					<Link component={ "button" } onClick={ toggleSignUp }>
-						Already have an account? Log In
-					</Link>
+					<Grid container spacing={ 1 } direction={ "column" } alignItems={ "stretch" }>
+						<Grid container item xs={ 12 } sm={ 12 } justify={ "center" }><Field component={ TextField } name="username"
+						                                                label={ "Username" }
+						                                                variant="outlined"/></Grid>
+						<Grid container item xs={ 12 } sm={ 12 } justify={ "center" }><Field className={ "mb-3" } component={ TextField }
+						                                                name="email" label={ "Email Address *" }
+						                                                variant="outlined"/></Grid>
+						<Grid container item xs={ 12 } sm={ 12 } justify={ "center" }><Field className={ "mb-3" } component={ TextField }
+						                                                name="password" label={ "Password *" }
+						                                                type={ "password" }
+						                                                variant="outlined"/></Grid>
+						<Grid container item xs={ 12 } sm={ 12 } justify={ "center" }><Field className={ "mb-3" } component={ TextField }
+						                                                name="confirmPassword"
+						                                                label={ "Confirm Password *" }
+						                                                type={ "password" }
+						                                                variant="outlined"/></Grid>
+						<Grid container item xs={ 12 } sm={ 12 } justify={ "center" }><Button type={ "submit" } variant="contained"
+						                                                 disabled={ isSubmitting }
+						                                                 color="primary">Register</Button>
+						</Grid>
+
+						<Grid item xs={ 6 } sm={ 6 } justify={ "center" }>
+							<Link component={ "button" } onClick={ toggleSignUp }>
+								Already have an account? Log In
+							</Link>
+						</Grid>
+					</Grid>
 				</Form>
 			) }
 		</Formik>
