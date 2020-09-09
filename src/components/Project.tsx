@@ -1,9 +1,8 @@
 import React from 'react';
-import { Col, Container, ListGroup, Row } from "react-bootstrap";
 import { SimpleNavBar } from "./SimpleNavBar";
 import { useParams } from "react-router-dom";
 import { HackathonOne, HackathonTwo, NoProject, ProjectOne, ProjectTwo } from "../constants";
-import { Typography } from "@material-ui/core";
+import { Container, Grid, List, ListItem, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 interface Props {
@@ -54,41 +53,43 @@ export const Project: React.FC<Props> = () => {
 	return (<div>
 		<SimpleNavBar/>
 		<Container>
-			<Row>
-				<Col>
-					<Typography variant={ "h1" } className={ classes.title } color="textPrimary"
-					            gutterBottom>{ title } { year }</Typography>
-					<Typography variant={ "h6" } color="textSecondary" gutterBottom>{ date } { location }</Typography>
-					<Typography variant={ "h5" } gutterBottom>{ projectTitle } Inspiration</Typography>
-					<Typography variant={ "body1" } gutterBottom>{ summary }</Typography>
+			<Grid
+				container
+				direction={ "column" }
+				spacing={ 1 }
+			>
+				<Typography variant={ "h1" } className={ classes.title } color="textPrimary"
+				            gutterBottom>{ title } { year }</Typography>
+				<Typography variant={ "h6" } color="textSecondary" gutterBottom>{ date } { location }</Typography>
+				<Typography variant={ "h5" } gutterBottom>{ projectTitle } Inspiration</Typography>
+				<Typography variant={ "body1" } gutterBottom>{ summary }</Typography>
 
-					<Typography variant={ "h5" } gutterBottom>How it Works</Typography>
-					<Typography variant={ "body1" } gutterBottom>{ howItWorks }</Typography>
+				<Typography variant={ "h5" } gutterBottom>How it Works</Typography>
+				<Typography variant={ "body1" } gutterBottom>{ howItWorks }</Typography>
 
-					<Typography variant={ "h5" } gutterBottom>How we built it</Typography>
-					<Typography variant={ "body1" } gutterBottom>{ howWeBuilt }</Typography>
+				<Typography variant={ "h5" } gutterBottom>How we built it</Typography>
+				<Typography variant={ "body1" } gutterBottom>{ howWeBuilt }</Typography>
 
-					<Typography variant={ "h5" } gutterBottom>Challenges we ran into</Typography>
-					<Typography variant={ "body1" } gutterBottom>{ challenges }</Typography>
+				<Typography variant={ "h5" } gutterBottom>Challenges we ran into</Typography>
+				<Typography variant={ "body1" } gutterBottom>{ challenges }</Typography>
 
-					<Typography variant={ "h5" } gutterBottom>Accomplishments that we're proud of</Typography>
-					<Typography variant={ "body1" } gutterBottom>{ accomplishments }</Typography>
+				<Typography variant={ "h5" } gutterBottom>Accomplishments that we're proud of</Typography>
+				<Typography variant={ "body1" } gutterBottom>{ accomplishments }</Typography>
 
-					<Typography variant={ "h5" } gutterBottom>What we learned</Typography>
-					<Typography variant={ "body1" } gutterBottom>{ learned }</Typography>
+				<Typography variant={ "h5" } gutterBottom>What we learned</Typography>
+				<Typography variant={ "body1" } gutterBottom>{ learned }</Typography>
 
-					<Typography variant={ "h5" } gutterBottom>What's next for { projectTitle }</Typography>
-					<Typography variant={ "body1" } gutterBottom>{ next }</Typography>
-					<a href={ repoUrl }
-					   rel={ "noopener noreferrer" }
-					   target={ "_blank" }>Repository</a>
+				<Typography variant={ "h5" } gutterBottom>What's next for { projectTitle }</Typography>
+				<Typography variant={ "body1" } gutterBottom>{ next }</Typography>
+				<a href={ repoUrl }
+				   rel={ "noopener noreferrer" }
+				   target={ "_blank" }>Repository</a>
 
-					<Typography variant={ "h6" } gutterBottom>Built with</Typography>
-					<ListGroup horizontal>
-						{ technologies.map((name: React.ReactNode) => <ListGroup.Item>{ name }</ListGroup.Item>) }
-					</ListGroup>
-				</Col>
-			</Row>
+				<Typography variant={ "h6" } gutterBottom>Built with</Typography>
+				<List>
+					{ technologies.map((name: React.ReactNode) => <ListItem>{ name }</ListItem>) }
+				</List>
+			</Grid>
 		</Container>
 	</div>)
 };

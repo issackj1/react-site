@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { TextField } from "formik-material-ui";
-import { Button } from "@material-ui/core";
-import { Col, Row } from "react-bootstrap";
+import { Button, Grid, Typography } from "@material-ui/core";
 
 interface Props {
 
@@ -51,13 +50,16 @@ export const GetAllCubes: React.FC<Props> = (props) => {
 	};
 
 	return (
-		<>
-			<Row>
-				<Col>
+		<Grid
+			container
+			direction={ "column" }
+			spacing={ 1 }>
+			<Grid container item xs={ 12 }>
+				<Typography variant={ "body1" } align={ "center" }>
 					{ response }
-				</Col>
-			</Row>
-			<Formik
+				</Typography>
+			</Grid>
+			<Grid container item xs={ 12 } sm={ 12 }><Formik
 				initialValues={ { productId: '' } }
 				validationSchema={ schema }
 				onSubmit={ (values, { setSubmitting }) => {
@@ -77,6 +79,7 @@ export const GetAllCubes: React.FC<Props> = (props) => {
 					</Form>
 				) }
 			</Formik>
-		</>
+			</Grid>
+		</Grid>
 	);
 };

@@ -3,7 +3,6 @@ import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { TextField } from 'formik-material-ui';
 import { Button, Link } from "@material-ui/core";
-import { Col } from "react-bootstrap";
 
 interface Props {
 	handleSubmit: (username: string, email: string, password: string) => any
@@ -56,11 +55,9 @@ export const SignUpForm: React.FC<Props> = (props) => {
 					       variant="outlined"/>
 					<Button type={ "submit" } variant="contained" disabled={ isSubmitting }
 					        color="primary">Register</Button>
-					<Col>
-						<Link component={ "button" } onClick={ toggleSignUp }>
-							Already have an account? Log In
-						</Link>
-					</Col>
+					<Link component={ "button" } onClick={ toggleSignUp }>
+						Already have an account? Log In
+					</Link>
 				</Form>
 			) }
 		</Formik>
