@@ -1,0 +1,30 @@
+{
+  "FintechApps": [
+    {
+      "title": "Wealth Simple",
+      "link": "https://wealthsimple.com/invite/OBBTMW"
+    },
+    {
+      "title": "Questrade",
+      "link": "https://www.questrade.com?refid=5f518a4bef96e"
+    },
+    {
+      "title": "Moka",
+      "link": "https://go.moka.ai/xk27G51pg8"
+    },
+    {
+      "title": "Webull",
+      "link": "https://www.webull.com/"
+    }
+  ],
+  "Newsletters": [
+    {
+      "title": "MORNING BREW",
+      "link": "http://morningbrew.com/daily/r/?kid=173fbe8e"
+    },
+    {
+      "title": "EMERGING TECH BREW",
+      "link": "http://morningbrew.com/emerging-tech/r/?kid=173fbe8e"
+    }
+  ]
+}

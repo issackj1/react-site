@@ -7,3 +7,4 @@ export const AboutContent = require('./json/About.json');
 export const SkillsContent = require('./json/Skills.json');
 export const ExtracurricularContent = require('./json/Extracurricular.json');
 export const navProps = require("./json/NavProps.json");
+export const AffiliateLinks = require("./json/AffiliateLinks.json");
