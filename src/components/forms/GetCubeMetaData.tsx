@@ -4,8 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { TextField } from "formik-material-ui";
-import { Button, Card, CardActionArea, CardContent, Typography } from "@material-ui/core";
-import { Col, Row, Toast } from "react-bootstrap";
+import { Button, Card, CardActionArea, CardContent, Grid, Snackbar, Typography } from "@material-ui/core";
+import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
 
 interface Props {
 }
@@ -15,6 +15,10 @@ const axios = require('axios');
 const schema = Yup.object({
 	productId: Yup.number().required('Id must be 8 digits long')
 });
+
+function Alert(props: AlertProps) {
+	return <MuiAlert elevation={ 6 } variant="filled" { ...props } />;
+}
 
 export const GetCubeMetaData: React.FC<Props> = () => {
 
@@ -49,8 +53,8 @@ export const GetCubeMetaData: React.FC<Props> = () => {
 
 	return (
 		<>
-			<Row>
-				<Col className={ "d-flex justify-content-center" }>
+			<Grid container direction={ "column" } spacing={ 2 }>
+				<Grid container item direction={ "column" } xs={ 12 }>
 					<Formik
 						initialValues={ { productId: '' } }
 						validationSchema={ schema }
@@ -72,27 +76,23 @@ export const GetCubeMetaData: React.FC<Props> = () => {
 							</Form>
 						) }
 					</Formik>
-				</Col>
-			</Row>
-			<Row>
-				<Col className={ "d-flex justify-content-center mb-3" } style={ { height: '50px' } }>
+				</Grid>
+				<Grid container item direction={ "column" } xs={ 12 }>
 					{
 						toastMessage
 							? (
-								<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show }
-								       delay={ 3000 }
-								       autohide>
-									<Toast.Body>
+								<Snackbar className={ "mx-auto" } onClose={ () => setShow(false) } show={ show }
+								          delay={ 3000 }
+								          autohide>
+									<Alert severity={ "error" }>
 										<strong>{ toastMessage }</strong>
-									</Toast.Body>
-								</Toast>
+									</Alert>
+								</Snackbar>
 							)
 							: null
 					}
-				</Col>
-			</Row>
-			<Row>
-				<Col className={ "d-flex justify-content-center" }>
+				</Grid>
+				<Grid container item xs={ 12 } sm={ 12 }>
 					{
 						!isLoading && !_.isEmpty(response)
 							? (
@@ -121,8 +121,8 @@ export const GetCubeMetaData: React.FC<Props> = () => {
 							)
 							: null
 					}
-				</Col>
-			</Row>
+				</Grid>
+			</Grid>
 		</>
 	);
 };
