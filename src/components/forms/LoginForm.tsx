@@ -34,25 +34,34 @@ export const LoginForm: React.FC<Props> = (props) => {
 				}, 400);
 			} }>
 			{ ({ isSubmitting }) => (
-				<Form className={ "d-flex flex-column" }>
-					<CssBaseline/>
-					<Field className={ "mb-3" } component={ TextField } name="email" label={ "Email Address *" }
-					       variant="outlined"/>
-					<Field className={ "mb-3" } component={ TextField } type={ "password" } name="password"
-					       label={ "Password *" }
-					       variant="outlined"/>
-					<Button type={ "submit" } variant="contained" disabled={ isSubmitting } color="primary">Sign
-						In</Button>
-					<Grid container direction={ "row" } justify={"space-evenly"}>
-						<Grid item xs={ 6 } sm={ 6 }>
-							<Link component={ "button" } onClick={ toggleSignUp }>
-								Forgot password?
-							</Link>
+				<Form>
+					<Grid container spacing={ 1 } direction={ "column" } alignItems={ "stretch" }>
+						<Grid container item xs={ 12 } sm={ 12 } justify={"center"}>
+							<Field component={ TextField } name="email"
+							       label={ "Email Address *" }
+							       variant="outlined"/>
 						</Grid>
-						<Grid item xs={ 6 } sm={ 6 }>
-							<Link component={ "button" } onClick={ toggleSignUp }>
-								Don't have an account? Sign Up
-							</Link>
+						<Grid container item xs={ 12 } sm={ 12 } justify={"center"}>
+							<Field component={ TextField }
+							       type={ "password" } name="password"
+							       label={ "Password *" }
+							       variant="outlined"/>
+						</Grid>
+						<Grid container item xs={ 12 } sm={ 12 } justify={ "center" }>
+							<Button type={ "submit" } variant="contained" disabled={ isSubmitting } color="primary">Sign
+								In</Button>
+						</Grid>
+						<Grid container item direction={ "row" } justify={ "space-evenly" }>
+							<Grid item xs={ 6 } sm={ 6 }>
+								<Link component={ "button" } onClick={ toggleSignUp }>
+									Forgot password?
+								</Link>
+							</Grid>
+							<Grid container item xs={ 6 } sm={ 6 }>
+								<Link component={ "button" } onClick={ toggleSignUp }>
+									Don't have an account? Sign Up
+								</Link>
+							</Grid>
 						</Grid>
 					</Grid>
 				</Form>

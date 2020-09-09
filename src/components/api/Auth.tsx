@@ -25,7 +25,7 @@ function Copyright() {
 }
 
 function Alert(props: AlertProps) {
-	return <MuiAlert elevation={6} variant="filled" {...props} />;
+	return <MuiAlert elevation={ 6 } variant="filled" { ...props } />;
 }
 
 
@@ -82,38 +82,36 @@ export const Auth: React.FC<Props> = () => {
 	const signUpHeaders = () =>
 		(
 			<>
-				<CardHeader>
-					<Typography color={ "textPrimary" } variant="h4" component="h1" gutterBottom
-					            align={ "center" }>
-						Sign Up</Typography>
-				</CardHeader>
-				<SignUpForm
-					handleSubmit={ (username, email, password) => handleSignUp(username, email, password) }
-					toggleSignUp={ () => setIsSignUp(false) }
-				/>
+				<CardHeader title={ "Sign Up" }></CardHeader>
+				<CardContent>
+					<SignUpForm
+						handleSubmit={ (username, email, password) => handleSignUp(username, email, password) }
+						toggleSignUp={ () => setIsSignUp(false) }
+					/>
+				</CardContent>
 			</>
 		)
 
 	const logInHeaders = () =>
 		(
 			<>
-				<CardHeader>
-					<Typography color={ "textPrimary" } variant="h4" component="h1" gutterBottom
-					            align={ "center" }>
-						Sign in</Typography>
-				</CardHeader>
-				<LoginForm
-					handleSubmit={ (email, password) => handleLogIn(email, password) }
-					toggleSignUp={ () => setIsSignUp(true) }
-				/>
+				<CardHeader title={ "Sign In" }></CardHeader>
+				<CardContent>
+					<LoginForm
+						handleSubmit={ (email, password) => handleLogIn(email, password) }
+						toggleSignUp={ () => setIsSignUp(true) }
+					/>
+				</CardContent>
 			</>
 		)
 
 	return (
 		<Container maxWidth="sm">
-			<Box my={ 20 }>
+			<Box my={ 4 }>
 				<Grid container
 				      direction={ "column" }
+				      justify="center"
+				      alignItems="center"
 				      spacing={ 2 }
 				>
 					<Grid container item xs={ 12 } sm={ 12 }>
@@ -121,9 +119,9 @@ export const Auth: React.FC<Props> = () => {
 							toastMessage
 								? (
 									<Snackbar onClose={ () => setShow(false) } show={ show }
-									       delay={ 3000 }
-									       autohide>
-										<Alert severity={"error"}>
+									          delay={ 3000 }
+									          autohide>
+										<Alert severity={ "error" }>
 											<strong>{ toastMessage }</strong>
 										</Alert>
 									</Snackbar>
@@ -133,13 +131,11 @@ export const Auth: React.FC<Props> = () => {
 					</Grid>
 					<Grid container item xs={ 12 } sm={ 12 } direction={ "column" }>
 						<Card>
-							<CardContent className={ "d-flex flex-column justify-content-around" }>
-								{
-									isSignUp
-										? signUpHeaders()
-										: logInHeaders()
-								}
-							</CardContent>
+							{
+								isSignUp
+									? signUpHeaders()
+									: logInHeaders()
+							}
 						</Card>
 						{ Copyright() }
 					</Grid>

@@ -9,30 +9,30 @@ interface Props {
 
 export const Whimsical: React.FC<Props> = (props) => {
 
-	const {FintechApps, Newsletters } = AffiliateLinks;
+	const { FintechApps, Newsletters } = AffiliateLinks;
 	return (
 		<Container maxWidth="lg">
-			<Box my={ 4 }>
+			<Box my={ 2 }>
 				<Typography color={ "textPrimary" } variant={ "h3" } align={ "center" }>Financial Literacy</Typography>
 				<Grid container
 				      direction={ "row" }
-				spacing={2}>
-					<Grid container item direction={"column"} xs={6}>
+				      spacing={ 2 }>
+					<Grid container item direction={ "column" } xs={ 6 }>
 						<Typography color={ "textPrimary" } variant={ "h6" }>Fintech Apps</Typography>
-						<ul className={"list-unstyled"}>
+						<ul className={ "list-unstyled" }>
 							{
-								FintechApps.map(({title, link}, i) => <li key={i}>
-									<a href={link}>{title}</a>
+								FintechApps.map(({ title, link }, i) => <li key={ i }>
+									<a href={ link }>{ title }</a>
 								</li>)
 							}
 						</ul>
 					</Grid>
-					<Grid container item direction={"column"} xs={6}>
+					<Grid container item direction={ "column" } xs={ 6 }>
 						<Typography color={ "textPrimary" } variant={ "h6" }>Newsletters</Typography>
-						<ul className={"list-unstyled"}>
+						<ul className={ "list-unstyled" }>
 							{
-								Newsletters.map(({title, link}, i) => <li key={i}>
-									<a href={link}>{title}</a>
+								Newsletters.map(({ title, link }, i) => <li key={ i }>
+									<a href={ link }>{ title }</a>
 								</li>)
 							}
 						</ul>
