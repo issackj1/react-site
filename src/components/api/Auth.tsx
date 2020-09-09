@@ -1,10 +1,10 @@
 // @ts-nocheck
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Row, Toast } from "react-bootstrap";
+import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import { LoginForm } from "../forms/LoginForm";
 import { SignUpForm } from "../forms/SignUpForm";
 import { useHistory } from "react-router-dom";
-import { Box, Container, Link, Typography } from "@material-ui/core";
+import { Box, Card, CardContent, CardHeader, Container, Grid, Link, Snackbar, Typography } from "@material-ui/core";
 
 const axios = require('axios');
 
@@ -23,6 +23,11 @@ function Copyright() {
 		</Typography>
 	);
 }
+
+function Alert(props: AlertProps) {
+	return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 
 export const Auth: React.FC<Props> = () => {
 
@@ -77,11 +82,11 @@ export const Auth: React.FC<Props> = () => {
 	const signUpHeaders = () =>
 		(
 			<>
-				<Card.Title>
+				<CardHeader>
 					<Typography color={ "textPrimary" } variant="h4" component="h1" gutterBottom
 					            align={ "center" }>
 						Sign Up</Typography>
-				</Card.Title>
+				</CardHeader>
 				<SignUpForm
 					handleSubmit={ (username, email, password) => handleSignUp(username, email, password) }
 					toggleSignUp={ () => setIsSignUp(false) }
@@ -92,11 +97,11 @@ export const Auth: React.FC<Props> = () => {
 	const logInHeaders = () =>
 		(
 			<>
-				<Card.Title>
+				<CardHeader>
 					<Typography color={ "textPrimary" } variant="h4" component="h1" gutterBottom
 					            align={ "center" }>
 						Sign in</Typography>
-				</Card.Title>
+				</CardHeader>
 				<LoginForm
 					handleSubmit={ (email, password) => handleLogIn(email, password) }
 					toggleSignUp={ () => setIsSignUp(true) }
@@ -107,40 +112,38 @@ export const Auth: React.FC<Props> = () => {
 	return (
 		<Container maxWidth="sm">
 			<Box my={ 20 }>
-				<Row>
-					<Col>
-						<div className={ "d-flex flex-column justify-content-center mb-3" }
-						     style={ { height: '50px' } }>
-							{
-								toastMessage
-									? (
-										<Toast className={ "mx-auto" } onClose={ () => setShow(false) } show={ show }
-										       delay={ 3000 }
-										       autohide>
-											<Toast.Body>
-												<strong>{ toastMessage }</strong>
-											</Toast.Body>
-										</Toast>
-									)
-									: null
-							}
-						</div>
-					</Col>
-				</Row>
-				<Row>
-					<Col className={ "m-auto" }>
-						<Card className="mx-auto" style={ { minWidth: '50%' } }>
-							<Card.Body className={ "d-flex flex-column justify-content-around" }>
+				<Grid container
+				      direction={ "column" }
+				      spacing={ 2 }
+				>
+					<Grid container item xs={ 12 } sm={ 12 }>
+						{
+							toastMessage
+								? (
+									<Snackbar onClose={ () => setShow(false) } show={ show }
+									       delay={ 3000 }
+									       autohide>
+										<Alert severity={"error"}>
+											<strong>{ toastMessage }</strong>
+										</Alert>
+									</Snackbar>
+								)
+								: null
+						}
+					</Grid>
+					<Grid container item xs={ 12 } sm={ 12 } direction={ "column" }>
+						<Card>
+							<CardContent className={ "d-flex flex-column justify-content-around" }>
 								{
 									isSignUp
 										? signUpHeaders()
 										: logInHeaders()
 								}
-							</Card.Body>
+							</CardContent>
 						</Card>
 						{ Copyright() }
-					</Col>
-				</Row>
+					</Grid>
+				</Grid>
 			</Box>
 		</Container>
 	);
