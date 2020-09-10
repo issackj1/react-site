@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { TextField } from 'formik-material-ui';
-import { Button, CssBaseline, Grid, Link } from "@material-ui/core";
+import { Button, Grid, Link } from "@material-ui/core";
 
 interface Props {
 	handleSubmit: (username: string, password: string) => any
