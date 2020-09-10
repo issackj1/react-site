@@ -1,15 +1,43 @@
 // @ts-nocheck
 import React from 'react';
-import { Box, Container, Grid, Typography } from "@material-ui/core";
+import {
+	Box,
+	Container,
+	createStyles,
+	Grid,
+	List,
+	ListItem,
+	ListItemText,
+	ListSubheader,
+	Typography
+} from "@material-ui/core";
 import Iframe from "react-iframe";
 import { AffiliateLinks } from "../../constants";
+import { makeStyles } from "@material-ui/core/styles";
 
 interface Props {
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+	createStyles({
+		root: {
+			width: '100%',
+			maxWidth: 360,
+			backgroundColor: theme.palette.background.paper
+		}
+	}),
+);
+
 export const Whimsical: React.FC<Props> = (props) => {
 
 	const { FintechApps, Newsletters } = AffiliateLinks;
+	const classes = useStyles();
+	const [open, setOpen] = React.useState(true);
+
+	const handleClick = (link) => {
+		window.open(link)
+		setOpen(!open);
+	};
 	return (
 		<Container maxWidth="lg">
 			<Box my={ 2 }>
@@ -18,24 +46,37 @@ export const Whimsical: React.FC<Props> = (props) => {
 				      direction={ "row" }
 				      spacing={ 2 }>
 					<Grid container item direction={ "column" } xs={ 6 }>
-						<Typography color={ "textPrimary" } variant={ "h6" }>Fintech Apps</Typography>
-						<ul className={ "list-unstyled" }>
+						<List component={ "nav" }
+						      subheader={
+							      <ListSubheader component={ "div" }>
+								      FinTech Apps
+							      </ListSubheader>
+						      }
+						      className={ classes.root }
+						>
 							{
-								FintechApps.map(({ title, link }, i) => <li key={ i }>
-									<a href={ link }>{ title }</a>
-								</li>)
+								FintechApps.map(({ title, link }, i) => <ListItem key={ i } button href={ "#" }
+								                                                  onClick={ () => handleClick(link) }>
+									<ListItemText primary={ title }></ListItemText>
+								</ListItem>)
 							}
-						</ul>
+						</List>
 					</Grid>
 					<Grid container item direction={ "column" } xs={ 6 }>
-						<Typography color={ "textPrimary" } variant={ "h6" }>Newsletters</Typography>
-						<ul className={ "list-unstyled" }>
+						<List component={ "nav" }
+						      subheader={
+							      <ListSubheader component={ "div" }>
+								      Newsletters
+							      </ListSubheader>
+						      }
+						      className={ classes.root }
+						>
 							{
-								Newsletters.map(({ title, link }, i) => <li key={ i }>
-									<a href={ link }>{ title }</a>
-								</li>)
+								Newsletters.map(({ title, link }, i) => <ListItem key={ i } onClick={() => handleClick(link)}>
+									<ListItemText primary={ title }></ListItemText>
+								</ListItem>)
 							}
-						</ul>
+						</List>
 					</Grid>
 				</Grid>
 				<Grid container
