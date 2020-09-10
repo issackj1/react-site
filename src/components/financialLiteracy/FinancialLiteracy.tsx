@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from 'react';
 import { Route, Switch } from "react-router-dom";
 import { CircularProgress, Fade, Grid } from "@material-ui/core";
