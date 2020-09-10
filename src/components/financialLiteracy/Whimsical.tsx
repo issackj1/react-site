@@ -1,7 +1,8 @@
 // @ts-nocheck
 import React from 'react';
 import {
-	Box, Collapse,
+	Box,
+	Collapse,
 	Container,
 	createStyles,
 	Grid,
@@ -15,9 +16,7 @@ import {
 import Iframe from "react-iframe";
 import { AffiliateLinks } from "../../constants";
 import { makeStyles } from "@material-ui/core/styles";
-import { ExpandLess, ExpandMore, MonetizationOn, StarBorder } from "@material-ui/icons"
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-;
+import { ExpandLess, ExpandMore, Mail, MonetizationOn } from "@material-ui/icons";
 
 interface Props {
 }
@@ -99,7 +98,7 @@ export const Whimsical: React.FC<Props> = (props) => {
 						>
 							<ListItem button onClick={handleClick2}>
 								<ListItemIcon>
-									<MonetizationOn />
+									<Mail />
 								</ListItemIcon>
 								<ListItemText primary="Newsletters" />
 								{open2 ? <ExpandLess /> : <ExpandMore />}
