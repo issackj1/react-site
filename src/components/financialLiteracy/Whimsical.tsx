@@ -28,16 +28,15 @@ const useStyles = makeStyles((theme: Theme) =>
 	}),
 );
 
+function ListItemLink(props) {
+	return <ListItem button component="a" { ...props } />;
+}
+
 export const Whimsical: React.FC<Props> = (props) => {
 
 	const { FintechApps, Newsletters } = AffiliateLinks;
 	const classes = useStyles();
-	const [open, setOpen] = React.useState(true);
 
-	const handleClick = (link) => {
-		window.open(link)
-		setOpen(!open);
-	};
 	return (
 		<Container maxWidth="lg">
 			<Box my={ 2 }>
@@ -55,10 +54,10 @@ export const Whimsical: React.FC<Props> = (props) => {
 						      className={ classes.root }
 						>
 							{
-								FintechApps.map(({ title, link }, i) => <ListItem key={ i } button href={ "#" }
-								                                                  onClick={ () => handleClick(link) }>
-									<ListItemText primary={ title }></ListItemText>
-								</ListItem>)
+								FintechApps.map(({ title, link }, i) => <ListItemLink key={ i } href={ link }>
+										<ListItemText primary={ title }/>
+									</ListItemLink>
+								)
 							}
 						</List>
 					</Grid>
@@ -72,9 +71,9 @@ export const Whimsical: React.FC<Props> = (props) => {
 						      className={ classes.root }
 						>
 							{
-								Newsletters.map(({ title, link }, i) => <ListItem key={ i } onClick={() => handleClick(link)}>
-									<ListItemText primary={ title }></ListItemText>
-								</ListItem>)
+								Newsletters.map(({ title, link }, i) => <ListItemLink key={ i } href={ link }>
+									<ListItemText primary={ title }/>
+								</ListItemLink>)
 							}
 						</List>
 					</Grid>
