@@ -59,7 +59,7 @@ export const Whimsical: React.FC<Props> = (props) => {
 				<Grid container
 				      direction={ "row" }
 				      spacing={ 1 }>
-					<Grid container item direction={ "column" } xs={ 5 } sm={2}>
+					<Grid container item direction={ "column" } xs={ 6 } sm={6}>
 						<List component={ "nav" }
 						      subheader={
 							      <ListSubheader component={ "div" }>
@@ -83,13 +83,13 @@ export const Whimsical: React.FC<Props> = (props) => {
 												<ListItemText primary={ title }/>
 											</ListItemLink>
 										)
-									}
+									}s
 								</List>
 							</Collapse>
 
 						</List>
 					</Grid>
-					<Grid container item direction={ "column" } xs={ 5 } sm={2}>
+					<Grid container item direction={ "column" } xs={ 6 } sm={6}>
 						<List component={ "nav" }
 						      subheader={
 							      <ListSubheader component={ "div" }>
