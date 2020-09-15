@@ -10,7 +10,8 @@ import {
 	ListItem,
 	ListItemIcon,
 	ListItemText,
-	ListSubheader, Theme,
+	ListSubheader,
+	Theme,
 	Typography
 } from "@material-ui/core";
 import Iframe from "react-iframe";
@@ -40,8 +41,8 @@ export const Whimsical: React.FC<Props> = (props) => {
 
 	const { FintechApps, Newsletters } = AffiliateLinks;
 	const classes = useStyles();
-	const [open1, setOpen1] = React.useState(true);
-	const [open2, setOpen2] = React.useState(true);
+	const [open1, setOpen1] = React.useState(false);
+	const [open2, setOpen2] = React.useState(false);
 
 	const handleClick1 = () => {
 		setOpen1(!open1);
@@ -56,68 +57,62 @@ export const Whimsical: React.FC<Props> = (props) => {
 				<Typography color={ "textPrimary" } variant={ "h3" } align={ "center" }>Financial Literacy</Typography>
 				<Typography color={ "textPrimary" } variant={ "body2" } align={ "center" }>Some of the tech that I
 					recommend and use</Typography>
-				<Grid container
-				      direction={ "row" }
-				      spacing={ 1 }>
-					<Grid container item direction={ "column" } xs={ 6 } sm={6}>
-						<List component={ "nav" }
-						      subheader={
-							      <ListSubheader component={ "div" }>
-								      FinTech Apps
-							      </ListSubheader>
-						      }
-						      className={ classes.root }
-						>
-							<ListItem button onClick={ handleClick1 }>
-								<ListItemIcon>
-									<MonetizationOn/>
-								</ListItemIcon>
-								<ListItemText primary="Trading"/>
-								{ open1 ? <ExpandLess/> : <ExpandMore/> }
-							</ListItem>
-							<Collapse in={ open1 } timeout="auto" unmountOnExit>
-								<List component="div" disablePadding>
-									{
-										FintechApps.map(({ title, link }, i) => <ListItemLink key={ i } href={ link }
-										                                                      className={ classes.nested }>
-												<ListItemText primary={ title }/>
-											</ListItemLink>
-										)
-									}s
-								</List>
-							</Collapse>
+				<Grid container item direction={ "column" }>
+					<List subheader={
+						<ListSubheader component={ "div" }>
+							FinTech Apps
+						</ListSubheader>
+					}
+					      className={ classes.root }
+					>
+						<ListItem button onClick={ handleClick1 }>
+							<ListItemIcon>
+								<MonetizationOn/>
+							</ListItemIcon>
+							<ListItemText primary="Trading"/>
+							{ open1 ? <ExpandLess/> : <ExpandMore/> }
+						</ListItem>
+						<Collapse in={ open1 } timeout="auto" unmountOnExit>
+							<List component="div" disablePadding>
+								{
+									FintechApps.map(({ title, link }, i) => <ListItemLink key={ i } href={ link }
+									                                                      className={ classes.nested }>
+											<ListItemText primary={ title }/>
+										</ListItemLink>
+									)
+								}
+							</List>
+						</Collapse>
 
-						</List>
-					</Grid>
-					<Grid container item direction={ "column" } xs={ 6 } sm={6}>
-						<List component={ "nav" }
-						      subheader={
-							      <ListSubheader component={ "div" }>
-								      Others
-							      </ListSubheader>
-						      }
-						      className={ classes.root }
-						>
-							<ListItem button onClick={ handleClick2 }>
-								<ListItemIcon>
-									<Mail/>
-								</ListItemIcon>
-								<ListItemText primary="Newsletters"/>
-								{ open2 ? <ExpandLess/> : <ExpandMore/> }
-							</ListItem>
-							<Collapse in={ open2 } timeout="auto" unmountOnExit>
-								<List component="div" disablePadding>
-									{
-										Newsletters.map(({ title, link }, i) => <ListItemLink key={ i } href={ link }
-										                                                      className={ classes.nested }>
-												<ListItemText primary={ title }/>
-											</ListItemLink>
-										)
-									}
-								</List>
-							</Collapse>
-						</List>
-					</Grid>
+					</List>
+				</Grid>
+				<Grid container item direction={ "column" }>
+					<List subheader={
+						<ListSubheader component={ "div" }>
+							Others
+						</ListSubheader>
+					}
+					      className={ classes.root }
+					>
+						<ListItem button onClick={ handleClick2 }>
+							<ListItemIcon>
+								<Mail/>
+							</ListItemIcon>
+							<ListItemText primary="Newsletters"/>
+							{ open2 ? <ExpandLess/> : <ExpandMore/> }
+						</ListItem>
+						<Collapse in={ open2 } timeout="auto" unmountOnExit>
+							<List component="div" disablePadding>
+								{
+									Newsletters.map(({ title, link }, i) => <ListItemLink key={ i } href={ link }
+									                                                      className={ classes.nested }>
+											<ListItemText primary={ title }/>
+										</ListItemLink>
+									)
+								}
+							</List>
+						</Collapse>
+					</List>
 				</Grid>
 				<Grid container
 				      direction={ "row" } justify={ "center" }>
