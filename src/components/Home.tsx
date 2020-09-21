@@ -33,7 +33,7 @@ export const Home: React.FC<Props> = (props) => {
 
 	const h1Props = useSpring({
 		config: config.molasses,
-		delay: 3000,
+		delay: 1000,
 		opacity: 1,
 		from: {
 			opacity: 0,
