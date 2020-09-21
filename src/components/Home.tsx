@@ -47,6 +47,10 @@ export const Home: React.FC<Props> = (props) => {
 		color: 'white'
 	};
 
+	const backgroundLayerSpeed = 0.5;
+	const mainLayerSpeed = 1;
+	const buttonLayerSpeed = 0.5;
+
 	const buttons = ['Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Continue'];
 	const backToTop = [1, 2, 3, 4, 5, 6, 7];
 	// <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#007b3d3d' }}>
@@ -54,9 +58,9 @@ export const Home: React.FC<Props> = (props) => {
 	return (<>
 		<Parallax pages={ 7 } scrolling={ true } ref={ setParallax }>
 			{/*Backgrounds*/ }
-			<ParallaxLayer offset={ 2 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
-			<ParallaxLayer offset={ 4 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
-			<ParallaxLayer offset={ 6 } speed={ 1 } style={ { backgroundColor: '#282c34' } }/>
+			<ParallaxLayer offset={ 2 } speed={ backgroundLayerSpeed } style={ { backgroundColor: '#282c34' } }/>
+			<ParallaxLayer offset={ 4 } speed={ backgroundLayerSpeed } style={ { backgroundColor: '#282c34' } }/>
+			<ParallaxLayer offset={ 6 } speed={ backgroundLayerSpeed } style={ { backgroundColor: '#282c34' } }/>
 			<ParallaxLayer offset={ 0 } speed={ 2 } onClick={ () => parallax.scrollTo(1) }
 			               style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
 				<Container>
@@ -73,28 +77,28 @@ export const Home: React.FC<Props> = (props) => {
 			</ParallaxLayer>
 
 			<ParallaxLayer
-				offset={ 1 } speed={ 0.5 } onClick={ () => parallax.scrollTo(2) }
+				offset={ 1 } speed={ mainLayerSpeed } onClick={ () => parallax.scrollTo(2) }
 				style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
 				<Section component={ About }/>
 			</ParallaxLayer>
 
-			<ParallaxLayer offset={ 2 } speed={ 0.5 } onClick={ () => parallax.scrollTo(3) }
+			<ParallaxLayer offset={ 2 } speed={ mainLayerSpeed } onClick={ () => parallax.scrollTo(3) }
 			               style={ secondaryBackground }>
 				<Section component={ Skills }/>
 			</ParallaxLayer>
-			<ParallaxLayer offset={ 3 } speed={ 0.5 } onClick={ () => parallax.scrollTo(4) }
+			<ParallaxLayer offset={ 3 } speed={ mainLayerSpeed } onClick={ () => parallax.scrollTo(4) }
 			               style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
 				<Section component={ Education }/>
 			</ParallaxLayer>
-			<ParallaxLayer offset={ 4 } speed={ 0.5 } onClick={ () => parallax.scrollTo(5) }
+			<ParallaxLayer offset={ 4 } speed={ mainLayerSpeed } onClick={ () => parallax.scrollTo(5) }
 			               style={ secondaryBackground }>
 				<Section component={ Experience }/>
 			</ParallaxLayer>
-			<ParallaxLayer offset={ 5 } speed={ 0.5 } onClick={ () => parallax.scrollTo(6) }
+			<ParallaxLayer offset={ 5 } speed={ mainLayerSpeed } onClick={ () => parallax.scrollTo(6) }
 			               style={ { display: 'flex', alignItems: 'center', justifyContent: 'center' } }>
 				<Extracurricular/>
 			</ParallaxLayer>
-			<ParallaxLayer offset={ 6 } speed={ 0.5 } onClick={ () => parallax.scrollTo(1) }
+			<ParallaxLayer offset={ 6 } speed={ mainLayerSpeed } onClick={ () => parallax.scrollTo(1) }
 			               style={ secondaryBackground }>
 				<Section component={ Contact }/>
 			</ParallaxLayer>
@@ -111,7 +115,7 @@ export const Home: React.FC<Props> = (props) => {
 			) }
 
 			{
-				backToTop.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.7 + 1 } speed={ 1 }
+				backToTop.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.7 + 1 } speed={ buttonLayerSpeed }
 				                                            style={ {
 					                                            display: 'block',
 					                                            width: '20%',
