@@ -55,8 +55,9 @@ export const Whimsical: React.FC<Props> = (props) => {
 		<Container maxWidth="lg">
 			<Box my={ 2 }>
 				<Typography color={ "textPrimary" } variant={ "h3" } align={ "center" }>Financial Literacy</Typography>
-				<Typography color={ "textPrimary" } variant={ "body2" } align={ "center" }>Some of the tech that I
-					recommend and use</Typography>
+				<Typography color={ "textPrimary" } variant={ "body1" } align={ "center" }><strong>Financial literacy</strong> is the
+					ability to understand and effectively use various financial skills, including personal financial
+					management, budgeting, and investing.</Typography>
 				<Grid container item direction={ "column" }>
 					<List subheader={
 						<ListSubheader component={ "div" }>
