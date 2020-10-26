@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {"source":  "/api/login", "destination": "react-site-backend.vercel.app/api/login"}
+  ]
+}

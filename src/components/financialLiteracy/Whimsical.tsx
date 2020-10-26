@@ -84,7 +84,6 @@ export const Whimsical: React.FC<Props> = (props) => {
 								}
 							</List>
 						</Collapse>
-
 					</List>
 				</Grid>
 				<Grid container item direction={ "column" }>
