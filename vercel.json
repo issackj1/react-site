@@ -1,7 +1,5 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    {"source":  "/api/login", "destination": "react-site-backend.vercel.app/api/login"}
+  "rewrites": [
+    {"source":  "http://localhost:4000/:path*", "destination": "https://react-site-backend.vercel.app/:path*"}
   ]
 }
