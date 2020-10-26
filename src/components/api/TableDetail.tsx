@@ -17,7 +17,7 @@ export const TableDetail: React.FC<Props> = (props: Props) => {
 
 	const fetchTable = async () => {
 		setIsLoading(true)
-		await axios.post('http://localhost:4000/api/v1/getCubeMetaData/' + productId)
+		await axios.post('/api/v1/getCubeMetaData/' + productId)
 			.then((result: any) => {
 					if (result.data.status === 'FAILED') {
 						setResponse(result.data.object.split('.')[0]);
