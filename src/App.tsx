@@ -10,7 +10,7 @@ function Copyright() {
 	return (
 		<Typography variant="body2" color="textSecondary" align="center">
 			{ 'Copyright © ' }
-			<Link color="inherit" href="http://3.94.8.68/">
+			<Link color="inherit" href="https://react-site-five.vercel.app/">
 				Issack John
 			</Link>{ ' ' }
 			{ new Date().getFullYear() }

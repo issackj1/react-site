@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { AthenaCard } from "./ApiCard";
+import { AthenaCard } from "./AthenaCard";
 import { Grid } from "@material-ui/core";
 
 interface Props {

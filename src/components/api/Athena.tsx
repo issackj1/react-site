@@ -25,7 +25,7 @@ export const Athena: React.FC<Props> = () => {
 	const handleLogout = () => {
 		setIsLoading(true)
 		localStorage.removeItem('my-jwt');
-		history.push("/api");
+		history.push("/athena");
 		setIsLoading(false)
 	}
 

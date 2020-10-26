@@ -98,7 +98,7 @@ export const GetCubeMetaData: React.FC<Props> = () => {
 							? (
 								<Card>
 									<CardActionArea style={ { textDecoration: 'none' } } component={ Link }
-									                to={ `/api/${ name }/detail/${ response.productId }` }>
+									                to={ `/athena/${ name }/detail/${ response.productId }` }>
 										<CardContent>
 											<Typography gutterBottom variant="h5" component="h2">
 												{ response.cubeTitleEn }
