@@ -9,7 +9,7 @@ export const PrivateRoute = ({ component: Component, handleLogout, ...rest }) =>
 
 		if (!localStorage.getItem('my-jwt')) {
 			// not logged in so redirect to login page with the return url
-			return <Redirect to={ { pathname: '/api/auth', state: { from: props.location } } }/>
+			return <Redirect to={ { pathname: '/athena/auth', state: { from: props.location } } }/>
 		}
 
 		// authorised so return component

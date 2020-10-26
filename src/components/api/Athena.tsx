@@ -13,7 +13,7 @@ interface Props {
 
 }
 
-export const Api: React.FC<Props> = () => {
+export const Athena: React.FC<Props> = () => {
 
 	const [isLoading, setIsLoading] = useState(false);
 	const history = useHistory();
@@ -29,7 +29,7 @@ export const Api: React.FC<Props> = () => {
 		setIsLoading(false)
 	}
 
-	const noBackButton = ["/api", "/api/auth"]
+	const noBackButton = ["/athena", "/athena/auth"]
 
 	return (
 		<Grid
@@ -62,10 +62,10 @@ export const Api: React.FC<Props> = () => {
 						: (
 
 							<Switch>
-								<Route path={ "/api/auth" } component={ Auth }/>
+								<Route path={ "/athena/auth" } component={ Auth }/>
 								<PrivateRoute handleLogout={ () => handleLogout() }
-								              path={ "/api/:name/detail/:productId" } component={ TableDetail }/>
-								<PrivateRoute handleLogout={ () => handleLogout() } path={ "/api/:name" }
+								              path={ "/athena/:name/detail/:productId" } component={ TableDetail }/>
+								<PrivateRoute handleLogout={ () => handleLogout() } path={ "/athena/:name" }
 								              component={ Endpoint }/>
 								<PrivateRoute handleLogout={ () => handleLogout() } path={ "/" } component={ Welcome }/>
 							</Switch>

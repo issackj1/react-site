@@ -69,7 +69,7 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 					                                        color="inherit" variant={"text"}>{ title }</Button>
 					) }
 					<Button color={"inherit"} href={"/financialLiteracy"} variant={"text"}>Financial Literacy</Button>
-					<Button color={"inherit"} href={"/api"} variant={"text"}>API</Button>
+					<Button color={"inherit"} href={"/athena"} variant={"text"}>Athena</Button>
 				</Toolbar>
 				<ScrollTop>
 					<Fab color="secondary" size="small" aria-label="scroll back to top">

@@ -15,7 +15,7 @@ function Copyright() {
 	return (
 		<Typography variant="body2" color="textSecondary" align="center">
 			{ 'Copyright © ' }
-			<Link color="inherit" href="http://3.94.8.68/">
+			<Link color="inherit" href="https://react-site-five.vercel.app/">
 				Issack John
 			</Link>{ ' ' }
 			{ new Date().getFullYear() }
@@ -40,7 +40,7 @@ export const Auth: React.FC<Props> = () => {
 	useEffect(() => {
 		console.log('one')
 		if (authenticated) {
-			history.push("/api")
+			history.push("/athena")
 		}
 	}, [authenticated])
 
@@ -52,7 +52,7 @@ export const Auth: React.FC<Props> = () => {
 			})
 			.then((result: any) => {
 					localStorage.setItem('my-jwt', result.data.token);
-					history.push('/api')
+					history.push('/athena')
 				},
 				(error: any) => {
 					setToastMessage("Incorrect email or password");
@@ -70,7 +70,7 @@ export const Auth: React.FC<Props> = () => {
 			})
 			.then((result: any) => {
 					localStorage.setItem('my-jwt', result.data.token);
-					history.push('/api')
+					history.push('/athena')
 				},
 				(error: any) => {
 					setToastMessage("Email is already in use");

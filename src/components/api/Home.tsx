@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApiCard } from "./ApiCard";
+import { AthenaCard } from "./ApiCard";
 import { Grid } from "@material-ui/core";
 
 interface Props {
@@ -18,17 +18,17 @@ export const Home: React.FC<Props> = (props) => {
 			<Grid item
 			      xs={ 12 }
 			      sm={ 6 }>
-				<ApiCard title={ "See all tables" }
-				         description={ "Complete inventory of data tables available through this Statistics Canada API" }
-				         to={ "/api/seeAll" }
+				<AthenaCard title={ "See all tables" }
+				            description={ "Complete inventory of data tables available through this Statistics Canada API" }
+				            to={ "/athena/seeAll" }
 				/>
 			</Grid>
 			<Grid item
 			      xs={ 12 }
 			      sm={ 6 }>
-				<ApiCard title={ "Meta data table search" }
-				         description={ "Retrieve the metadata supporting the data at table level" }
-				         to={ "/api/searchAll" }
+				<AthenaCard title={ "Meta data table search" }
+				            description={ "Retrieve the metadata supporting the data at table level" }
+				            to={ "/athena/searchAll" }
 				/>
 			</Grid>
 		</Grid>

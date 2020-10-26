@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Project } from "./components/Project";
-import { Api } from "./components/api/Api";
+import { Athena } from "./components/api/Athena";
 import { Link, Typography } from "@material-ui/core";
 import { FinancialLiteracy } from "./components/financialLiteracy/FinancialLiteracy";
 
@@ -24,7 +24,7 @@ export default function App() {
 		<Router basename={ process.env.PUBLIC_URL }>
 			<Switch>
 				<Route path={ "/project/:name" } component={ Project }/>
-				<Route path={ "/api" } component={ Api }/>
+				<Route path={ "/athena" } component={ Athena }/>
 				<Route path={ "/financialLiteracy" } component={ FinancialLiteracy }/>
 				<Route path={ "/" } component={ Home } Copyright={ () => Copyright() }/>
 			</Switch>

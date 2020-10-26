@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 	}
 });
 
-export const ApiCard: React.FC<Props> = (props:Props) => {
+export const AthenaCard: React.FC<Props> = (props:Props) => {
 
 	const { title, description, to } = props;
 	const classes = useStyles();
