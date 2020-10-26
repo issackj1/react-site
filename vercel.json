@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    {"source":  "http://localhost:4000/:path", "destination": "https://react-site-backend.vercel.app/:path"}
+    {"source":  "/api/:path", "destination": "https://react-site-backend.vercel.app/:path"}
   ]
 }
