@@ -25,7 +25,7 @@ export const About: React.FC<Props> = () => {
 			direction={"column"}
 		      spacing={ 2 }>
 			<Typography variant={ "h2" } align={ "center" }>{ AboutContent.title }</Typography>
-			<Avatar variant={ "rounded" } alt="Issack John" src={ profilePicture } className={ classes.large }/>
+			<Avatar variant={"rounded"} alt="Issack John" src={profilePicture} className={classes.large}/>
 			<Typography variant={ "body1" } style={ { fontSize: '24px' } }
 			            align={ "center" }>{ AboutContent.summary }</Typography>
 		</Grid>

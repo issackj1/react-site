@@ -82,7 +82,7 @@ export const Auth: React.FC<Props> = () => {
 	const signUpHeaders = () =>
 		(
 			<>
-				<CardHeader title={ "Sign Up" }></CardHeader>
+				<CardHeader title={"Sign Up"}/>
 				<CardContent>
 					<SignUpForm
 						handleSubmit={ (username, email, password) => handleSignUp(username, email, password) }
@@ -95,7 +95,7 @@ export const Auth: React.FC<Props> = () => {
 	const logInHeaders = () =>
 		(
 			<>
-				<CardHeader title={ "Sign In" }></CardHeader>
+				<CardHeader title={"Sign In"}/>
 				<CardContent>
 					<LoginForm
 						handleSubmit={ (email, password) => handleLogIn(email, password) }
