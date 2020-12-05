@@ -6,6 +6,11 @@ interface Props {
 
 }
 
+interface Book {
+	name : String
+	author: String
+}
+
 export const Extracurricular: React.FC<Props> = () => {
 	return (
 		<div className={ "container" } id={ "extracurricular" }>
@@ -54,7 +59,7 @@ export const Extracurricular: React.FC<Props> = () => {
 					<Typography variant={ "h4" } gutterBottom align={ "center" }>Favourite Books</Typography>
 					<ul className={ "list-unstyled" }>
 						{
-							ExtracurricularContent.books.map((book, i) => <li key={ i }>{ book.name }</li>)
+							ExtracurricularContent.books.map((book: Book, i: number) => <li key={ i }>{ book.name }</li>)
 						}
 					</ul>
 				</Grid>

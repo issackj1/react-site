@@ -6,6 +6,7 @@ interface Props {
 
 }
 
+
 export const Skills: React.FC<Props> = () => {
 	return (
 		<Grid
@@ -31,7 +32,7 @@ export const Skills: React.FC<Props> = () => {
 				<Typography variant={ "h4" }>Languages</Typography>
 				<ul className={ "list-unstyled" }>
 					{
-						SkillsContent.languages.map((language, i) => <li key={ i }>{ language }</li>)
+						SkillsContent.languages.map((language:String, i:number) => <li key={ i }>{ language }</li>)
 					}
 				</ul>
 			</Grid>
@@ -39,7 +40,7 @@ export const Skills: React.FC<Props> = () => {
 				<Typography variant={ "h4" }>Libraries</Typography>
 				<ul className={ "list-unstyled" }>
 					{
-						SkillsContent.libraries.map((library, i) => <li key={ i }>{ library }</li>)
+						SkillsContent.libraries.map((library:String, i:number) => <li key={ i }>{ library }</li>)
 					}
 				</ul>
 			</Grid>
@@ -47,7 +48,7 @@ export const Skills: React.FC<Props> = () => {
 				<Typography variant={ "h4" }>Frameworks</Typography>
 				<ul className={ "list-unstyled" }>
 					{
-						SkillsContent.frameworks.map((framework, i) => <li key={ i }>{ framework }</li>)
+						SkillsContent.frameworks.map((framework:String, i:number) => <li key={ i }>{ framework }</li>)
 					}
 				</ul>
 			</Grid>
@@ -55,7 +56,7 @@ export const Skills: React.FC<Props> = () => {
 				<Typography variant={ "h4" }>Databases</Typography>
 				<ul className={ "list-unstyled" }>
 					{
-						SkillsContent.databases.map((database, i) => <li key={ i }>{ database }</li>)
+						SkillsContent.databases.map((database:String, i:number) => <li key={ i }>{ database }</li>)
 					}
 				</ul>
 			</Grid>
