@@ -38,11 +38,10 @@ export const Auth: React.FC<Props> = () => {
 	const authenticated = !!localStorage.getItem('my-jwt')
 
 	useEffect(() => {
-		console.log('one')
 		if (authenticated) {
 			history.push("/athena")
 		}
-	}, [authenticated])
+	}, [authenticated, history])
 
 	const handleLogIn = async (email: String, password: String) => {
 		await axios.post('/api/login',

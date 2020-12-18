@@ -11,7 +11,7 @@ const axios = require('axios');
 
 export const TableDetail: React.FC<Props> = (props: Props) => {
 
-	const { name, productId } = useParams();
+	const { productId } = useParams();
 	const [isLoading, setIsLoading] = useState(false);
 	const [response, setResponse] = useState({});
 
@@ -35,7 +35,6 @@ export const TableDetail: React.FC<Props> = (props: Props) => {
 	}, [])
 
 	const details = (response) => {
-		console.log(response)
 		return (
 			<>
 				<p>{ response.cubeTitleEn }</p>

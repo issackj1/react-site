@@ -31,7 +31,7 @@ export const Home: React.FC<Props> = (props) => {
 
 	const [parallax, setParallax] = useState<Parallax | RefObject<any> | null>(React.createRef);
 
-	const h1Props = useSpring({
+	const h1Props = useSpring<useSpringProps>({
 		config: config.molasses,
 		delay: 1000,
 		opacity: 1,
@@ -53,7 +53,6 @@ export const Home: React.FC<Props> = (props) => {
 
 	const buttons = ['Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Continue'];
 	const backToTop = [1, 2, 3, 4, 5, 6, 7];
-	// <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#007b3d3d' }}>
 
 	return (<>
 		<Parallax pages={ 7 } scrolling={ true } ref={ setParallax }>
