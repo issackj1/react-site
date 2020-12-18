@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar, createStyles, Grid, Theme, Typography } from '@material-ui/core';
 import { AboutContent } from "../constants";
 import { makeStyles } from "@material-ui/core/styles";
+import profilePicture from "../images/IMG_4774.JPG";
 
 interface Props {
 }
@@ -17,7 +18,6 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const About: React.FC<Props> = () => {
-	const profilePicture = require("../images/IMG_4774.JPG");
 	const classes = useStyles();
 	return (
 		<Grid
