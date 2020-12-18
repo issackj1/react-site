@@ -50,7 +50,7 @@ export const Home: React.FC<Props> = (props) => {
 	const backgroundLayerSpeed = 0.5;
 	const mainLayerSpeed = 1;
 	const buttonLayerSpeed = 0.5;
-	
+
 	return (<>
 		<Parallax pages={ 7 } scrolling={ true } ref={ setParallax }>
 			{/*Backgrounds*/ }
