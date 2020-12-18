@@ -33,7 +33,10 @@ export const Athena: React.FC<Props> = () => {
 
 	return (
 		<Grid
-			direction={ "row" }>
+			container
+			direction={ "column" }
+			justify={"center"}
+			alignItems={"stretch"}>
 			<Grid item xs={ 12 } sm={ 12 }>
 				<SimpleNavBar/>
 			</Grid>

@@ -50,10 +50,7 @@ export const Home: React.FC<Props> = (props) => {
 	const backgroundLayerSpeed = 0.5;
 	const mainLayerSpeed = 1;
 	const buttonLayerSpeed = 0.5;
-
-	const buttons = ['Continue', 'Continue', 'Continue', 'Continue', 'Continue', 'Continue'];
-	const backToTop = [1, 2, 3, 4, 5, 6, 7];
-
+	
 	return (<>
 		<Parallax pages={ 7 } scrolling={ true } ref={ setParallax }>
 			{/*Backgrounds*/ }
@@ -103,18 +100,18 @@ export const Home: React.FC<Props> = (props) => {
 			</ParallaxLayer>
 
 			{/*button*/ }
-			{ buttons.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }>
+			{ Array.from(Array(6)).map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }>
 					<Grid container justify="center">
 						<span onClick={ () => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1) }>
 							<Button variant="contained" color={ "primary" } size={ "large" }
-					        block={ "true" }>{ object }</Button>
+					        block={ "true" }>Continue</Button>
 						</span>
 					</Grid>
 				</ParallaxLayer>
 			) }
 
 			{
-				backToTop.map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.7 + 1 } speed={ buttonLayerSpeed }
+				Array.from(Array(7)).map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.7 + 1 } speed={ buttonLayerSpeed }
 				                                            style={ {
 					                                            display: 'block',
 					                                            width: '20%',
