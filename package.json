@@ -10,7 +10,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@types/yup": "^0.29.11",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "fontsource-roboto": "^4.0.0",
     "formik": "^2.2.6",
