@@ -24,9 +24,9 @@ export default function App() {
 		<Router basename={ process.env.PUBLIC_URL }>
 			<Switch>
 				<Route path={ "/project/:name" } component={ Project }/>
-				<Route path={ "/athena" } component={ Athena }/>
-				<Route path={ "/financialLiteracy" } component={ FinancialLiteracy } Copyright={ () => Copyright() }/>
-				<Route path={ "/" } component={ Home } Copyright={ () => Copyright() }/>
+				<Route path={ "/athena" } component={ Athena } copyright={ () => Copyright() }/>
+				<Route path={ "/financialLiteracy" } component={ FinancialLiteracy } copyright={ () => Copyright() }/>
+				<Route path={ "/" } component={ Home } copyright={ () => Copyright() }/>
 			</Switch>
 		</Router>
 	);

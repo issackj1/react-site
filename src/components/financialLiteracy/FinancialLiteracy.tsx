@@ -12,7 +12,6 @@ export const FinancialLiteracy: React.FC<Props> = (props) => {
 
 	const [isLoading, setIsLoading] = useState(false);
 	const { Copyright } = props;
-	console.log(Copyright)
 
 	return (
 		<Grid

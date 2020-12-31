@@ -4,24 +4,12 @@ import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import { LoginForm } from "../forms/LoginForm";
 import { SignUpForm } from "../forms/SignUpForm";
 import { useHistory } from "react-router-dom";
-import { Box, Card, CardContent, CardHeader, Container, Grid, Link, Snackbar, Typography } from "@material-ui/core";
+import { Box, Card, CardContent, CardHeader, Container, Grid, Snackbar } from "@material-ui/core";
 
 const axios = require('axios');
 
 interface Props {
-}
-
-function Copyright() {
-	return (
-		<Typography variant="body2" color="textSecondary" align="center">
-			{ 'Copyright © ' }
-			<Link color="inherit" href="https://react-site-five.vercel.app/">
-				Issack John
-			</Link>{ ' ' }
-			{ new Date().getFullYear() }
-			{ '.' }
-		</Typography>
-	);
+	copyright: () => () => JSX.Element
 }
 
 function Alert(props: AlertProps) {
@@ -29,8 +17,9 @@ function Alert(props: AlertProps) {
 }
 
 
-export const Auth: React.FC<Props> = () => {
+export const Auth: React.FC<Props> = (props) => {
 
+	const { copyright } = props;
 	const [show, setShow] = useState(false);
 	const [toastMessage, setToastMessage] = useState('');
 	const [isSignUp, setIsSignUp] = useState(false);
@@ -81,7 +70,7 @@ export const Auth: React.FC<Props> = () => {
 	const signUpHeaders = () =>
 		(
 			<>
-				<CardHeader title={"Sign Up"}/>
+				<CardHeader title={ "Sign Up" }/>
 				<CardContent>
 					<SignUpForm
 						handleSubmit={ (username, email, password) => handleSignUp(username, email, password) }
@@ -94,7 +83,7 @@ export const Auth: React.FC<Props> = () => {
 	const logInHeaders = () =>
 		(
 			<>
-				<CardHeader title={"Sign In"}/>
+				<CardHeader title={ "Sign In" }/>
 				<CardContent>
 					<LoginForm
 						handleSubmit={ (email, password) => handleLogIn(email, password) }
@@ -136,7 +125,7 @@ export const Auth: React.FC<Props> = () => {
 									: logInHeaders()
 							}
 						</Card>
-						{ Copyright() }
+						{ copyright }
 					</Grid>
 				</Grid>
 			</Box>

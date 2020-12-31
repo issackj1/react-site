@@ -10,11 +10,12 @@ import { NavigateBefore } from "@material-ui/icons";
 import { TableDetail } from "./TableDetail";
 
 interface Props {
-
+	copyright: () => () => JSX.Element
 }
 
-export const Athena: React.FC<Props> = () => {
+export const Athena: React.FC<Props> = (props) => {
 
+	const { copyright } = props;
 	const [isLoading, setIsLoading] = useState(false);
 	const history = useHistory();
 
@@ -62,7 +63,7 @@ export const Athena: React.FC<Props> = () => {
 						: (
 
 							<Switch>
-								<Route path={ "/athena/auth" } component={ Auth }/>
+								<Route path={ "/athena/auth" } component={ Auth } copyright={ copyright }/>
 								<PrivateRoute handleLogout={ () => handleLogout() }
 								              path={ "/athena/:name/detail/:productId" } component={ TableDetail }/>
 								<PrivateRoute handleLogout={ () => handleLogout() } path={ "/athena/:name" }
