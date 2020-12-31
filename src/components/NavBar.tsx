@@ -16,6 +16,17 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: theme.spacing(2),
 		},
 	},
+	toolbar: {
+		flexWrap: 'wrap'
+	},
+	toolbarSecondary: {
+		justifyContent: "space-between",
+		overflowX: "auto"
+	},
+	toolbarLink: {
+		padding: theme.spacing(1),
+		flexShrink: 0,
+	},
 	menuButton: {
 		marginRight: theme.spacing(2),
 	},
@@ -59,17 +70,22 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 	return (
 		<div className={ classes.root }>
 			<AppBar position="static">
-				<Toolbar variant={"dense"}>
+				<Toolbar variant={"dense"} className={classes.toolbar}>
 					<Typography variant="h6" className={ classes.title }>
 						<Link underline={ "none" } color={ "inherit" } href={ "/" }>
 							Issack John
 						</Link>
 					</Typography>
-					{ navLinks.map(({ title }, i) => <Button onClick={ () => parallax.scrollTo(i + 1) } key={ i }
-					                                        color="inherit" variant={"text"}>{ title }</Button>
+				</Toolbar>
+				<Toolbar className={classes.toolbarSecondary}>
+					{ navLinks.map(({ title }, i) => <Link noWrap
+					                                       className={classes.toolbarLink}
+					                                       onClick={ () => parallax.scrollTo(i + 1) }
+					                                       key={ i }
+					                                       color="inherit" variant={"text"}>{ title }</Link>
 					) }
-					<Button color={"inherit"} href={"/financialLiteracy"} variant={"text"}>Financial Literacy</Button>
-					<Button color={"inherit"} href={"/athena"} variant={"text"}>Athena</Button>
+					<Link noWrap className={classes.toolbarLink} color={"inherit"} href={"/financialLiteracy"} variant={"text"}>Financial Literacy</Link>
+					<Link nowrap className={classes.toolbarLink} color={"inherit"} href={"/athena"} variant={"text"}>Athena</Link>
 				</Toolbar>
 				<ScrollTop>
 					<Fab color="secondary" size="small" aria-label="scroll back to top">
