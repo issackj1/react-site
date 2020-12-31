@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { AppBar, Button, Fab, Link, Toolbar, Typography, Zoom, } from "@material-ui/core";
+import { AppBar, Button, Container, Fab, Link, Toolbar, Typography, Zoom, } from "@material-ui/core";
 import { Parallax } from "react-spring/renderprops-addons";
 import { navProps } from "../constants";
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 		flexWrap: 'wrap'
 	},
 	toolbarSecondary: {
-		justifyContent: "space-between",
+		justifyContent: "space-around",
 		overflowX: "auto"
 	},
 	toolbarLink: {
@@ -77,15 +77,16 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 						</Link>
 					</Typography>
 				</Toolbar>
-				<Toolbar className={classes.toolbarSecondary}>
-					{ navLinks.map(({ title }, i) => <Link noWrap
-					                                       className={classes.toolbarLink}
-					                                       onClick={ () => parallax.scrollTo(i + 1) }
-					                                       key={ i }
-					                                       color="inherit" variant={"text"}>{ title }</Link>
-					) }
-					<Link noWrap className={classes.toolbarLink} color={"inherit"} href={"/financialLiteracy"} variant={"text"}>Financial Literacy</Link>
-					<Link nowrap className={classes.toolbarLink} color={"inherit"} href={"/athena"} variant={"text"}>Athena</Link>
+				<Toolbar variant={"dense"} className={classes.toolbarSecondary}>
+						{ navLinks.map(({ title }, i) => <Link noWrap
+						                                       underline={"none"}
+						                                       className={classes.toolbarLink}
+						                                       onClick={ () => parallax.scrollTo(i + 1) }
+						                                       key={ i }
+						                                       color="inherit" variant={"subtitle2"}>{ title }</Link>
+						) }
+						<Link noWrap underline={"none"} className={classes.toolbarLink} color={"inherit"} href={"/financialLiteracy"} variant={"subtitle2"}>Financial Literacy</Link>
+						<Link nowrap underline={"none"} className={classes.toolbarLink} color={"inherit"} href={"/athena"} variant={"subtitle2"}>Athena</Link>
 				</Toolbar>
 				<ScrollTop>
 					<Fab color="secondary" size="small" aria-label="scroll back to top">

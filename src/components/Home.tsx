@@ -50,6 +50,7 @@ export const Home: React.FC<Props> = (props) => {
 	const backgroundLayerSpeed = 0.5;
 	const mainLayerSpeed = 1;
 	const buttonLayerSpeed = 0.5;
+	const numOfButtons = 6;
 
 	return (<>
 		<Parallax pages={ 7 } scrolling={ true } ref={ setParallax }>
@@ -69,7 +70,7 @@ export const Home: React.FC<Props> = (props) => {
 			</ParallaxLayer>
 
 			<ParallaxLayer offset={ 0 } speed={ 2 } factor={ 1 / 6 }>
-				<NavBar parallax={ parallax }/>
+					<NavBar parallax={ parallax }/>
 			</ParallaxLayer>
 
 			<ParallaxLayer
@@ -100,9 +101,9 @@ export const Home: React.FC<Props> = (props) => {
 			</ParallaxLayer>
 
 			{/*button*/ }
-			{ Array.from(Array(6)).map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }>
+			{ Array.from(Array(numOfButtons)).map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }>
 					<Grid container justify="center">
-						<span onClick={ () => parallax.scrollTo(i === buttons.length - 1 ? 1 : i + 1) }>
+						<span onClick={ () => parallax.scrollTo(i === numOfButtons - 1 ? 1 : i + 1) }>
 							<Button variant="contained" color={ "primary" } size={ "large" }
 					        block={ "true" }>Continue</Button>
 						</span>
