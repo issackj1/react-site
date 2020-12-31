@@ -1,6 +1,6 @@
 // @ts-nocheck
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import { Box, CircularProgress, Container, Fade } from "@material-ui/core";
 import _ from 'lodash';
@@ -15,24 +15,30 @@ export const TableDetail: React.FC<Props> = (props: Props) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [response, setResponse] = useState({});
 
-	const fetchTable = async () => {
+
+	const memoizedFetchTable = useCallback(async () => {
 		setIsLoading(true)
 		await axios.post('/api/v1/getCubeMetaData/' + productId)
 			.then((result: any) => {
-					if (result.data.status === 'FAILED') {
-						setResponse(result.data.object.split('.')[0]);
-					} else {
-						setResponse(result.data.object);
-					}
+					return JSON.stringify(data);
 				},
 				(error: any) => {
+					console.log(error)
 				});
 		setIsLoading(false);
-	}
+	}, [productId])
 
 	useEffect(() => {
-		fetchTable()
-	}, [])
+		memoizedFetchTable().then((result: any) => {
+				if (result.data.status === 'FAILED') {
+					setResponse(result.data.object.split('.')[0]);
+				} else {
+					setResponse(result.data.object);
+				}
+			},
+			(error: any) => {
+			})
+	}, [memoizedFetchTable])
 
 	const details = (response) => {
 		return (

@@ -9,7 +9,7 @@ interface Props {
 
 export const FinancialLiteracy: React.FC<Props> = () => {
 
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading] = useState(false);
 
 	return (
 		<Grid

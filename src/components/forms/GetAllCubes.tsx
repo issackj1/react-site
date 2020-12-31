@@ -20,7 +20,7 @@ export const GetAllCubes: React.FC<Props> = (props) => {
 	const [response, setResponse] = useState([]);
 	const [toastMessage, setToastMessage] = useState('');
 	const [show, setShow] = useState(false);
-	const [isLoading, setIsLoading] = useState(false);
+	const [setIsLoading] = useState(false);
 
 
 	const handleSubmit = async (id: string) => {
@@ -56,6 +56,7 @@ export const GetAllCubes: React.FC<Props> = (props) => {
 			spacing={ 1 }>
 			<Grid container item xs={ 12 }>
 				<Typography variant={ "body1" } align={ "center" }>
+					{ show ? toastMessage : null }
 					{ response }
 				</Typography>
 			</Grid>
