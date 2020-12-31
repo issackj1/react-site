@@ -5,11 +5,11 @@ import { LoginForm } from "../forms/LoginForm";
 import { SignUpForm } from "../forms/SignUpForm";
 import { useHistory } from "react-router-dom";
 import { Box, Card, CardContent, CardHeader, Container, Grid, Snackbar } from "@material-ui/core";
+import {Copyright} from "../../sharedFunctions";
 
 const axios = require('axios');
 
 interface Props {
-	copyright: () => () => JSX.Element
 }
 
 function Alert(props: AlertProps) {
@@ -17,9 +17,8 @@ function Alert(props: AlertProps) {
 }
 
 
-export const Auth: React.FC<Props> = (props) => {
+export const Auth: React.FC<Props> = () => {
 
-	const { copyright } = props;
 	const [show, setShow] = useState(false);
 	const [toastMessage, setToastMessage] = useState('');
 	const [isSignUp, setIsSignUp] = useState(false);
@@ -125,7 +124,7 @@ export const Auth: React.FC<Props> = (props) => {
 									: logInHeaders()
 							}
 						</Card>
-						{ copyright }
+						{ Copyright() }
 					</Grid>
 				</Grid>
 			</Box>

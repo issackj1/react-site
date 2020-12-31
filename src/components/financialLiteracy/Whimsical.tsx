@@ -18,9 +18,10 @@ import Iframe from "react-iframe";
 import { AffiliateLinks } from "../../constants";
 import { makeStyles } from "@material-ui/core/styles";
 import { ExpandLess, ExpandMore, Mail, MonetizationOn } from "@material-ui/icons";
+import {Copyright} from "../../sharedFunctions";
+
 
 interface Props {
-	Copyright: () => () => JSX.Element
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -38,9 +39,8 @@ function ListItemLink(props) {
 	return <ListItem button component="a" { ...props } />;
 }
 
-export const Whimsical: React.FC<Props> = (props) => {
+export const Whimsical: React.FC<Props> = () => {
 
-	const { Copyright } = props;
 	const { FintechApps, Newsletters } = AffiliateLinks;
 	const classes = useStyles();
 	const [open1, setOpen1] = React.useState(false);
@@ -113,7 +113,7 @@ export const Whimsical: React.FC<Props> = (props) => {
 										</ListItemLink>
 									)
 								}
-							</List>
+							</List>``
 						</Collapse>
 					</List>
 				</Grid>
@@ -127,7 +127,7 @@ export const Whimsical: React.FC<Props> = (props) => {
 					        position="relative"/>
 				</Grid>
 				<Grid>
-					{ Copyright }
+					{ Copyright() }
 				</Grid>
 			</Box>
 		</Container>)
