@@ -5,12 +5,14 @@ import { SimpleNavBar } from "../SimpleNavBar";
 import { Whimsical } from "./Whimsical";
 
 interface Props {
-
+	Copyright: () => () => JSX.Element
 }
 
-export const FinancialLiteracy: React.FC<Props> = () => {
+export const FinancialLiteracy: React.FC<Props> = (props) => {
 
 	const [isLoading, setIsLoading] = useState(false);
+	const { Copyright } = props;
+	console.log(Copyright)
 
 	return (
 		<Grid
@@ -30,8 +32,9 @@ export const FinancialLiteracy: React.FC<Props> = () => {
 						)
 						: (
 							<Switch>
-								<Route path={ "/" } component={ Whimsical }/>
+								<Route path={ "/" } component={ Whimsical } Copyright={ Copyright }/>
 							</Switch>
+
 						)
 				}
 			</Grid>

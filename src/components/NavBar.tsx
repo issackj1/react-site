@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { AppBar, Button, Container, Fab, Link, Toolbar, Typography, Zoom, } from "@material-ui/core";
+import { AppBar, Fab, Link, Toolbar, Typography, Zoom, } from "@material-ui/core";
 import { Parallax } from "react-spring/renderprops-addons";
 import { navProps } from "../constants";
 import { makeStyles } from "@material-ui/core/styles";
@@ -55,7 +55,7 @@ function ScrollTop() {
 
 	return (
 		<Zoom>
-			<div onClick={handleClick} role="presentation" className={classes.zoom}>
+			<div onClick={ handleClick } role="presentation" className={ classes.zoom }>
 				hi
 			</div>
 		</Zoom>
@@ -70,31 +70,32 @@ export const NavBar: React.FC<Props> = ({ parallax }) => {
 	return (
 		<div className={ classes.root }>
 			<AppBar position="static">
-				<Toolbar variant={"dense"} className={classes.toolbar}>
+				<Toolbar variant={ "dense" } className={ classes.toolbar }>
 					<Typography variant="h6" className={ classes.title }>
 						<Link underline={ "none" } color={ "inherit" } href={ "/" }>
 							Issack John
 						</Link>
 					</Typography>
+					<Link  noWrap underline={ "none" } className={ classes.toolbarLink } color={ "inherit" }
+					      href={ "/financialLiteracy" } variant={ "subtitle2" }>Financial Literacy</Link>
+					<Link noWrap underline={ "none" } className={ classes.toolbarLink } color={ "inherit" }
+					      href={ "/athena" } variant={ "subtitle2" }>Athena</Link>
 				</Toolbar>
-				<Toolbar variant={"dense"} className={classes.toolbarSecondary}>
-						{ navLinks.map(({ title }, i) => <Link noWrap
-						                                       underline={"none"}
-						                                       className={classes.toolbarLink}
-						                                       onClick={ () => parallax.scrollTo(i + 1) }
-						                                       key={ i }
-						                                       color="inherit" variant={"subtitle2"}>{ title }</Link>
-						) }
-						<Link noWrap underline={"none"} className={classes.toolbarLink} color={"inherit"} href={"/financialLiteracy"} variant={"subtitle2"}>Financial Literacy</Link>
-						<Link nowrap underline={"none"} className={classes.toolbarLink} color={"inherit"} href={"/athena"} variant={"subtitle2"}>Athena</Link>
+				<Toolbar variant={ "dense" } className={ classes.toolbarSecondary }>
+					{ navLinks.map(({ title }, i) => <Link noWrap
+					                                       underline={ "none" }
+					                                       className={ classes.toolbarLink }
+					                                       onClick={ () => parallax.scrollTo(i + 1) }
+					                                       key={ i }
+					                                       color="inherit" variant={ "subtitle2" }>{ title }</Link>
+					) }
 				</Toolbar>
 				<ScrollTop>
 					<Fab color="secondary" size="small" aria-label="scroll back to top">
-						<KeyboardArrowUpIcon />
+						<KeyboardArrowUpIcon/>
 					</Fab>
 				</ScrollTop>
 			</AppBar>
-
 		</div>
 	);
 };

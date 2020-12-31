@@ -20,6 +20,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { ExpandLess, ExpandMore, Mail, MonetizationOn } from "@material-ui/icons";
 
 interface Props {
+	Copyright: () => () => JSX.Element
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -39,6 +40,7 @@ function ListItemLink(props) {
 
 export const Whimsical: React.FC<Props> = (props) => {
 
+	const { Copyright } = props;
 	const { FintechApps, Newsletters } = AffiliateLinks;
 	const classes = useStyles();
 	const [open1, setOpen1] = React.useState(false);
@@ -55,10 +57,11 @@ export const Whimsical: React.FC<Props> = (props) => {
 		<Container maxWidth="lg">
 			<Box my={ 2 }>
 				<Typography color={ "textPrimary" } variant={ "h3" } align={ "center" }>Financial Literacy</Typography>
-				<Typography color={ "textPrimary" } variant={ "body1" } align={ "center" }><strong>Financial literacy</strong> is the
+				<Typography color={ "textPrimary" } variant={ "body1" } align={ "center" }><strong>Financial
+					literacy</strong> is the
 					ability to understand and effectively use various financial skills, including personal financial
 					management, budgeting, and investing.</Typography>
-				<Grid container item direction={ "column" }>
+				<Grid container item>
 					<List subheader={
 						<ListSubheader component={ "div" }>
 							FinTech Apps
@@ -86,7 +89,7 @@ export const Whimsical: React.FC<Props> = (props) => {
 						</Collapse>
 					</List>
 				</Grid>
-				<Grid container item direction={ "column" }>
+				<Grid container item>
 					<List subheader={
 						<ListSubheader component={ "div" }>
 							Others
@@ -114,8 +117,7 @@ export const Whimsical: React.FC<Props> = (props) => {
 						</Collapse>
 					</List>
 				</Grid>
-				<Grid container
-				      direction={ "row" } justify={ "center" }>
+				<Grid container justify={ "center" }>
 					<Iframe url="https://whimsical.com/embed/337yB3814c7Fs1JVmmqQGU"
 					        width={ "1600px" }
 					        height="500px"
@@ -123,6 +125,9 @@ export const Whimsical: React.FC<Props> = (props) => {
 					        className="myClassname"
 					        display="initial"
 					        position="relative"/>
+				</Grid>
+				<Grid>
+					{ Copyright }
 				</Grid>
 			</Box>
 		</Container>)

@@ -6,7 +6,7 @@ import { Athena } from "./components/api/Athena";
 import { Link, Typography } from "@material-ui/core";
 import { FinancialLiteracy } from "./components/financialLiteracy/FinancialLiteracy";
 
-function Copyright() {
+const Copyright = () => {
 	return (
 		<Typography variant="body2" color="textSecondary" align="center">
 			{ 'Copyright © ' }
@@ -25,7 +25,7 @@ export default function App() {
 			<Switch>
 				<Route path={ "/project/:name" } component={ Project }/>
 				<Route path={ "/athena" } component={ Athena }/>
-				<Route path={ "/financialLiteracy" } component={ FinancialLiteracy }/>
+				<Route path={ "/financialLiteracy" } component={ FinancialLiteracy } Copyright={ () => Copyright() }/>
 				<Route path={ "/" } component={ Home } Copyright={ () => Copyright() }/>
 			</Switch>
 		</Router>
