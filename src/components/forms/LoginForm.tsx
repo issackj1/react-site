@@ -14,8 +14,7 @@ const schema = Yup.object({
 		.email()
 		.required('Please enter a valid email'),
 	password: Yup.string()
-		.min(8)
-		.max(16)
+		.min(1)
 		.required('Please enter a password')
 });
 
