@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Route, Switch, useHistory } from "react-router-dom";
 import { Welcome } from "./Welcome";
-import { Button, CircularProgress, Fade, Grid, SvgIcon } from "@material-ui/core";
+import { Button, Grid, SvgIcon } from "@material-ui/core";
 import { Auth } from "./Auth";
 import { PrivateRoute } from "./PrivateRoute";
 import { Endpoint } from "./Endpoint";
 import { SimpleNavBar } from "../SimpleNavBar";
 import { NavigateBefore } from "@material-ui/icons";
 import { TableDetail } from "./TableDetail";
+import { Conditional } from "../Conditional";
 
 interface Props {
 }
@@ -51,17 +52,12 @@ export const Athena: React.FC<Props> = (props) => {
 			<Grid item xs={ 12 } sm={ 12 }>
 				{
 					isLoading
-						? (<div>
-								<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
-								      unmountOnExit>
-									<CircularProgress/>
-								</Fade>
-							</div>
+						? (
+							<Conditional isLoading={ isLoading }/>
 						)
 						: (
-
 							<Switch>
-								<Route path={ "/athena/auth" } component={ Auth } />
+								<Route path={ "/athena/auth" } component={ Auth }/>
 								<PrivateRoute handleLogout={ () => handleLogout() }
 								              path={ "/athena/:name/detail/:productId" } component={ TableDetail }/>
 								<PrivateRoute handleLogout={ () => handleLogout() } path={ "/athena/:name" }

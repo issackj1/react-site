@@ -2,8 +2,9 @@
 import * as React from 'react';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import { Box, CircularProgress, Container, Fade } from "@material-ui/core";
+import { Box, Container } from "@material-ui/core";
 import _ from 'lodash';
+import { Conditional } from "../Conditional";
 
 type Props = {};
 
@@ -58,12 +59,7 @@ export const TableDetail: React.FC<Props> = (props: Props) => {
 				{
 					isLoading
 						? (
-							<div>
-								<Fade in={ isLoading } style={ { transitionDelay: isLoading ? '800ms' : '0ms', } }
-								      unmountOnExit>
-									<CircularProgress/>
-								</Fade>
-							</div>
+							<Conditional isLoading={ isLoading }/>
 						)
 						: (
 							!_.isEmpty(response)

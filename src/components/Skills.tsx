@@ -6,7 +6,6 @@ interface Props {
 
 }
 
-
 export const Skills: React.FC<Props> = () => {
 	return (
 		<Grid
