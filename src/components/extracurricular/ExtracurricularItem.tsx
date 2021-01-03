@@ -2,7 +2,7 @@ import React from 'react';
 import {Grid, Typography} from "@material-ui/core";
 
 interface Props {
-    title: String,
+    title: string,
     items: []
 }
 

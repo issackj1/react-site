@@ -9,7 +9,7 @@ interface Props {
 }
 
 interface ExtracurricularContentItems {
-    title: String
+    title: string
     items: []
 }
 

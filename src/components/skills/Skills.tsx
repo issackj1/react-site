@@ -9,7 +9,7 @@ interface Props {
 }
 
 interface SkillsContentItems {
-    title: String,
+    title: string,
     items: []
 }
 
