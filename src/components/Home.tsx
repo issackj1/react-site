@@ -104,7 +104,7 @@ export const Home: React.FC<Props> = (props) => {
 			{ Array.from(Array(numOfButtons)).map((object, i) => <ParallaxLayer key={ i } offset={ i + 0.8 } speed={ 1 }>
 					<Grid container justify="center">
 						<span onClick={ () => parallax.scrollTo(i === numOfButtons - 1 ? 1 : i + 1) }>
-							<Button variant="contained" color={ "primary" } size={ "large" }
+							<Button variant="contained" color={ "primary" } size={ "medium" }
 					        block={ "true" }>Continue</Button>
 						</span>
 					</Grid>

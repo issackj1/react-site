@@ -18,7 +18,7 @@ export const Extracurricular: React.FC<Props> = () => {
         <div className={"container"} id={"extracurricular"}>
             <Grid container direction={"row"} spacing={1}>
                 <Grid item xs={12} sm={12}>
-                    <Typography variant={"h2"} gutterBottom
+                    <Typography variant={"h3"} gutterBottom
                                 align={"center"}>{ExtracurricularContent.title}</Typography>
                 </Grid>
                 {

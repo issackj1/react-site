@@ -13,7 +13,7 @@ export const ExtracurricularItem: React.FC<Props> = props => {
             container
             direction={ "column" }
             item
-            xs={ 12 }
+            xs={ 6 }
             sm={ 6 }
             alignItems={ "center" }
         >
