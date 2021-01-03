@@ -7,7 +7,7 @@ import {SpringConfig} from "react-spring/renderprops-universal";
 import {About} from "./About";
 import {Contact} from "./Contact";
 import {Education} from "./Education";
-import {Experience} from "./Experience";
+import {Experience} from "./experience/Experience";
 import {Extracurricular} from "./extracurricular/Extracurricular";
 import {NavBar} from "./NavBar";
 import {Section} from "./Section";

@@ -18,3 +18,5 @@ export let navProps;
 navProps = require("./json/NavProps.json");
 export let AffiliateLinks;
 AffiliateLinks = require("./json/AffiliateLinks.json");
+export let ExperienceContent;
+ExperienceContent = require("./json/Experience.json");
