@@ -2,10 +2,12 @@
   "title": "EXTRACURRICULAR",
   "hackathons": [
     {
-      "name": "Starter Hacks 2020"
+      "name": "Starter Hacks 2020",
+      "link": "https://devpost.com/software/starterhacks2020-klj3qb"
     },
     {
-      "name": "NSBE Hacks 2020"
+      "name": "NSBE Hacks 2020",
+      "link": "https://devpost.com/software/black-tech-initiative-4fghix"
     }
   ],
   "books": [

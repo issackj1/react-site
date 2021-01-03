@@ -1,11 +1,35 @@
 import React from 'react';
+import {Grid, Typography} from "@material-ui/core";
 
 interface Props {
-
+    title: String,
+    items: []
 }
 
 export const ExtracurricularItem: React.FC<Props> = props => {
+    const {title, items} = props;
     return (
-        <div></div>
+        <Grid
+            container
+            direction={ "column" }
+            item
+            xs={ 12 }
+            sm={ 6 }
+            alignItems={ "center" }
+        >
+            <Typography variant={ "h4" } gutterBottom align={ "center" }>{title}</Typography>
+            <ul className={ "list-unstyled" }>
+                {
+                    items.map((object:any) => {
+                        return <a
+                            href={object.link ? object.link : "#"}
+                                  rel={"noopener noreferrer"}
+                                  target={"_blank"}>
+                            <li>{object.name}</li>
+                        </a>;
+                    })
+                }
+            </ul>
+        </Grid>
     );
 }
