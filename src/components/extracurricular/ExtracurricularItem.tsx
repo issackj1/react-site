@@ -3,7 +3,7 @@ import {Grid, Typography} from "@material-ui/core";
 
 interface Props {
     title: string,
-    items: []
+    items: { name: string, link: string }[]
 }
 
 export const ExtracurricularItem: React.FC<Props> = props => {
@@ -22,7 +22,7 @@ export const ExtracurricularItem: React.FC<Props> = props => {
                 {
                     items.map((object:any) => {
                         return <a
-                            href={object.link ? object.link : "#"}
+                            href={object.link}
                                   rel={"noopener noreferrer"}
                                   target={"_blank"}>
                             <li>{object.name}</li>

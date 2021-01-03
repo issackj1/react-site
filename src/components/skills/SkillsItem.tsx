@@ -3,7 +3,7 @@ import {Grid, Typography} from "@material-ui/core";
 
 interface Props {
     title: string
-    items: []
+    items: string[]
 }
 
 export const SkillsItem: React.FC<Props> = props => {

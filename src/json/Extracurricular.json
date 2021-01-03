@@ -13,19 +13,6 @@
           "link": "https://devpost.com/software/black-tech-initiative-4fghix"
         }
       ]
-    },
-    {
-      "title": "books",
-      "items": [
-        {
-          "name": "The Phoenix Project",
-          "author": "Gene Kim, Kevin Behr, George Spafford"
-        },
-        {
-          "name": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald"
-        }
-      ]
     }
   ]
 }
