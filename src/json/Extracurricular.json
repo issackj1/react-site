@@ -1,23 +1,31 @@
 {
   "title": "EXTRACURRICULAR",
-  "hackathons": [
+  "content": [
     {
-      "name": "Starter Hacks 2020",
-      "link": "https://devpost.com/software/starterhacks2020-klj3qb"
+      "title": "hackathons",
+      "items": [
+        {
+          "name": "Starter Hacks 2020",
+          "link": "https://devpost.com/software/starterhacks2020-klj3qb"
+        },
+        {
+          "name": "NSBE Hacks 2020",
+          "link": "https://devpost.com/software/black-tech-initiative-4fghix"
+        }
+      ]
     },
     {
-      "name": "NSBE Hacks 2020",
-      "link": "https://devpost.com/software/black-tech-initiative-4fghix"
-    }
-  ],
-  "books": [
-    {
-      "name": "The Phoenix Project",
-      "author": "Gene Kim, Kevin Behr, George Spafford"
-    },
-    {
-      "name": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald"
+      "title": "books",
+      "items": [
+        {
+          "name": "The Phoenix Project",
+          "author": "Gene Kim, Kevin Behr, George Spafford"
+        },
+        {
+          "name": "The Great Gatsby",
+          "author": "F. Scott Fitzgerald"
+        }
+      ]
     }
   ]
 }
