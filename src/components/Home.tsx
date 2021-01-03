@@ -11,7 +11,7 @@ import { Experience } from "./Experience";
 import { Extracurricular } from "./Extracurricular";
 import { NavBar } from "./NavBar";
 import { Section } from "./Section";
-import { Skills } from "./Skills";
+import { Skills } from "./skills/Skills";
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import IconButton from "@material-ui/core/IconButton";
 
