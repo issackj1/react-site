@@ -52,15 +52,15 @@ export const Home: React.FC<Props> = (props) => {
         mainLayerSpeed = 1,
         buttonLayerSpeed = 0.5,
         numOfButtons = 6,
-        blackBackGroundOffsets = [2,4,6];
+        blackBackGroundOffsets = [2, 4, 6];
 
     return (<>
         <Parallax pages={7} scrolling={true} ref={setParallax}>
             {/*Backgrounds*/}
             {
                 blackBackGroundOffsets.map((offset: number) => <ParallaxLayer key={uuidv4()} offset={offset}
-                                                                                    speed={backgroundLayerSpeed}
-                                                                                    style={{backgroundColor: '#282c34'}}/>)
+                                                                              speed={backgroundLayerSpeed}
+                                                                              style={{backgroundColor: '#282c34'}}/>)
             }
             <ParallaxLayer offset={0} speed={2} onClick={() => parallax.scrollTo(1)}
                            style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
