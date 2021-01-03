@@ -1,5 +1,6 @@
 import React from 'react';
 import {Grid, Typography} from "@material-ui/core";
+import {v4 as uuidv4} from "uuid";
 
 interface Props {
     title: string
@@ -13,7 +14,7 @@ export const SkillsItem: React.FC<Props> = props => {
             <Typography variant={"h4"}>{title}</Typography>
             <ul className={"list-unstyled"}>
                 {
-                    items.map((item: String, i: number) => <li key={i}>{item}</li>)
+                    items.map((item: String) => <li key={uuidv4()}>{item}</li>)
                 }
             </ul>
         </Grid>
