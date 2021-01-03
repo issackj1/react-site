@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExtracurricularContent } from "../constants";
+import { ExtracurricularContent } from "../../constants";
 import { Grid, Typography } from "@material-ui/core";
 
 interface Props {

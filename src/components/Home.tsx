@@ -8,7 +8,7 @@ import { About } from "./About";
 import { Contact } from "./Contact";
 import { Education } from "./Education";
 import { Experience } from "./Experience";
-import { Extracurricular } from "./Extracurricular";
+import { Extracurricular } from "./extracurricular/Extracurricular";
 import { NavBar } from "./NavBar";
 import { Section } from "./Section";
 import { Skills } from "./skills/Skills";
