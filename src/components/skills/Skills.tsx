@@ -9,8 +9,8 @@ interface Props {
 }
 
 interface SkillsContentItems {
-    title: String,
-    items: []
+    title: string,
+    items: string[]
 }
 
 export const Skills: React.FC<Props> = () => {

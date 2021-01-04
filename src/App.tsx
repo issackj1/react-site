@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./components/Home";
-import { Project } from "./components/Project";
+import { Project } from "./components/project/Project";
 import { Athena } from "./components/api/Athena";
 import { FinancialLiteracy } from "./components/financialLiteracy/FinancialLiteracy";
 

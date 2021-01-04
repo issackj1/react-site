@@ -1,20 +1,24 @@
-export let HackathonOne;
-HackathonOne = require('./json/StarterHacks2020');
-export let HackathonTwo;
-HackathonTwo = require('./json/NSBEHacks2020');
-export let ProjectOne;
-ProjectOne = require('./json/Shuffl');
-export let ProjectTwo;
-ProjectTwo = require('./json/AstroJump');
-export let NoProject;
-NoProject = require('./json/NoProject');
-export let AboutContent;
-AboutContent = require('./json/About.json');
-export let SkillsContent;
-SkillsContent = require('./json/Skills.json');
-export let ExtracurricularContent;
-ExtracurricularContent = require('./json/Extracurricular.json');
-export let navProps;
-navProps = require("./json/NavProps.json");
-export let AffiliateLinks;
-AffiliateLinks = require("./json/AffiliateLinks.json");
+const HackathonOne = require('./json/StarterHacks2020'),
+    HackathonTwo = require('./json/NSBEHacks2020'),
+    ProjectOne = require('./json/Shuffl'),
+    ProjectTwo = require('./json/AstroJump'),
+    NoProject = require('./json/NoProject'),
+    AboutContent = require('./json/About.json'),
+    SkillsContent = require('./json/Skills.json'),
+    ExtracurricularContent = require('./json/Extracurricular.json'),
+    navProps = require("./json/NavProps.json"),
+    AffiliateLinks = require("./json/AffiliateLinks.json"),
+    ExperienceContent = require("./json/Experience.json");
+export {
+    HackathonOne,
+    HackathonTwo,
+    ProjectOne,
+    ProjectTwo,
+    NoProject,
+    AboutContent,
+    SkillsContent,
+    ExtracurricularContent,
+    navProps,
+    AffiliateLinks,
+    ExperienceContent
+}
