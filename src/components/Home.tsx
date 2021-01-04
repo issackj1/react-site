@@ -33,9 +33,12 @@ export const Home: React.FC<Props> = (props) => {
     const [parallax, setParallax] = useState<Parallax | RefObject<any> | null>(React.createRef);
 
     const h1Props = useSpring<useSpringProps>({
+        // @ts-ignore
         config: config.molasses,
         delay: 1000,
-        opacity: 1,
+        to: {
+            opacity: 1
+        },
         from: {
             opacity: 0,
         }
