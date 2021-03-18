@@ -110,11 +110,10 @@ export const Home: React.FC<Props> = (props) => {
             {/*button*/}
             {Array.from(Array(numOfButtons)).map((object, i) => <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
                     <Grid container justify="center">
-						<span onClick={() => parallax.scrollTo(i === numOfButtons - 1 ? 1 : i + 1)}>
-                            <Fab variant={"extended"} color={"primary"}>
-                                Continue
-                            </Fab>
-						</span>
+                        <Fab variant={"extended"} color={"primary"}
+                             onClick={() => parallax.scrollTo(i === numOfButtons - 1 ? 1 : i + 1)}>
+                            Continue
+                        </Fab>
                     </Grid>
                 </ParallaxLayer>
             )}
@@ -127,11 +126,9 @@ export const Home: React.FC<Props> = (props) => {
                                                                            width: '20%',
                                                                            marginLeft: '95%'
                                                                        }}>
-					<span onClick={() => parallax.scrollTo(0)}>
-						<IconButton edge="start" color="inherit" aria-label="arrow" fontSize={{fontSize: 200}}>
-							<KeyboardArrowUpIcon fontSize={"large"}/>
-						</IconButton>
-					</span>
+                    <Fab color={"secondary"} onClick={() => parallax.scrollTo(0)}>
+                        <KeyboardArrowUpIcon fontSize={"large"}/>
+                    </Fab>
                 </ParallaxLayer>)
             }
         </Parallax>
