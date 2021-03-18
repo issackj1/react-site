@@ -20,14 +20,10 @@ const useStyles = makeStyles((theme: Theme) =>
 export const About: React.FC<Props> = () => {
 	const classes = useStyles();
 	return (
-		<Grid
-			container
-			direction={"column"}
-		      spacing={ 2 }>
+		<Grid container direction={"column"} spacing={ 1 }>
 			<Typography variant={ "h2" } align={ "center" }>{ AboutContent.title }</Typography>
 			<Avatar variant={"rounded"} alt="Issack John" src={profilePicture} className={classes.large}/>
-			<Typography variant={ "body1" } style={ { fontSize: '24px' } }
-			            align={ "center" }>{ AboutContent.summary }</Typography>
+			<Typography variant={ "body1" } align={ "center" }>{ AboutContent.summary }</Typography>
 		</Grid>
 	);
 };

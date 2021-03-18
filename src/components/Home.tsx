@@ -1,5 +1,5 @@
 // @ts-nocheck
-import {Box, Button, Container, Fab, Grid} from "@material-ui/core";
+import {Box, Container, Fab, Grid} from "@material-ui/core";
 import React, {RefObject, useState} from 'react';
 import {animated, config, useSpring} from 'react-spring';
 import {Parallax, ParallaxLayer} from "react-spring/renderprops-addons";
@@ -13,7 +13,6 @@ import {NavBar} from "./NavBar";
 import {Section} from "./Section";
 import {Skills} from "./skills/Skills";
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import IconButton from "@material-ui/core/IconButton";
 import {v4 as uuidv4} from "uuid";
 
 interface Props {
@@ -33,7 +32,6 @@ export const Home: React.FC<Props> = (props) => {
     const [parallax, setParallax] = useState<Parallax | RefObject<any> | null>(React.createRef);
 
     const h1Props = useSpring<useSpringProps>({
-        // @ts-ignore
         config: config.molasses,
         delay: 1000,
         to: {
@@ -122,9 +120,8 @@ export const Home: React.FC<Props> = (props) => {
                 Array.from(Array(7)).map((object, i) => <ParallaxLayer key={i} offset={i + 0.7 + 1}
                                                                        speed={buttonLayerSpeed}
                                                                        style={{
-                                                                           display: 'block',
                                                                            width: '20%',
-                                                                           marginLeft: '95%'
+                                                                           marginLeft: '90%'
                                                                        }}>
                     <Fab color={"secondary"} onClick={() => parallax.scrollTo(0)}>
                         <KeyboardArrowUpIcon fontSize={"large"}/>
