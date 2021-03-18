@@ -1,5 +1,5 @@
 // @ts-nocheck
-import {Box, Button, Container, Grid} from "@material-ui/core";
+import {Box, Button, Container, Fab, Grid} from "@material-ui/core";
 import React, {RefObject, useState} from 'react';
 import {animated, config, useSpring} from 'react-spring';
 import {Parallax, ParallaxLayer} from "react-spring/renderprops-addons";
@@ -111,8 +111,9 @@ export const Home: React.FC<Props> = (props) => {
             {Array.from(Array(numOfButtons)).map((object, i) => <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
                     <Grid container justify="center">
 						<span onClick={() => parallax.scrollTo(i === numOfButtons - 1 ? 1 : i + 1)}>
-							<Button variant="contained" color={"primary"} size={"small"}
-                                    block={"true"}>Continue</Button>
+                            <Fab variant={"extended"} color={"primary"}>
+                                Continue
+                            </Fab>
 						</span>
                     </Grid>
                 </ParallaxLayer>
