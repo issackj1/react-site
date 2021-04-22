@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import { Grid } from "@material-ui/core";
-import { SimpleNavBar } from "../SimpleNavBar";
-import { Whimsical } from "./Whimsical";
+import { SimpleNavBar } from "../components/SimpleNavBar";
+import { Whimsical } from "../components/financialLiteracy/Whimsical";
 
 interface Props {
 }
