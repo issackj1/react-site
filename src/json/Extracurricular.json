@@ -5,12 +5,20 @@
       "title": "hackathons",
       "items": [
         {
+          "name": "Calgary Hacks 2019",
+          "link": "https://devpost.com/software/lynk-zc6pth"
+        },
+        {
           "name": "Starter Hacks 2020",
           "link": "https://devpost.com/software/starterhacks2020-klj3qb"
         },
         {
           "name": "NSBE Hacks 2020",
           "link": "https://devpost.com/software/black-tech-initiative-4fghix"
+        },
+        {
+          "name": "Calgary Hacks 2021",
+          "link": "https://devpost.com/software/sessionly"
         }
       ]
     }
