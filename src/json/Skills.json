@@ -4,34 +4,19 @@
   "content": [
     {
       "title": "languages",
-      "items": [
-        "Java",
-        "JavaScript",
-        "Python",
-        "C++",
-        "c"
-      ]
+      "items": ["Java", "JavaScript", "Python", "C++", "c"]
     },
     {
       "title": "libraries",
-      "items": [
-        "React"
-      ]
+      "items": ["React"]
     },
     {
       "title": "frameworks",
-      "items": [
-        "Django",
-        "Express.js"
-      ]
+      "items": ["Django", "Express.js"]
     },
     {
       "title": "databases",
-      "items": [
-        "MongoDB",
-        "SQLite3",
-        "PostgreSQL"
-      ]
+      "items": ["MongoDB", "SQLite3", "PostgreSQL"]
     }
   ]
 }
