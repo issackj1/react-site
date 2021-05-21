@@ -4,8 +4,7 @@
     { "title": "NSBE Hacks 2020", "path": "/project/nsbehacks2020" },
     { "title": "Shuffl", "path": "/project/shuffl" },
     { "title": "Astro Jump", "path": "/project/astrojump" }
-  ]
-,
+  ],
   "navLinks": [
     { "title": "About" },
     { "title": "Skills" },

@@ -12,6 +12,5 @@
   "learned": "This was a 24 hour learning experience. This put us out of the comfort zone and into the growth zone. We did not stop learning, and that's what matters most. A few things that we learning was React, Express.js, IBM Cloud, MongoDB, and Black Communities. This project gave us an overview of how a full stack system should get designed and implemented in a proper function. Super happy to be apart of NSBEHacks2020!",
   "next": "The Black Tech Initiative can grow in many different ways. Currently, we are only providing resources to people who are running their company through the start-up simulator. This is great first step however, we want to take it a step further and actually connect people with established mentors in the industry. This can bridge the gap when it comes to connecting the mentor with the mentee and really take a first step to feasibly creating any type of real venture.",
   "repoUrl": "https://us-east.git.cloud.ibm.com/dnkantor/BlackTechInitiative",
-  "technologies": ["express.js", "ibm-cloud", "mongodb","node.js","react"]
-
+  "technologies": ["express.js", "ibm-cloud", "mongodb", "node.js", "react"]
 }

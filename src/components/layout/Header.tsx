@@ -1,5 +1,6 @@
 // @ts-nocheck
-import React from "react";
+import React, { RefObject } from "react";
+import { Parallax } from "react-spring/renderprops-addons";
 import {
   AppBar,
   Fab,
@@ -8,13 +9,12 @@ import {
   Typography,
   Zoom,
 } from "@material-ui/core";
-import { Parallax } from "react-spring/renderprops-addons";
-import { navProps } from "../constants";
-import { makeStyles } from "@material-ui/core/styles";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import { navProps } from "../../constants";
+import { makeStyles } from "@material-ui/core/styles";
 
 interface Props {
-  parallax: Parallax;
+  parallax: Parallax | RefObject<any> | null;
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -69,7 +69,7 @@ function ScrollTop() {
   );
 }
 
-export const NavBar: React.FC<Props> = ({ parallax }) => {
+export const Header: React.FC<Props> = ({ parallax }) => {
   const { navLinks } = navProps;
   const classes = useStyles();
 
