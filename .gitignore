@@ -27,5 +27,4 @@ yarn-error.log*
 *.xml
 .idea/alpha.iml
 .idea/modules.xml
-.idea/vcs.xml
 .eslintcache
