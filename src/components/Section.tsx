@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from "react";
 import { Route } from "react-router-dom";
-import { Box, Container } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 
 export const Section = ({ component: Component, ...rest }) => (
   <Route
@@ -10,9 +10,7 @@ export const Section = ({ component: Component, ...rest }) => (
       // authorised so return component
       return (
         <Container>
-          <Box>
-            <Component {...props} />
-          </Box>
+          <Component {...props} />
         </Container>
       );
     }}

@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Avatar,
+  Container,
   createStyles,
   Grid,
   Theme,
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export const About: React.FC<Props> = () => {
   const classes = useStyles();
   return (
-    <Grid container direction={"column"} spacing={1}>
+    <Grid container direction={"column"} spacing={3} md={8}>
       <Typography variant={"h2"} align={"center"}>
         {AboutContent.title}
       </Typography>
