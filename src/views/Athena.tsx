@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Switch, useHistory } from "react-router-dom";
-import { Welcome } from "./Welcome";
+import { Welcome } from "../components/api/Welcome";
 import { Grid } from "@material-ui/core";
-import { Auth } from "./Auth";
-import { PrivateRoute } from "./PrivateRoute";
-import { Endpoint } from "./Endpoint";
-import { TableDetail } from "./TableDetail";
-import { AthenaNavBar } from "./AthenaNavBar";
+import { Auth } from "../components/api/Auth";
+import { PrivateRoute } from "../components/api/PrivateRoute";
+import { Endpoint } from "../components/api/Endpoint";
+import { TableDetail } from "../components/api/TableDetail";
+import { AthenaNavBar } from "../components/api/AthenaNavBar";
 
 interface Props {
 }

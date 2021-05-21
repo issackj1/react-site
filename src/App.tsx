@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home } from "./components/Home";
+import { Home } from "./views/Home";
 import { Project } from "./components/project/Project";
-import { Athena } from "./components/api/Athena";
-import { FinancialLiteracy } from "./components/financialLiteracy/FinancialLiteracy";
+import { Athena } from "./views/Athena";
+import { FinancialLiteracy } from "./views/FinancialLiteracy";
 
 
 export default function App() {
