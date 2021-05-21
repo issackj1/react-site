@@ -92,16 +92,6 @@ export const Header: React.FC<Props> = ({ parallax }) => {
           >
             Financial Literacy
           </Link>
-          <Link
-            noWrap
-            underline={"none"}
-            className={classes.toolbarLink}
-            color={"inherit"}
-            href={"/athena"}
-            variant={"subtitle2"}
-          >
-            Athena
-          </Link>
         </Toolbar>
         <Toolbar variant={"dense"} className={classes.toolbarSecondary}>
           {navLinks.map(({ title }, i) => (
