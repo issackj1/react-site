@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { ExperienceContent } from "../../constants";
 import { ExperienceItem } from "./ExperienceItem";
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {}
 
@@ -31,6 +32,7 @@ export const Experience: React.FC<Props> = () => {
             title={job.title}
             company={job.company}
             date={job.date}
+            key={uuidv4()}
           />
         ))}
       </Grid>

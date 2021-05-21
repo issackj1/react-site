@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { ExtracurricularItem } from "./ExtracurricularItem";
-import { v4 as uuidv4 } from "uuid";
 import { ExtracurricularContent } from "../../constants";
 
 interface Props {}
@@ -21,9 +20,9 @@ export const Extracurricular: React.FC<Props> = () => {
           </Typography>
         </Grid>
         {ExtracurricularContent.content.map(
-          (object: ExtracurricularContentItems) => (
+          (object: ExtracurricularContentItems, index: number) => (
             <ExtracurricularItem
-              key={uuidv4()}
+              key={index}
               title={object.title}
               items={object.items}
             />
