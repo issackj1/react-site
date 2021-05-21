@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { Box, Container, Fab, Grid } from "@material-ui/core";
-import React, { RefObject, useState } from "react";
+import React from "react";
 import { animated, config, useSpring } from "react-spring";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import { SpringConfig } from "react-spring/renderprops-universal";
@@ -9,7 +9,6 @@ import { Contact } from "../components/Contact";
 import { Education } from "../components/Education";
 import { Experience } from "../components/experience/Experience";
 import { Extracurricular } from "../components/extracurricular/Extracurricular";
-import { NavBar } from "../components/NavBar";
 import { Section } from "../components/Section";
 import { Skills } from "../components/skills/Skills";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
@@ -80,10 +79,6 @@ export const Home: React.FC<Props> = (props) => {
               </Grid>
             </Box>
           </Container>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={0} speed={2} factor={1 / 6}>
-          <NavBar parallax={parallax} />
         </ParallaxLayer>
 
         <ParallaxLayer
