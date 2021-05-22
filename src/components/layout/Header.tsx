@@ -61,7 +61,6 @@ export const Header: React.FC<Props> = ({ parallax }) => {
                 </Link>
               ))}
               <Link
-                component={"button"}
                 underline={"none"}
                 className={classes.toolbarLink}
                 color={"inherit"}

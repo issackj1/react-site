@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Avatar,
-  Container,
   createStyles,
   Grid,
   Theme,
