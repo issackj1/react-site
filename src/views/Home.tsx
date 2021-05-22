@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { Box, Container, Fab, Grid } from "@material-ui/core";
+import { Container, Fab, Grid } from "@material-ui/core";
 import React from "react";
 import { animated, config, useSpring } from "react-spring";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
@@ -61,114 +61,117 @@ export const Home: React.FC<Props> = (props) => {
           style={{ backgroundColor: "#282c34" }}
         />
       ))}
-      <Container>
-        <ParallaxLayer
-          offset={0}
-          speed={2}
-          onClick={() => parallax.scrollTo(1)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <animated.h1 style={h1Props}>Welcome</animated.h1>
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={1}
-          speed={mainLayerSpeed}
-          onClick={() => parallax.scrollTo(2)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <About />
-        </ParallaxLayer>
+      <ParallaxLayer
+        offset={0}
+        speed={2}
+        onClick={() => parallax.scrollTo(1)}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <animated.h1 style={h1Props}>Welcome to my Portfolio</animated.h1>
+      </ParallaxLayer>
 
-        <ParallaxLayer
-          offset={2}
-          speed={mainLayerSpeed}
-          onClick={() => parallax.scrollTo(3)}
-          style={secondaryBackground}
-        >
-          <Section component={Skills} />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={3}
-          speed={mainLayerSpeed}
-          onClick={() => parallax.scrollTo(4)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Section component={Education} />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={4}
-          speed={mainLayerSpeed}
-          onClick={() => parallax.scrollTo(5)}
-          style={secondaryBackground}
-        >
-          <Section component={Experience} />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={5}
-          speed={mainLayerSpeed}
-          onClick={() => parallax.scrollTo(6)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Extracurricular />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={6}
-          speed={mainLayerSpeed}
-          onClick={() => parallax.scrollTo(1)}
-          style={secondaryBackground}
-        >
-          <Section component={Contact} />
-        </ParallaxLayer>
+      <ParallaxLayer
+        offset={1}
+        speed={mainLayerSpeed}
+        onClick={() => parallax.scrollTo(2)}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <About />
+      </ParallaxLayer>
 
-        {/*button*/}
-        {Array.from(Array(numOfButtons)).map((object, i) => (
-          <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
-            <Grid container justify="center">
-              <Fab
-                variant={"extended"}
-                color={"primary"}
-                onClick={() =>
-                  parallax.scrollTo(i === numOfButtons - 1 ? 1 : i + 1)
-                }
-              >
-                Continue
-              </Fab>
-            </Grid>
-          </ParallaxLayer>
-        ))}
+      <ParallaxLayer
+        offset={2}
+        speed={mainLayerSpeed}
+        onClick={() => parallax.scrollTo(3)}
+        style={secondaryBackground}
+      >
+        <Section component={Skills} />
+      </ParallaxLayer>
 
-        {Array.from(Array(7)).map((object, i) => (
-          <ParallaxLayer
-            key={i}
-            offset={i + 0.7 + 1}
-            speed={buttonLayerSpeed}
-            style={{
-              width: "20%",
-              marginLeft: "90%",
-            }}
-          >
-            <Fab color={"secondary"} onClick={() => parallax.scrollTo(0)}>
-              <KeyboardArrowUpIcon fontSize={"large"} />
+      <ParallaxLayer
+        offset={3}
+        speed={mainLayerSpeed}
+        onClick={() => parallax.scrollTo(4)}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Section component={Education} />
+      </ParallaxLayer>
+
+      <ParallaxLayer
+        offset={4}
+        speed={mainLayerSpeed}
+        onClick={() => parallax.scrollTo(5)}
+        style={secondaryBackground}
+      >
+        <Section component={Experience} />
+      </ParallaxLayer>
+
+      <ParallaxLayer
+        offset={5}
+        speed={mainLayerSpeed}
+        onClick={() => parallax.scrollTo(6)}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Extracurricular />
+      </ParallaxLayer>
+
+      <ParallaxLayer
+        offset={6}
+        speed={mainLayerSpeed}
+        onClick={() => parallax.scrollTo(1)}
+        style={secondaryBackground}
+      >
+        <Section component={Contact} />
+      </ParallaxLayer>
+
+      {/*button*/}
+      {Array.from(Array(numOfButtons)).map((object, i) => (
+        <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
+          <Grid container justify="center">
+            <Fab
+              variant={"extended"}
+              color={"primary"}
+              onClick={() =>
+                parallax.scrollTo(i === numOfButtons - 1 ? 1 : i + 1)
+              }
+            >
+              Continue
             </Fab>
-          </ParallaxLayer>
-        ))}
-      </Container>
+          </Grid>
+        </ParallaxLayer>
+      ))}
+
+      {Array.from(Array(7)).map((object, i) => (
+        <ParallaxLayer
+          key={i}
+          offset={i + 0.7 + 1}
+          speed={buttonLayerSpeed}
+          style={{
+            width: "20%",
+            marginLeft: "90%",
+          }}
+        >
+          <Fab color={"secondary"} onClick={() => parallax.scrollTo(0)}>
+            <KeyboardArrowUpIcon fontSize={"large"} />
+          </Fab>
+        </ParallaxLayer>
+      ))}
     </Parallax>
   );
 };

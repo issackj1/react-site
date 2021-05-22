@@ -1,11 +1,9 @@
 // @ts-nocheck
 import React from "react";
 import {
-  Box,
   Collapse,
   Container,
   createStyles,
-  Grid,
   List,
   ListItem,
   ListItemIcon,
@@ -23,7 +21,6 @@ import {
   Mail,
   MonetizationOn,
 } from "@material-ui/icons";
-import { Copyright } from "../../sharedFunctions";
 
 interface Props {}
 
@@ -57,77 +54,68 @@ export const Whimsical: React.FC<Props> = () => {
 
   return (
     <Container maxWidth="lg">
-      <Box my={2}>
-        <Typography color={"textPrimary"} variant={"h3"} align={"center"}>
-          Financial Literacy
-        </Typography>
-        <Typography color={"textPrimary"} variant={"body1"} align={"center"}>
-          <strong>Financial literacy</strong> is the ability to understand and
-          effectively use various financial skills, including personal financial
-          management, budgeting, and investing.
-        </Typography>
-        <Grid container item>
-          <List
-            subheader={
-              <ListSubheader component={"div"}>FinTech Apps</ListSubheader>
-            }
-            className={classes.root}
-          >
-            <ListItem button onClick={handleClick1}>
-              <ListItemIcon>
-                <MonetizationOn />
-              </ListItemIcon>
-              <ListItemText primary="Trading" />
-              {open1 ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse in={open1} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                {FintechApps.map(({ title, link }, i) => (
-                  <ListItemLink key={i} href={link} className={classes.nested}>
-                    <ListItemText primary={title} />
-                  </ListItemLink>
-                ))}
-              </List>
-            </Collapse>
+      <Typography color={"textPrimary"} variant={"h3"} align={"center"}>
+        Financial Literacy
+      </Typography>
+      <Typography color={"textPrimary"} variant={"body1"} align={"center"}>
+        <strong>Financial literacy</strong> is the ability to understand and
+        effectively use various financial skills, including personal financial
+        management, budgeting, and investing.
+      </Typography>
+      <List
+        subheader={
+          <ListSubheader component={"div"}>FinTech Apps</ListSubheader>
+        }
+        className={classes.root}
+      >
+        <ListItem button onClick={handleClick1}>
+          <ListItemIcon>
+            <MonetizationOn />
+          </ListItemIcon>
+          <ListItemText primary="Trading" />
+          {open1 ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+        <Collapse in={open1} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            {FintechApps.map(({ title, link }, i) => (
+              <ListItemLink key={i} href={link} className={classes.nested}>
+                <ListItemText primary={title} />
+              </ListItemLink>
+            ))}
           </List>
-        </Grid>
-        <Grid container item>
-          <List
-            subheader={<ListSubheader component={"div"}>Others</ListSubheader>}
-            className={classes.root}
-          >
-            <ListItem button onClick={handleClick2}>
-              <ListItemIcon>
-                <Mail />
-              </ListItemIcon>
-              <ListItemText primary="Newsletters" />
-              {open2 ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse in={open2} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                {Newsletters.map(({ title, link }, i) => (
-                  <ListItemLink key={i} href={link} className={classes.nested}>
-                    <ListItemText primary={title} />
-                  </ListItemLink>
-                ))}
-              </List>
-              ``
-            </Collapse>
+        </Collapse>
+      </List>
+      <List
+        subheader={<ListSubheader component={"div"}>Others</ListSubheader>}
+        className={classes.root}
+      >
+        <ListItem button onClick={handleClick2}>
+          <ListItemIcon>
+            <Mail />
+          </ListItemIcon>
+          <ListItemText primary="Newsletters" />
+          {open2 ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+        <Collapse in={open2} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            {Newsletters.map(({ title, link }, i) => (
+              <ListItemLink key={i} href={link} className={classes.nested}>
+                <ListItemText primary={title} />
+              </ListItemLink>
+            ))}
           </List>
-        </Grid>
-        <Grid container justify={"center"}>
-          <Iframe
-            url="https://whimsical.com/embed/337yB3814c7Fs1JVmmqQGU"
-            width={"1600px"}
-            height="500px"
-            id="myId"
-            className="myClassname"
-            display="initial"
-            position="relative"
-          />
-        </Grid>
-        <Grid>{Copyright()}</Grid>
-      </Box>
+          ``
+        </Collapse>
+      </List>
+      <Iframe
+        url="https://whimsical.com/embed/337yB3814c7Fs1JVmmqQGU"
+        width={"1600px"}
+        height="500px"
+        id="myId"
+        className="myClassname"
+        display="initial"
+        position="relative"
+      />
     </Container>
   );
 };
