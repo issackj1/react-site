@@ -1,6 +1,5 @@
 import React, { RefObject } from "react";
 import { Header } from "./Header";
-import { Footer } from "./Footer";
 import { Parallax } from "react-spring/renderprops-addons";
 import { Typography } from "@material-ui/core";
 
@@ -14,7 +13,6 @@ export const Layout: React.FC<Props> = ({ parallax, children }) => {
     <Typography>
       <Header parallax={parallax} />
       {children}
-      <Footer />
     </Typography>
   );
 };
