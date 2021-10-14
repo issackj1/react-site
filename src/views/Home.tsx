@@ -1,9 +1,8 @@
 // @ts-nocheck
 import { Fab, Grid } from "@material-ui/core";
 import React from "react";
-import { animated, config, useSpring } from "react-spring";
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
-import { SpringConfig } from "react-spring/renderprops-universal";
+import { animated, config, useSpring, SpringConfig } from "react-spring";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { About } from "../components/About";
 import { Contact } from "../components/Contact";
 import { Education } from "../components/Education";

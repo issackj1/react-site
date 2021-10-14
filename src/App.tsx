@@ -4,12 +4,12 @@ import { Home } from "./views/Home";
 import { Project } from "./components/project/Project";
 import { FinancialLiteracy } from "./views/FinancialLiteracy";
 import { Layout } from "./components/layout/Layout";
-import { Parallax } from "react-spring/renderprops-addons";
+import { Parallax } from "@react-spring/parallax";
 
 export default function App() {
-  const [parallax, setParallax] = useState<Parallax | RefObject<any> | null>(
-    React.createRef
-  );
+  const [parallax, setParallax] = useState<
+    typeof Parallax | RefObject<any> | null
+  >(React.createRef);
 
   return (
     <Layout parallax={parallax}>
