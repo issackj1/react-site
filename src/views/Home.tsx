@@ -27,13 +27,9 @@ export const Home: React.FC<Props> = (props) => {
 
   const h1Props = useSpring<useSpringProps>({
     config: config.molasses,
-    delay: 1000,
-    to: {
-      opacity: 1,
-    },
-    from: {
-      opacity: 0,
-    },
+    delay: 800,
+    to: { opacity: 1 },
+    from: { opacity: 0 },
   });
 
   const secondaryBackground = {
