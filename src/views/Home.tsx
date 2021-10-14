@@ -2,7 +2,7 @@
 import { Fab, Grid } from "@material-ui/core";
 import React from "react";
 import { animated, config, useSpring } from "react-spring";
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { SpringConfig } from "react-spring/renderprops-universal";
 import { About } from "../components/About";
 import { Contact } from "../components/Contact";
