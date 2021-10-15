@@ -123,7 +123,7 @@ export const Home: React.FC<Props> = (props) => {
           justifyContent: "center",
         }}
       >
-        <Extracurricular />
+        <Section component={Extracurricular} />
       </ParallaxLayer>
 
       <ParallaxLayer

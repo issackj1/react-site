@@ -20,7 +20,7 @@ export const Skills: React.FC<Props> = () => {
         </Typography>
       </Grid>
       <Grid item xs={12} sm={12}>
-        <Typography variant={"h5"} align={"center"}>
+        <Typography variant={"h5"} align={"center"} gutterBottom>
           {SkillsContent.subtitle}
         </Typography>
       </Grid>
