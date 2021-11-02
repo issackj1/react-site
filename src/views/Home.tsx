@@ -39,9 +39,9 @@ export const Home: React.FC<Props> = (props) => {
     color: "white",
   };
 
-  const backgroundLayerSpeed = 0.5,
+  const backgroundLayerSpeed = 0.6,
     mainLayerSpeed = 1,
-    buttonLayerSpeed = 0.5,
+    buttonLayerSpeed = 0.6,
     numOfButtons = 6,
     blackBackGroundOffsets = [2, 4, 6];
 
@@ -68,7 +68,6 @@ export const Home: React.FC<Props> = (props) => {
       >
         <animated.h1 style={h1Props}>Welcome to my Portfolio</animated.h1>
       </ParallaxLayer>
-
       <ParallaxLayer
         offset={1}
         speed={mainLayerSpeed}
@@ -81,7 +80,6 @@ export const Home: React.FC<Props> = (props) => {
       >
         <About />
       </ParallaxLayer>
-
       <ParallaxLayer
         offset={2}
         speed={mainLayerSpeed}
@@ -90,7 +88,6 @@ export const Home: React.FC<Props> = (props) => {
       >
         <Section component={Skills} />
       </ParallaxLayer>
-
       <ParallaxLayer
         offset={3}
         speed={mainLayerSpeed}
@@ -103,7 +100,6 @@ export const Home: React.FC<Props> = (props) => {
       >
         <Section component={Education} />
       </ParallaxLayer>
-
       <ParallaxLayer
         offset={4}
         speed={mainLayerSpeed}
@@ -112,7 +108,6 @@ export const Home: React.FC<Props> = (props) => {
       >
         <Section component={Experience} />
       </ParallaxLayer>
-
       <ParallaxLayer
         offset={5}
         speed={mainLayerSpeed}
@@ -125,7 +120,6 @@ export const Home: React.FC<Props> = (props) => {
       >
         <Section component={Extracurricular} />
       </ParallaxLayer>
-
       <ParallaxLayer
         offset={6}
         speed={mainLayerSpeed}
@@ -134,17 +128,14 @@ export const Home: React.FC<Props> = (props) => {
       >
         <Section component={Contact} />
       </ParallaxLayer>
-
       {/*button*/}
       {Array.from(Array(numOfButtons)).map((object, i) => (
-        <ParallaxLayer key={i} offset={i + 0.8} speed={1}>
+        <ParallaxLayer key={i} offset={i + 0.8} speed={1.25}>
           <Grid container justify="center">
             <Fab
               variant={"extended"}
               color={"primary"}
-              onClick={() =>
-                parallax.scrollTo(i === numOfButtons - 1 ? 1 : i + 1)
-              }
+              onClick={() => parallax.scrollTo(i + 1)}
             >
               Continue
             </Fab>
