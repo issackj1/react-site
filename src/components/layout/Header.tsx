@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { RefObject } from "react";
-import { Parallax } from "react-spring/renderprops-addons";
+import { Parallax } from "@react-spring/parallax";
 import {
   AppBar,
   Container,
@@ -13,7 +13,7 @@ import { navProps } from "../../constants";
 import { makeStyles } from "@material-ui/core/styles";
 
 interface Props {
-  parallax: Parallax | RefObject<any> | null;
+  parallax: typeof Parallax | RefObject<any> | null;
 }
 
 const useStyles = makeStyles((theme) => ({

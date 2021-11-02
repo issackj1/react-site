@@ -11,24 +11,24 @@ interface ExtracurricularContentItems {
 }
 
 export const Extracurricular: React.FC<Props> = () => {
+  const { title, content } = ExtracurricularContent;
+
   return (
-    <div className={"container"} id={"extracurricular"}>
-      <Grid container direction={"row"} spacing={1}>
-        <Grid item xs={12} sm={12}>
-          <Typography variant={"h3"} gutterBottom align={"center"}>
-            {ExtracurricularContent.title}
-          </Typography>
-        </Grid>
-        {ExtracurricularContent.content.map(
-          (object: ExtracurricularContentItems, index: number) => (
-            <ExtracurricularItem
-              key={index}
-              title={object.title}
-              items={object.items}
-            />
-          )
-        )}
+    <Grid container direction={"row"} justify={"center"}>
+      <Grid item xs={12} sm={12}>
+        <Typography variant={"h3"} align={"center"}>
+          {title}
+        </Typography>
       </Grid>
-    </div>
+      {content.map((object: ExtracurricularContentItems, index: number) => (
+        <Grid item xs={4} sm={4}>
+          <ExtracurricularItem
+            key={index}
+            title={object.title}
+            items={object.items}
+          />
+        </Grid>
+      ))}
+    </Grid>
   );
 };
