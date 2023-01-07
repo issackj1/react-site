@@ -1,5 +1,5 @@
 import React, { RefObject, useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./views/Home";
 import { Project } from "./components/project/Project";
 import { FinancialLiteracy } from "./views/FinancialLiteracy";
@@ -14,16 +14,16 @@ export default function App() {
   return (
     <Layout parallax={parallax}>
       <Router basename={process.env.PUBLIC_URL}>
-        <Switch>
-          <Route path={"/project/:name"} component={Project} />
-          <Route path={"/financialLiteracy"} component={FinancialLiteracy} />
+        <Routes>
+          <Route path={"/project/:name"} element={<Project/>} />
+          <Route path={"/financialLiteracy"} element={<FinancialLiteracy/>} />
           <Route
             path={"/"}
             render={(props: any) => (
               <Home {...props} parallax={parallax} setParallax={setParallax} />
             )}
           />
-        </Switch>
+        </Routes>
       </Router>
     </Layout>
   );
