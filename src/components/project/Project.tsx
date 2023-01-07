@@ -16,10 +16,11 @@ import { v4 as uuidv4 } from "uuid";
 interface Props {}
 
 interface ParamTypes {
-  name: string;
+  name?:  string;
 }
 
-function getProps(name: string) {
+function getProps(name: string | undefined) {
+  if(!name) return;
   let project;
   switch (name) {
     case "starterhacks2020":
@@ -47,7 +48,7 @@ const useStyles = makeStyles({
 });
 
 export const Project: React.FC<Props> = () => {
-  const { name } = useParams<ParamTypes>();
+  const { name } = useParams();
 
   const {
     title,
@@ -67,6 +68,8 @@ export const Project: React.FC<Props> = () => {
   } = getProps(name);
 
   const classes = useStyles();
+
+  if(!name) return <div><SimpleNavBar /></div>
 
   return (
     <div>

@@ -19,6 +19,7 @@ export default function App() {
           <Route path={"/financialLiteracy"} element={<FinancialLiteracy/>} />
           <Route
             path={"/"}
+            // @ts-ignore
             render={(props: any) => (
               <Home {...props} parallax={parallax} setParallax={setParallax} />
             )}
