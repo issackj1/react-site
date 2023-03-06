@@ -1,6 +1,5 @@
 // @ts-nocheck
-import React, { RefObject } from "react";
-import { Parallax } from "@react-spring/parallax";
+import React, { useContext } from "react";
 import {
   AppBar,
   Container,
@@ -11,10 +10,9 @@ import {
 } from "@material-ui/core";
 import { navProps } from "../../constants";
 import { makeStyles } from "@material-ui/core/styles";
+import { ParallaxContext } from "../ParallaxProvider";
 
-interface Props {
-  parallax: typeof Parallax | RefObject<any> | null;
-}
+interface Props {}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,9 +30,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Header: React.FC<Props> = ({ parallax }) => {
+export const Header: React.FC<Props> = () => {
   const { navLinks } = navProps;
   const classes = useStyles();
+  const { parallax } = useContext(ParallaxContext);
 
   return (
     <div className={classes.root}>

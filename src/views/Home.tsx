@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { Fab, Grid } from "@material-ui/core";
-import React from "react";
+import React, { useContext } from "react";
 import { animated, config, useSpring, SpringConfig } from "react-spring";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { About } from "../components/About";
@@ -12,6 +12,7 @@ import { Section } from "../components/Section";
 import { Skills } from "../components/skills/Skills";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { v4 as uuidv4 } from "uuid";
+import { ParallaxContext } from "../components/ParallaxProvider";
 
 interface Props {}
 
@@ -22,8 +23,10 @@ interface useSpringProps {
   from: { opacity: number };
 }
 
-export const Home: React.FC<Props> = (props) => {
-  const { parallax, setParallax } = props;
+export const Home: React.FC<Props> = () => {
+  console.log("hey");
+
+  const { parallax, setParallax } = useContext(ParallaxContext);
 
   const h1Props = useSpring<useSpringProps>({
     config: config.molasses,
@@ -46,7 +49,7 @@ export const Home: React.FC<Props> = (props) => {
     blackBackGroundOffsets = [2, 4, 6];
 
   return (
-    <Parallax pages={7} scrolling={true} ref={setParallax}>
+    <Parallax pages={7} ref={setParallax}>
       {/*Backgrounds*/}
       {blackBackGroundOffsets.map((offset: number) => (
         <ParallaxLayer
@@ -86,7 +89,7 @@ export const Home: React.FC<Props> = (props) => {
         onClick={() => parallax.scrollTo(3)}
         style={secondaryBackground}
       >
-        <Section component={Skills} />
+        <Skills />
       </ParallaxLayer>
       <ParallaxLayer
         offset={3}
@@ -98,7 +101,7 @@ export const Home: React.FC<Props> = (props) => {
           justifyContent: "center",
         }}
       >
-        <Section component={Education} />
+        <Education />
       </ParallaxLayer>
       <ParallaxLayer
         offset={4}
@@ -106,7 +109,7 @@ export const Home: React.FC<Props> = (props) => {
         onClick={() => parallax.scrollTo(5)}
         style={secondaryBackground}
       >
-        <Section component={Experience} />
+        <Experience />
       </ParallaxLayer>
       <ParallaxLayer
         offset={5}
@@ -118,7 +121,7 @@ export const Home: React.FC<Props> = (props) => {
           justifyContent: "center",
         }}
       >
-        <Section component={Extracurricular} />
+        <Extracurricular />
       </ParallaxLayer>
       <ParallaxLayer
         offset={6}
@@ -126,7 +129,7 @@ export const Home: React.FC<Props> = (props) => {
         onClick={() => parallax.scrollTo(1)}
         style={secondaryBackground}
       >
-        <Section component={Contact} />
+        <Contact />
       </ParallaxLayer>
       {/*button*/}
       {Array.from(Array(numOfButtons)).map((object, i) => (
@@ -142,7 +145,6 @@ export const Home: React.FC<Props> = (props) => {
           </Grid>
         </ParallaxLayer>
       ))}
-
       {Array.from(Array(7)).map((object, i) => (
         <ParallaxLayer
           key={i}
