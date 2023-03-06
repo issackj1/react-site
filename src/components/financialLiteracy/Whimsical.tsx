@@ -104,7 +104,6 @@ export const Whimsical: React.FC<Props> = () => {
               </ListItemLink>
             ))}
           </List>
-          ``
         </Collapse>
       </List>
       <Iframe
