@@ -2,12 +2,10 @@ import React from "react";
 import {
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   Grid,
   List,
   ListItem,
-  ListItemText,
   Typography,
 } from "@material-ui/core";
 import { v4 as uuidv4 } from "uuid";
