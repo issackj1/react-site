@@ -2,6 +2,23 @@
   "title": "EXTRACURRICULAR",
   "content": [
     {
+      "title": "Projects",
+      "items": [
+        {
+          "name": "UFC Calendar",
+          "link": "https://www.ufccalendar.tech/"
+        },
+        {
+          "name": "Shuffl",
+          "link": "/project/shuffl"
+        },
+        {
+          "name": "Astro Jump",
+          "link": "/project/astrojump"
+        }
+      ]
+    },
+    {
       "title": "Hackathons",
       "items": [
         {

@@ -1,5 +1,9 @@
 import React from "react";
 import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
   Grid,
   List,
   ListItem,
@@ -19,10 +23,8 @@ export const ExtracurricularItem: React.FC<Props> = (props) => {
     <Grid
       container
       direction={"column"}
-      item
-      xs={12}
-      sm={12}
       alignItems={"center"}
+      justifyContent={"space-between"}
     >
       <Grid item xs={12} sm={12}>
         <Typography variant={"h4"} align={"center"}>
@@ -33,16 +35,21 @@ export const ExtracurricularItem: React.FC<Props> = (props) => {
         <List dense={true}>
           {items.map((object: any) => {
             return (
-              <a
-                key={uuidv4()}
-                href={object.link}
-                rel={"noopener noreferrer"}
-                target={"_blank"}
-              >
-                <ListItem>
-                  <ListItemText primary={object.name} />
-                </ListItem>
-              </a>
+              <ListItem>
+                <Card>
+                  <CardActionArea>
+                    <CardContent></CardContent>
+                    <a
+                      key={uuidv4()}
+                      href={object.link}
+                      rel={"noopener noreferrer"}
+                      target={"_blank"}
+                    >
+                      {object.name}
+                    </a>
+                  </CardActionArea>
+                </Card>
+              </ListItem>
             );
           })}
         </List>
