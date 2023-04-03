@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar, Grid, Typography } from "@mui/material";
 import { AboutContent } from "../constants";
-import profilePicture from "../images/IMG_4774.JPG";
+import profilePicture from "../images/profile.jpg.JPG";
 
 interface Props {}
 
