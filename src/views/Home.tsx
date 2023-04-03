@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { Fab, Grid } from "@material-ui/core";
+import { Container, Fab, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import { animated, config, useSpring, SpringConfig } from "react-spring";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
@@ -8,9 +8,8 @@ import { Contact } from "../components/Contact";
 import { Education } from "../components/Education";
 import { Experience } from "../components/experience/Experience";
 import { Extracurricular } from "../components/extracurricular/Extracurricular";
-import { Section } from "../components/Section";
 import { Skills } from "../components/skills/Skills";
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { v4 as uuidv4 } from "uuid";
 import { ParallaxContext } from "../components/ParallaxProvider";
 
@@ -24,8 +23,6 @@ interface useSpringProps {
 }
 
 export const Home: React.FC<Props> = () => {
-  console.log("hey");
-
   const { parallax, setParallax } = useContext(ParallaxContext);
 
   const h1Props = useSpring<useSpringProps>({
@@ -81,7 +78,9 @@ export const Home: React.FC<Props> = () => {
           justifyContent: "center",
         }}
       >
-        <About />
+        <Container>
+          <About />
+        </Container>
       </ParallaxLayer>
       <ParallaxLayer
         offset={2}
@@ -89,7 +88,9 @@ export const Home: React.FC<Props> = () => {
         onClick={() => parallax.scrollTo(3)}
         style={secondaryBackground}
       >
-        <Skills />
+        <Container>
+          <Skills />
+        </Container>
       </ParallaxLayer>
       <ParallaxLayer
         offset={3}
@@ -121,7 +122,9 @@ export const Home: React.FC<Props> = () => {
           justifyContent: "center",
         }}
       >
-        <Extracurricular />
+        <Container>
+          <Extracurricular />
+        </Container>
       </ParallaxLayer>
       <ParallaxLayer
         offset={6}
@@ -134,7 +137,7 @@ export const Home: React.FC<Props> = () => {
       {/*button*/}
       {Array.from(Array(numOfButtons)).map((object, i) => (
         <ParallaxLayer key={i} offset={i + 0.8} speed={1.25}>
-          <Grid container justify="center">
+          <Typography variant={"h1"} align={"center"}>
             <Fab
               variant={"extended"}
               color={"primary"}
@@ -142,7 +145,7 @@ export const Home: React.FC<Props> = () => {
             >
               Continue
             </Fab>
-          </Grid>
+          </Typography>
         </ParallaxLayer>
       ))}
       {Array.from(Array(7)).map((object, i) => (

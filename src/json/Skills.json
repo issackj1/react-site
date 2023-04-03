@@ -3,19 +3,19 @@
   "subtitle": "My Skills",
   "content": [
     {
-      "title": "languages",
-      "items": ["Java", "JavaScript", "Python", "C++", "c"]
+      "title": "Languages",
+      "items": ["Java", "JavaScript", "Python", "C++", "C"]
     },
     {
-      "title": "libraries",
+      "title": "Libraries",
       "items": ["React"]
     },
     {
-      "title": "frameworks",
+      "title": "Frameworks",
       "items": ["Django", "Express.js"]
     },
     {
-      "title": "databases",
+      "title": "Databases",
       "items": ["MongoDB", "SQLite3", "PostgreSQL"]
     }
   ]

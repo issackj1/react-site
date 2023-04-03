@@ -8,19 +8,19 @@ import {
   ProjectOne,
   ProjectTwo,
 } from "../../constants";
-import { Container, Grid, List, ListItem, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Container, Grid, List, ListItem, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { ProjectItem } from "./ProjectItem";
 import { v4 as uuidv4 } from "uuid";
 
 interface Props {}
 
-interface ParamTypes {
-  name?:  string;
+interface Props1 {
+  name: string | undefined;
 }
 
-function getProps(name: string | undefined) {
-  if(!name) return;
+function getProps({ name }: Props1) {
+  if (!name) return;
   let project;
   switch (name) {
     case "starterhacks2020":
@@ -41,7 +41,7 @@ function getProps(name: string | undefined) {
   return project;
 }
 
-const useStyles = makeStyles({
+const useStyles: any = makeStyles({
   title: {
     fontSize: 42,
   },
@@ -65,11 +65,16 @@ export const Project: React.FC<Props> = () => {
     next,
     repoUrl,
     technologies,
-  } = getProps(name);
+  } = getProps({ name: name });
 
   const classes = useStyles();
 
-  if(!name) return <div><SimpleNavBar /></div>
+  if (!name)
+    return (
+      <div>
+        <SimpleNavBar />
+      </div>
+    );
 
   return (
     <div>

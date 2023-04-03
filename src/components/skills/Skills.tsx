@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@mui/material";
 import React from "react";
 import { SkillsContent } from "../../constants";
 import { SkillsItem } from "./SkillsItem";
@@ -13,7 +13,13 @@ interface SkillsContentItems {
 
 export const Skills: React.FC<Props> = () => {
   return (
-    <Grid container direction="row" spacing={1} justify="center">
+    <Grid
+      container
+      direction="row"
+      spacing={1}
+      alignItems={"flex-start"}
+      alignContent="center"
+    >
       <Grid item xs={12} sm={12}>
         <Typography variant={"h2"} align={"center"} gutterBottom>
           {SkillsContent.title}

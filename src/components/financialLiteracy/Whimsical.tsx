@@ -3,7 +3,6 @@ import React from "react";
 import {
   Collapse,
   Container,
-  createStyles,
   List,
   ListItem,
   ListItemIcon,
@@ -11,16 +10,15 @@ import {
   ListSubheader,
   Theme,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
+import createStyles from "@mui/styles/createStyles";
 import Iframe from "react-iframe";
 import { AffiliateLinks } from "../../constants";
-import { makeStyles } from "@material-ui/core/styles";
-import {
-  ExpandLess,
-  ExpandMore,
-  Mail,
-  MonetizationOn,
-} from "@material-ui/icons";
+import { makeStyles } from "@mui/styles";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MailIcon from "@mui/icons-material/Mail";
 
 interface Props {}
 
@@ -70,10 +68,10 @@ export const Whimsical: React.FC<Props> = () => {
       >
         <ListItem button onClick={handleClick1}>
           <ListItemIcon>
-            <MonetizationOn />
+            <MonetizationOnIcon />
           </ListItemIcon>
           <ListItemText primary="Trading" />
-          {open1 ? <ExpandLess /> : <ExpandMore />}
+          {open1 ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </ListItem>
         <Collapse in={open1} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
@@ -91,10 +89,10 @@ export const Whimsical: React.FC<Props> = () => {
       >
         <ListItem button onClick={handleClick2}>
           <ListItemIcon>
-            <Mail />
+            <MailIcon />
           </ListItemIcon>
           <ListItemText primary="Newsletters" />
-          {open2 ? <ExpandLess /> : <ExpandMore />}
+          {open2 ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </ListItem>
         <Collapse in={open2} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>

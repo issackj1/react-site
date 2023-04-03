@@ -1,5 +1,5 @@
 import React from "react";
-import { CircularProgress, Fade } from "@material-ui/core";
+import { CircularProgress, Fade } from "@mui/material";
 
 interface Props {
   isLoading: boolean;

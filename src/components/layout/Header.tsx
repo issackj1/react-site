@@ -2,14 +2,15 @@
 import React, { useContext } from "react";
 import {
   AppBar,
+  Box,
   Container,
   Grid,
   Link,
   Toolbar,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import { navProps } from "../../constants";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 import { ParallaxContext } from "../ParallaxProvider";
 
 interface Props {}
@@ -36,42 +37,38 @@ export const Header: React.FC<Props> = () => {
   const { parallax } = useContext(ParallaxContext);
 
   return (
-    <div className={classes.root}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Container>
-            <Grid container alignItems={"center"}>
-              <Typography variant="h6" className={classes.title}>
-                <Link underline={"none"} color={"inherit"} href={"/"}>
-                  Issack John
-                </Link>
-              </Typography>
-              {navLinks.map(({ title }, i) => (
-                <Link
-                  underline={"none"}
-                  className={classes.toolbarLink}
-                  onClick={() => parallax.scrollTo(i + 1)}
-                  key={i}
-                  color="inherit"
-                  variant={"subtitle2"}
-                  component={"button"}
-                >
-                  {title}
-                </Link>
-              ))}
-              <Link
-                underline={"none"}
-                className={classes.toolbarLink}
-                color={"inherit"}
-                href={"/financialLiteracy"}
-                variant={"subtitle2"}
-              >
-                Financial Literacy
-              </Link>
-            </Grid>
-          </Container>
+          <Typography variant="h6" className={classes.title} component={"div"}>
+            <Link underline={"none"} color={"inherit"} href={"/"}>
+              Issack John
+            </Link>
+          </Typography>
+          {navLinks.map(({ title }, i) => (
+            <Link
+              underline={"none"}
+              className={classes.toolbarLink}
+              onClick={() => parallax.scrollTo(i + 1)}
+              key={i}
+              color="inherit"
+              variant={"subtitle2"}
+              component={"button"}
+            >
+              {title}
+            </Link>
+          ))}
+          <Link
+            underline={"none"}
+            className={classes.toolbarLink}
+            color={"inherit"}
+            href={"/financialLiteracy"}
+            variant={"subtitle2"}
+          >
+            Financial Literacy
+          </Link>
         </Toolbar>
       </AppBar>
-    </div>
+    </Box>
   );
 };

@@ -1,5 +1,11 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import {
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 
 interface Props {
@@ -10,13 +16,20 @@ interface Props {
 export const SkillsItem: React.FC<Props> = (props) => {
   const { title, items } = props;
   return (
-    <Grid item xs={6} sm={3}>
-      <Typography variant={"h4"}>{title}</Typography>
-      <ul className={"list-unstyled"}>
+    <Grid item xs={6} sm={3} alignContent={"flex-start"}>
+      <Typography align={"center"} variant={"h4"}>
+        {title}
+      </Typography>
+      <List dense>
         {items.map((item: String) => (
-          <li key={uuidv4()}>{item}</li>
+          <ListItem key={uuidv4()}>
+            <ListItemText
+              primaryTypographyProps={{ align: "center" }}
+              primary={item}
+            />
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </Grid>
   );
 };

@@ -7,7 +7,7 @@ import {
   List,
   ListItem,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 
 interface Props {
@@ -18,40 +18,33 @@ interface Props {
 export const ExtracurricularItem: React.FC<Props> = (props) => {
   const { title, items } = props;
   return (
-    <Grid
-      container
-      direction={"column"}
-      alignItems={"center"}
-      justifyContent={"space-between"}
-    >
-      <Grid item xs={12} sm={12}>
-        <Typography variant={"h4"} align={"center"}>
-          {title}
-        </Typography>
-      </Grid>
-      <Grid item xs={12} sm={12}>
-        <List dense={true}>
-          {items.map((object: any) => {
-            return (
-              <ListItem>
-                <Card>
-                  <CardActionArea>
-                    <CardContent></CardContent>
-                    <a
-                      key={uuidv4()}
-                      href={object.link}
-                      rel={"noopener noreferrer"}
-                      target={"_blank"}
-                    >
-                      {object.name}
-                    </a>
-                  </CardActionArea>
-                </Card>
-              </ListItem>
-            );
-          })}
-        </List>
-      </Grid>
+    <Grid item xs={6} sm={6} alignContent={"flex-start"}>
+      <Typography variant={"h4"} align={"center"}>
+        {title}
+      </Typography>
+      <List dense>
+        {items.map((object: any) => (
+          <ListItem
+            alignItems={"center"}
+            key={uuidv4()}
+            // slotProps={{ root: { justifyContent: "center" } }}
+          >
+            <Card>
+              <CardActionArea>
+                <CardContent>{object.name}</CardContent>
+                <a
+                  key={uuidv4()}
+                  href={object.link}
+                  rel={"noopener noreferrer"}
+                  target={"_blank"}
+                >
+                  Link
+                </a>
+              </CardActionArea>
+            </Card>
+          </ListItem>
+        ))}
+      </List>
     </Grid>
   );
 };

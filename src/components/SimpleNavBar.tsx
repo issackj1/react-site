@@ -1,22 +1,24 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, Link, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Link, Toolbar, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 interface Props {}
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > * + *": {
-      marginLeft: theme.spacing(2),
+const useStyles: any = makeStyles(
+  (theme: { spacing: (arg0: number) => any }) => ({
+    root: {
+      "& > * + *": {
+        marginLeft: theme.spacing(2),
+      },
     },
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  })
+);
 
 export const SimpleNavBar: React.FC<Props> = () => {
   const classes = useStyles();

@@ -1,11 +1,11 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@mui/material";
 
 interface Props {}
 
 export const Education: React.FC<Props> = () => {
   return (
-    <Grid container direction={"row"} justify={"center"}>
+    <Grid container direction={"row"} justifyContent={"center"}>
       <Grid item xs={12} sm={12}>
         <Typography variant={"h2"} align={"center"}>
           EDUCATION
