@@ -84,7 +84,7 @@ export const Home: React.FC<Props> = () => {
     </ParallaxLayer>
   );
 
-  const BackToTopButtonLayer = ({ index }: { index: number }) => (
+  const KeyboardArrowUpIconLayer = ({ index }: { index: number }) => (
     <ParallaxLayer
       key={index}
       offset={index + 0.7 + 1}
@@ -94,7 +94,7 @@ export const Home: React.FC<Props> = () => {
         marginLeft: "90%",
       }}
     >
-      <Fab color={"secondary"} onClick={handleClick(0)}>
+      <Fab color={"secondary"} onClick={handleClick(index)}>
         <KeyboardArrowUpIcon fontSize={"large"} />
       </Fab>
     </ParallaxLayer>
@@ -174,13 +174,21 @@ export const Home: React.FC<Props> = () => {
       >
         <Contact />
       </ParallaxLayer>
+      {/* Back to top button */}
+      <ParallaxLayer offset={NUM_PAGES - 1 + 0.8} speed={1.25}>
+        <Typography variant={"h1"} align={"center"}>
+          <Fab variant={"extended"} color={"primary"} onClick={handleClick(0)}>
+            Back to top
+          </Fab>
+        </Typography>
+      </ParallaxLayer>
       {/*button*/}
       {Array(numOfButtons)
         .fill(undefined)
         .map((object, i) => ButtonLayer({ index: i }))}
       {Array(NUM_PAGES)
         .fill(undefined)
-        .map((object, i) => BackToTopButtonLayer({ index: i }))}
+        .map((object, i) => KeyboardArrowUpIconLayer({ index: i }))}
     </Parallax>
   );
 };
