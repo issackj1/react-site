@@ -136,17 +136,17 @@ export const Home: React.FC<Props> = () => {
         onClick={handleClick(3)}
         style={secondaryBackground}
       >
-        <Container>
-          <Skills />
-        </Container>
+        <Experience />
       </ParallaxLayer>
       <ParallaxLayer
         offset={3}
         speed={mainLayerSpeed}
         onClick={handleClick(4)}
-        style={centeredStyle}
+        // style={secondaryBackground}
       >
-        <Education />
+        <Container>
+          <Skills />
+        </Container>
       </ParallaxLayer>
       <ParallaxLayer
         offset={4}
@@ -154,7 +154,7 @@ export const Home: React.FC<Props> = () => {
         onClick={handleClick(5)}
         style={secondaryBackground}
       >
-        <Experience />
+        <Education />
       </ParallaxLayer>
       <ParallaxLayer
         offset={5}
