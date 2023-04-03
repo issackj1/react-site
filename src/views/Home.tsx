@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { Container, Fab, Typography } from "@mui/material";
-import React, { useContext } from "react";
+import React, { useCallback, useContext } from "react";
 import { animated, config, useSpring, SpringConfig } from "react-spring";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { About } from "../components/About";
@@ -10,7 +10,6 @@ import { Experience } from "../components/experience/Experience";
 import { Extracurricular } from "../components/extracurricular/Extracurricular";
 import { Skills } from "../components/skills/Skills";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { v4 as uuidv4 } from "uuid";
 import { ParallaxContext } from "../components/ParallaxProvider";
 
 interface Props {}
@@ -23,6 +22,8 @@ interface useSpringProps {
 }
 
 export const Home: React.FC<Props> = () => {
+  const NUM_PAGES = 7;
+
   const { parallax, setParallax } = useContext(ParallaxContext);
 
   const h1Props = useSpring<useSpringProps>({
@@ -45,38 +46,85 @@ export const Home: React.FC<Props> = () => {
     numOfButtons = 6,
     blackBackGroundOffsets = [2, 4, 6];
 
+  const handleClick = useCallback(
+    (offset) => () => {
+      parallax.scrollTo(offset);
+    },
+    [parallax]
+  );
+
+  const BackgroundLayer: React.FC<{ offset: number }> = ({
+    offset,
+  }: {
+    offset: number;
+  }) => (
+    <ParallaxLayer
+      key={offset}
+      offset={offset}
+      speed={backgroundLayerSpeed}
+      style={{ backgroundColor: "#282c34" }}
+    />
+  );
+
+  const ButtonLayer: React.FC<{ index: number }> = ({
+    index,
+  }: {
+    index: number;
+  }) => (
+    <ParallaxLayer key={index} offset={index + 0.8} speed={1.25}>
+      <Typography variant={"h1"} align={"center"}>
+        <Fab
+          variant={"extended"}
+          color={"primary"}
+          onClick={handleClick(index + 1)}
+        >
+          Continue
+        </Fab>
+      </Typography>
+    </ParallaxLayer>
+  );
+
+  const BackToTopButtonLayer = ({ index }: { index: number }) => (
+    <ParallaxLayer
+      key={index}
+      offset={index + 0.7 + 1}
+      speed={buttonLayerSpeed}
+      style={{
+        width: "20%",
+        marginLeft: "90%",
+      }}
+    >
+      <Fab color={"secondary"} onClick={handleClick(0)}>
+        <KeyboardArrowUpIcon fontSize={"large"} />
+      </Fab>
+    </ParallaxLayer>
+  );
+
+  const centeredStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  };
+
   return (
-    <Parallax pages={7} ref={setParallax}>
+    <Parallax pages={NUM_PAGES} ref={setParallax}>
       {/*Backgrounds*/}
-      {blackBackGroundOffsets.map((offset: number) => (
-        <ParallaxLayer
-          key={uuidv4()}
-          offset={offset}
-          speed={backgroundLayerSpeed}
-          style={{ backgroundColor: "#282c34" }}
-        />
-      ))}
+      {blackBackGroundOffsets.map((offset: number) =>
+        BackgroundLayer({ offset })
+      )}
       <ParallaxLayer
         offset={0}
         speed={2}
-        onClick={() => parallax.scrollTo(1)}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+        onClick={handleClick(1)}
+        style={centeredStyle}
       >
         <animated.h1 style={h1Props}>Welcome to my Portfolio</animated.h1>
       </ParallaxLayer>
       <ParallaxLayer
         offset={1}
         speed={mainLayerSpeed}
-        onClick={() => parallax.scrollTo(2)}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+        onClick={handleClick(2)}
+        style={centeredStyle}
       >
         <Container>
           <About />
@@ -85,7 +133,7 @@ export const Home: React.FC<Props> = () => {
       <ParallaxLayer
         offset={2}
         speed={mainLayerSpeed}
-        onClick={() => parallax.scrollTo(3)}
+        onClick={handleClick(3)}
         style={secondaryBackground}
       >
         <Container>
@@ -95,19 +143,15 @@ export const Home: React.FC<Props> = () => {
       <ParallaxLayer
         offset={3}
         speed={mainLayerSpeed}
-        onClick={() => parallax.scrollTo(4)}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+        onClick={handleClick(4)}
+        style={centeredStyle}
       >
         <Education />
       </ParallaxLayer>
       <ParallaxLayer
         offset={4}
         speed={mainLayerSpeed}
-        onClick={() => parallax.scrollTo(5)}
+        onClick={handleClick(5)}
         style={secondaryBackground}
       >
         <Experience />
@@ -115,12 +159,8 @@ export const Home: React.FC<Props> = () => {
       <ParallaxLayer
         offset={5}
         speed={mainLayerSpeed}
-        onClick={() => parallax.scrollTo(6)}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+        onClick={handleClick(6)}
+        style={centeredStyle}
       >
         <Container>
           <Extracurricular />
@@ -129,40 +169,18 @@ export const Home: React.FC<Props> = () => {
       <ParallaxLayer
         offset={6}
         speed={mainLayerSpeed}
-        onClick={() => parallax.scrollTo(1)}
+        onClick={handleClick(1)}
         style={secondaryBackground}
       >
         <Contact />
       </ParallaxLayer>
       {/*button*/}
-      {Array.from(Array(numOfButtons)).map((object, i) => (
-        <ParallaxLayer key={i} offset={i + 0.8} speed={1.25}>
-          <Typography variant={"h1"} align={"center"}>
-            <Fab
-              variant={"extended"}
-              color={"primary"}
-              onClick={() => parallax.scrollTo(i + 1)}
-            >
-              Continue
-            </Fab>
-          </Typography>
-        </ParallaxLayer>
-      ))}
-      {Array.from(Array(7)).map((object, i) => (
-        <ParallaxLayer
-          key={i}
-          offset={i + 0.7 + 1}
-          speed={buttonLayerSpeed}
-          style={{
-            width: "20%",
-            marginLeft: "90%",
-          }}
-        >
-          <Fab color={"secondary"} onClick={() => parallax.scrollTo(0)}>
-            <KeyboardArrowUpIcon fontSize={"large"} />
-          </Fab>
-        </ParallaxLayer>
-      ))}
+      {Array(numOfButtons)
+        .fill(undefined)
+        .map((object, i) => ButtonLayer({ index: i }))}
+      {Array(NUM_PAGES)
+        .fill(undefined)
+        .map((object, i) => BackToTopButtonLayer({ index: i }))}
     </Parallax>
   );
 };

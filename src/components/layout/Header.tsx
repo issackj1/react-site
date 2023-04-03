@@ -1,14 +1,6 @@
 // @ts-nocheck
 import React, { useContext } from "react";
-import {
-  AppBar,
-  Box,
-  Container,
-  Grid,
-  Link,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Box, Link, Toolbar, Typography } from "@mui/material";
 import { navProps } from "../../constants";
 import { makeStyles } from "@mui/styles";
 import { ParallaxContext } from "../ParallaxProvider";
