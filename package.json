@@ -1,6 +1,6 @@
 {
   "name": "alpha",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://react-site-five.vercel.app/",
   "repository": "https://github.com/issackj1/react-site",
   "proxy": "http://localhost:4000",
